@@ -1,0 +1,1 @@
+This folder eill contain all header files(.h files) containing class declarations, funcrion prototypes, and other definitions
