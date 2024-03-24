@@ -51,40 +51,19 @@ public:
     }
 
     // Setters
-    void setAge(int newAge)
-    {
-        age = newAge;
-    }
+    void setAge(int newAge){age = newAge;}
 
-    void setSex(string newSex)
-    {
-        sex = newSex;
-    }
+    void setSex(string newSex){sex = newSex;}
 
-    void setBudget(int newBudget)
-    {
-        budget = newBudget;
-    }
+    void setBudget(int newBudget){budget = newBudget;}
 
-    void setName(string newName)
-    {
-        name = newName;
-    }
+    void setName(string newName){name = newName;}
 
-    void setEmail(string newEmail)
-    {
-        email = newEmail;
-    }
+    void setEmail(string newEmail){email = newEmail;}
 
-    void setAddress(string newAddress)
-    {
-        address = newAddress;
-    }
+    void setAddress(string newAddress){address = newAddress;}
 
-    void setPhoneNumber(string newPhoneNumber)
-    {
-        phoneNumber = newPhoneNumber;
-    }
+    void setPhoneNumber(string newPhoneNumber){phoneNumber = newPhoneNumber;}
 
     // Getters
     int getID()
