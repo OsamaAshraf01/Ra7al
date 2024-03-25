@@ -2,8 +2,9 @@
 
 Our app, Ra7al, aims to help people organize their journeys. We create a user-friendly experience that includes all the major aspects of travel planning. In addition, we simplify the travel process by assisting users in, first of all, choosing their destination, and then we offer them a list of available flights. After that, Ra7al helps users budget their travels by choosing the best value for their budget, covering everything from flights to accommodations. <br>
 Moreover, we partner with airlines to provide the best deals for our customers. Users can get Ra7al points and cash back. Furthermore, Ra7al offers a wide selection of hotels, hostels, and rentals.<br>
-Our ultimate goal is to provide our users with a travel companion that takes them from the moment they dream of their next trip to their experience and the memories they create there. <br>
----
+Our ultimate goal is to provide our users with a travel companion that takes them from the moment they dream of their next trip to their experience and the memories they create there. <be>
+
+<br>
 
 ## Project Features:
 
