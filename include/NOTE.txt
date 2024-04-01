@@ -1,1 +1,0 @@
-This folder will contain all header files(.h files) containing class declarations, function prototypes, and other definitions

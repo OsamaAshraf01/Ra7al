@@ -1,1 +1,0 @@
-This folder will cocntain all source code files(.cpp files) implementing the functionality declared in the header files
