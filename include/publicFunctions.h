@@ -8,7 +8,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<string> split(string& str, char delimiter) {
+vector<string> split(string& str, char delimiter=' ') {
     vector<string> result;
     string temp;
     for (char i : str) {
@@ -21,6 +21,15 @@ vector<string> split(string& str, char delimiter) {
     }
     result.push_back(temp);
     return result;
+}
+
+
+string join(vector<string>& values, const string& delimiter){
+    ostringstream oss;
+    for(int i=0 ; i<values.size() ; i++)
+        oss << values[i] << (i+1 != values.size() ? delimiter : "");
+
+    return oss.str();
 }
 
 #endif //RA7AL_PUBLICFUNCTIONS_H
