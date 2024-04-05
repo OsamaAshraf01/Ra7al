@@ -1,12 +1,18 @@
 #include <iostream>
-#include "../include/Date.h"
+#include "../include/Location.h"
 using namespace std;
 
-
 int main() {
-    Date d(23, 3, 2024);
-    cout<<d.toString("DD-MM-YYYY", "/");
+    Location l;   double lat, lon;
+    do{
+        cout<<"Enter Latitude: ";
+        cin>>lat;
+    } while(!l.setLatitude(lat) && (cout << "Invalid Value! "));
+    do{
+        cout<<"Enter Longitude: ";
+        cin>>lon;
+    } while(!l.setLongitude(lon) && (cout << "Invalid Value! "));
 
-
+    cout<<l.toString();
     return 0;
 }
