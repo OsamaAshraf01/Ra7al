@@ -5,11 +5,12 @@
 #ifndef RA7AL_DATABASE_H
 #define RA7AL_DATABASE_H
 #include <iostream>
-#include <bits/stdc++.h>
+#include <vector>
+#include <string>
 using namespace std;
 
-
-class Database {
+class Database
+{
 private:
     string path;
 
@@ -21,5 +22,4 @@ public:
     void update(vector<string> columns, vector<string> values, vector<string> condition);
 };
 
-
-#endif //RA7AL_DATABASE_H
+#endif // RA7AL_DATABASE_H

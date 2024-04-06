@@ -2,6 +2,8 @@
 // Created by OSAMA ASHRAF on 3/23/2024.
 //
 /* ---Validation---
+    #include "Date.h"
+
     Date d;
     int day, month, year;
     do{
@@ -18,18 +20,19 @@
   cout<<d.toString();
 */
 
-
 #ifndef RA7AL_DATE_H
 #define RA7AL_DATE_H
 #include <string>
 using namespace std;
 
-class Date {
+class Date
+{
     /*
      * TODO: Distance between two dates
      */
 private:
     int day, month, year;
+
 public:
     // Constructors
     Date();
@@ -43,17 +46,16 @@ public:
     // Setters
     bool setDay(int _day);
     bool setMonth(int _month);
-    bool setYear (int _year);
+    bool setYear(int _year);
 
     // Methods
-    string toString(string format="DD.MM.YYYY", string separator="/");
+    string toString(string format = "DD.MM.YYYY", string separator = "/");
     void addDays(int days);
     void addMonths(int months);
     void addYears(int years);
 
     bool isValid() const;
-    //Duration calcDistance(Date other);
+    // Duration calcDistance(Date other);
 };
 
-
-#endif //RA7AL_DATE_H
+#endif // RA7AL_DATE_H
