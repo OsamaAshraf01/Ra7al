@@ -1,18 +1,14 @@
 #include <iostream>
-#include "../include/Location.h"
+#include "../include/Time.h"
 using namespace std;
 
 int main() {
-    Location l;   double lat, lon;
-    do{
-        cout<<"Enter Latitude: ";
-        cin>>lat;
-    } while(!l.setLatitude(lat) && (cout << "Invalid Value! "));
-    do{
-        cout<<"Enter Longitude: ";
-        cin>>lon;
-    } while(!l.setLongitude(lon) && (cout << "Invalid Value! "));
+    Time t(5, 0, 0, "AM");
+    cout<<t.toString()<<'\n';
+    t.addHours(7);
+    t.addMinutes(30);
+    t.addSeconds(40);
+    cout << t.toString("hh:mm") <<'\n';
 
-    cout<<l.toString();
     return 0;
 }
