@@ -5,17 +5,24 @@
 #ifndef RA7AL_PUBLICFUNCTIONS_H
 #define RA7AL_PUBLICFUNCTIONS_H
 
-#include <bits/stdc++.h>
+#include <vector>
+#include <string>
+#include <sstream>
 using namespace std;
 
-vector<string> split(string& str, char delimiter=' ') {
+vector<string> split(string &str, char delimiter = ' ')
+{
     vector<string> result;
     string temp;
-    for (char i : str) {
-        if (i == delimiter) {
+    for (char i : str)
+    {
+        if (i == delimiter)
+        {
             result.push_back(temp);
             temp = "";
-        } else {
+        }
+        else
+        {
             temp += i;
         }
     }
@@ -23,13 +30,13 @@ vector<string> split(string& str, char delimiter=' ') {
     return result;
 }
 
-
-string join(vector<string>& values, const string& delimiter){
+string join(vector<string> &values, const string &delimiter)
+{
     ostringstream oss;
-    for(int i=0 ; i<values.size() ; i++)
-        oss << values[i] << (i+1 != values.size() ? delimiter : "");
+    for (int i = 0; i < values.size(); i++)
+        oss << values[i] << (i + 1 != values.size() ? delimiter : "");
 
     return oss.str();
 }
 
-#endif //RA7AL_PUBLICFUNCTIONS_H
+#endif // RA7AL_PUBLICFUNCTIONS_H
