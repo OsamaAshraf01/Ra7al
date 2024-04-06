@@ -1,10 +1,12 @@
 //
-// Created by OSAMA ASHRAF on 23/3/2024.
+// Created by OSAMA ASHRAF on 23/3/MAX_YEAR.
 //
 
 #include "../include/Date.h"
 #include <bits/stdc++.h>
 using namespace std;
+int MAX_YEAR = 2024;
+int MIN_YEAR = 1800;
 
 // Global Functions
 bool isLeap(int year){
@@ -35,14 +37,14 @@ Date::Date(int DD, int MM, int YYYY) {
 }
 
 // Getters
-double Date::getDay() const {return this->day;}
-double Date::getMonth() const {return this->month;}
-double Date::getYear() const {return this->year;}
+double Date::getDay() const {return day;}
+double Date::getMonth() const {return month;}
+double Date::getYear() const {return year;}
 
 // Setters
-void Date::setDay(int _day) {this->day = _day;}
-void Date::setMonth(int _month) {this->month = _month;}
-void Date::setYear(int _year) {this->year = _year;}
+bool Date::setDay(int d) {return !(d > dayLimit(month, year) || d < 1) && (day=d);}
+bool Date::setMonth(int m) {return !(m > 12 || m < 1) && (month=m);}
+bool Date::setYear(int y) {return !(y > MAX_YEAR || y < MIN_YEAR) && (year=y);}
 
 // Methods
 string Date::toString(string format, string separator) {  // "DD.MM.YYYY"
@@ -68,7 +70,7 @@ string Date::toString(string format, string separator) {  // "DD.MM.YYYY"
 
 bool Date::isValid() const {
     // Checking Year
-    if (year > 2024 || year < 1800)
+    if (year > MAX_YEAR || year < MIN_YEAR)
         return false;
 
 
@@ -78,7 +80,7 @@ bool Date::isValid() const {
 
 
     // Checking Day
-    if (day > dayLimit(month, year) || day > 31 || day < 1)
+    if (day > dayLimit(month, year) || day < 1)
         return false;
 
     return true;

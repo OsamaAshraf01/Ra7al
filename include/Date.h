@@ -24,9 +24,9 @@ public:
     double getYear() const;
 
     // Setters
-    void setDay(int _day);
-    void setMonth(int _month);
-    void setYear(int _year);
+    bool setDay(int _day);
+    bool setMonth(int _month);
+    bool setYear (int _year);
 
     // Methods
     string toString(string format="DD.MM.YYYY", string separator="/");
