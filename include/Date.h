@@ -8,8 +8,7 @@
 using namespace std;
 
 class Date {
-    /* TODO: Date Validity
-     * TODO: Add days, months, years (%)
+    /*
      * TODO: Distance between two dates
      */
 private:
@@ -19,15 +18,24 @@ public:
     Date();
     Date(int DD, int MM, int YYYY);
 
+    // Getters
     double getDay() const;
     double getMonth() const;
     double getYear() const;
 
+    // Setters
     void setDay(int _day);
     void setMonth(int _month);
     void setYear(int _year);
 
+    // Methods
     string toString(string format="DD.MM.YYYY", string separator="/");
+    void addDays(int days);
+    void addMonths(int months);
+    void addYears(int years);
+
+    bool isValid() const;
+    //Duration calcDistance(Date other);
 };
 
 
