@@ -1,6 +1,23 @@
 //
 // Created by OSAMA ASHRAF on 3/23/2024.
 //
+/* ---Validation---
+    Date d;
+    int day, month, year;
+    do{
+        cin>>day>>month>>year;
+        d = {day, month, year};
+    } while(!d.isValid() && cout<<"Enter valid date!\n");
+
+
+  ---Adding---
+  Date d{1, 1, 2003};
+  d.addYears(3);
+  d.addMonths(1);
+  d.addDays(28);
+  cout<<d.toString();
+*/
+
 
 #ifndef RA7AL_DATE_H
 #define RA7AL_DATE_H
