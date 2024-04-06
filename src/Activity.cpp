@@ -77,7 +77,7 @@ bool Activity::setPrice(double p)
 
 bool Activity::setStartDate(Date sd)
 {
-    if (sd.getYear() < 0 || sd.getMonth() < 1 || sd.getMonth() > 12 || sd.getDay() < 1 || sd.getDay() > 31)
+    if (!sd.isValid())
     {
         return false;
     }
@@ -87,7 +87,7 @@ bool Activity::setStartDate(Date sd)
 
 bool Activity::setEndDate(Date ed)
 {
-    if (ed.getYear() < 0 || ed.getMonth() < 1 || ed.getMonth() > 12 || ed.getDay() < 1 || ed.getDay() > 31)
+    if (!ed.isValid())
     {
         return false;
     }
@@ -99,7 +99,7 @@ bool Activity::isAvailableAt(Location l)
 {
     for (Location location : locations)
     {
-        if (location.getLongitude() == l.getLongitude() && location.getLatitude() == l.getLatitude())
+        if (location.distanceTo(l) == 0)
         {
             return true;
         }

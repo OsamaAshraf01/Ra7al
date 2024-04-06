@@ -61,7 +61,7 @@ bool Transportation::setType(string t)
 
 bool Transportation::setOrigin(Location o)
 {
-    if (o.getLongitude() == destination.getLongitude() && o.getLatitude() == destination.getLatitude())
+    if (origin.distanceTo(o) == 0)
     {
         return false;
     }
@@ -71,7 +71,7 @@ bool Transportation::setOrigin(Location o)
 
 bool Transportation::setDestination(Location d)
 {
-    if (d.getLongitude() == origin.getLongitude() && d.getLatitude() == origin.getLatitude())
+    if (destination.distanceTo(d) == 0)
     {
         return false;
     }
@@ -81,7 +81,7 @@ bool Transportation::setDestination(Location d)
 
 bool Transportation::setDepartureTime(Time dt)
 {
-    if (dt.getHours() > 24 || dt.getHours() < 0 || dt.getMinutes() > 60 || dt.getMinutes() < 0 || dt.getSeconds() > 60 || dt.getSeconds() < 0)
+    if (!dt.isValid())
     {
         return false;
     }
@@ -91,7 +91,7 @@ bool Transportation::setDepartureTime(Time dt)
 
 bool Transportation::setArrivalTime(Time at)
 {
-    if (at.getHours() > 24 || at.getHours() < 0 || at.getMinutes() > 60 || at.getMinutes() < 0 || at.getSeconds() > 60 || at.getSeconds() < 0)
+    if (!at.isValid())
     {
         return false;
     }
