@@ -1,21 +1,26 @@
+
+// Created by Ahmed Hamdy Kotp
+
 #ifndef Budget_H
 #define Budget_H
 #include <string>
-#include <vector>
 #include <map>
 
+
 using namespace std;
-
-
-class Budget
-{
+class Budget :  Person {
 private :
 	map<string, double> categories;
-    
-	
-public :
-    Budget();
     double total_budget;
+public :
+    //Constructor
+
+    //setters
+
+    //getters
+
+    //methods
+    Budget();
 	void add_category(const string& category_name, double amount);
     double getBalance(const string& category_name) const;
     void spend(const string& category_name, double amount);
@@ -27,3 +32,4 @@ public :
 };
 
 #endif 
+
