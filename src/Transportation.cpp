@@ -1,12 +1,14 @@
 #include "../include/Transportation.h"
 
-// destructor
+// Destructor
+
 Transportation::~Transportation()
 {
-    cout << "Transportation Object Destroyed!!!" << endl;
+    cout << "Transportation" << type << " deleted" << endl;
 }
 
 // Constructors
+
 Transportation::Transportation()
 {
     type = "";
@@ -31,40 +33,19 @@ Transportation::Transportation(string type, Location origin, Location destinatio
 
 // Getters
 
-string Transportation::getType() const
-{
-    return type;
-}
+string Transportation::getType() const { return type; }
 
-Location Transportation::getOrigin() const
-{
-    return origin;
-}
+Location Transportation::getOrigin() const { return origin; }
 
-Location Transportation::getDestination() const
-{
-    return destination;
-}
+Location Transportation::getDestination() const { return destination; }
 
-Time Transportation::getDepartureTime() const
-{
-    return departureTime;
-}
+Time Transportation::getDepartureTime() const { return departureTime; }
 
-Time Transportation::getArrivalTime() const
-{
-    return arrivalTime;
-}
+Time Transportation::getArrivalTime() const { return arrivalTime; }
 
-double Transportation::getPrice() const
-{
-    return price;
-}
+double Transportation::getPrice() const { return price; }
 
-int Transportation::getPassengers() const
-{
-    return passengers;
-}
+int Transportation::getPassengers() const { return passengers; }
 
 // Setters
 
@@ -72,7 +53,6 @@ bool Transportation::setType(string t)
 {
     if (t.empty())
     {
-        cout << "Type cannot be empty" << endl;
         return false;
     }
     type = t;
@@ -81,24 +61,40 @@ bool Transportation::setType(string t)
 
 bool Transportation::setOrigin(Location o)
 {
+    if (o.getLongitude() == destination.getLongitude() && o.getLatitude() == destination.getLatitude())
+    {
+        return false;
+    }
     origin = o;
     return true;
 }
 
 bool Transportation::setDestination(Location d)
 {
+    if (d.getLongitude() == origin.getLongitude() && d.getLatitude() == origin.getLatitude())
+    {
+        return false;
+    }
     destination = d;
     return true;
 }
 
 bool Transportation::setDepartureTime(Time dt)
 {
+    if (dt.getHours() > 24 || dt.getHours() < 0 || dt.getMinutes() > 60 || dt.getMinutes() < 0 || dt.getSeconds() > 60 || dt.getSeconds() < 0)
+    {
+        return false;
+    }
     departureTime = dt;
     return true;
 }
 
 bool Transportation::setArrivalTime(Time at)
 {
+    if (at.getHours() > 24 || at.getHours() < 0 || at.getMinutes() > 60 || at.getMinutes() < 0 || at.getSeconds() > 60 || at.getSeconds() < 0)
+    {
+        return false;
+    }
     arrivalTime = at;
     return true;
 }
@@ -107,7 +103,6 @@ bool Transportation::setPrice(double p)
 {
     if (p < 0)
     {
-        cout << "Price cannot be negative" << endl;
         return false;
     }
     price = p;
@@ -118,7 +113,6 @@ bool Transportation::setPassengers(int p)
 {
     if (p < 0)
     {
-        cout << "Passengers cannot be negative" << endl;
         return false;
     }
     passengers = p;
@@ -127,6 +121,5 @@ bool Transportation::setPassengers(int p)
 
 void Transportation::cancelBooking()
 {
-    // We use destructor on the object
     delete this;
 }

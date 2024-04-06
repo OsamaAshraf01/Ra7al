@@ -1,21 +1,3 @@
-// - type: string
-// - origin: Location
-// - destination: Location
-// - departureTime: Time
-// - arrivalTime: Time
-// - price: double
-// - passengers: int
-
-// + cancelBooking():
-// + duration(): Duration
-
-// Responsibilities:
-// This class will be responsible for representing transportation, associated times, price, etc.
-
-// Collaborators:
-// Class Location
-// Class Time
-
 #ifndef RA7AL_TRANSPORTATION_H
 #define RA7AL_TRANSPORTATION_H
 #include <iostream>
