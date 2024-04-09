@@ -1,33 +1,31 @@
-//Created By Ahmed Hamdy Kotp
-
 #ifndef Budget_H
 #define Budget_H
 #include <string>
+#include <vector>
 #include <map>
 
-
 using namespace std;
-class Budget  {
+
+
+class Budget
+{
 private :
 	map<string, double> categories;
-    double total_budget;
+
 public :
-    //Constructor
-
-    //setters
-
-
-    //getters
-    double getTotalSpent() const;
-    double getRemaining() const;
-    double getBalance(const string& category_name) const;
-    //methods
+//constructors
     Budget();
+    Budget(map<string, double> &categories);
+    double total_budget;
+//Methods
+    void add_category(const string& category_name, double amount);
+    double getBalance(const string& category_name) const;
     void spend(const string& category_name, double amount);
-    void add_category(const string& category_name);
     void deposit(const string& category_name, double amount);
+    double getTotalSpent(double &total) const;
+    double getRemaining() const;
     void overview() const;
-    void advice() const;
+    void advice() ;
 };
 
 #endif 
