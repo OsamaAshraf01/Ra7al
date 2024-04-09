@@ -5,21 +5,25 @@
 #include "../include/Budget.h"
 #include <iostream>
 #include <iomanip>
+#include "Budget.h"
 using namespace std;
 
 // Constructor 
-Budget::Budget() : total_budget(0.0) {}
-Budget::Budget(const double& total): 
-total_budget(total){}
+Budget::Budget() : total_budget(0.0) {} 
+Budget::Budget(map<string, double>& categories) : categories(categories), total_budget(0.0) {
+    for (const auto& item : categories) {
+        total_budget += item.second;
+    }
+}
 
 // Add a new budget category or update an existing one
-void Budget::add_category(const string& category_name){
+void Budget::add_category(const string& category_name, double amount){
     for (auto& x : categories) {
         if (category_name != x.first) {
             categories[category_name] = 0.0;
         }
         else {
-            cout<<"THis category is already exist !\n"
+            cout<<"THis category is already exist !\n" ;
         }
     }
 }
@@ -32,13 +36,19 @@ double Budget::getBalance(const string& category_name) const {
 
 // Spend from a category
 void Budget::spend(const string& category_name, double amount) {
+    bool isFound = false;
     for (auto& x : categories) {
         if (category_name == x.first) {
-        
+            isFound = true;
             if (categories[category_name] >= amount) {
-                categories[category_name] -= amount; total_budget = getRemaining();
+                categories[category_name] -= amount;
+                total_budget = getRemaining();
             }
+            break;
         }
+    }
+    if (!isFound) {
+        cout << "Error: Category '" << category_name << "' not found." << endl;
     }
 }
 
@@ -53,7 +63,7 @@ void Budget::deposit(const string& category_name, double amount) {
 }
 
 // Calculate the total amount spent
-double Budget::getTotalSpent() const {
+double Budget::getTotalSpent(double &total ) const {
     return total_budget - getRemaining();
 }
 
@@ -79,9 +89,9 @@ void Budget::overview() const {
 }
 
 // Offer basic budget advice
-void Budget::advice() const {
-    double spent = getTotalSpent();
-    if (spent > total_budget * 0.8) {
+void Budget::advice()  {
+        double spent = getTotalSpent(total_budget);    
+        if (spent > total_budget * 0.8) {
         cout << "Warning: You've spent over 80% of your budget. Consider reducing expenses.\n";
     }
     else {
