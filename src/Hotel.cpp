@@ -5,113 +5,84 @@
 
 using namespace std;
 
-class Hotel {
+// Setters
+void Hotel::setName(string name) {
+    this->name = name;
+}
 
-private:
-    string name;
-    string location;
-    string type;
-    string description;
-    vector<string> amenities;
-    double pricing;
+void Hotel::setLocation(string location) {
+    this->location = location;
+}
 
-public:
+void Hotel::setType(string type) {
+    this->type = type;
+}
+
+void Hotel::setDescription(string description) {
+    this->description = description;
+}
+
+void Hotel::setAmenities(vector<string> amenities) {
+    this->amenities = amenities;
+}
+
+void Hotel::setPricing(double pricing) {
+    this->pricing = pricing;
+}
 
 
-    // Setters
-    void setName(string name)
-    {
-        this->name = name;
+// Getters
+string Hotel::getName() {
+    return name;
+}
+
+string Hotel::getLocation() {
+    return location;
+}
+
+string Hotel::getType() {
+    return type;
+}
+
+string Hotel::getDescription() {
+    return description;
+}
+
+vector<string> Hotel::getAmenities() {
+    return amenities;
+}
+
+double Hotel::getPricing() {
+    return pricing;
+}
+
+
+// Methods
+void Hotel::showDetails() {
+    cout << "Name: " << name << "\n";
+    cout << "Location: " << location << "\n";
+    cout << "Type: " << type << "\n";
+    cout << "Description: " << description << "\n";
+    cout << "Amenities:\n";
+    for (string amenity: amenities) {
+        cout << amenity << " ,";
     }
 
-    void setLocation(string location)
-    {
-        this->location = location;
+}
+
+void Hotel::showPricing() {
+    cout << "Pricing: " << pricing << "\n";
+}
+
+void Hotel::showAmenities() {
+    cout << "Amenities: " << "\n";
+    for (string amenity: amenities) {
+        cout << amenity << " ,";
     }
 
-    void setType(string type)
-    {
-        this->type = type;
-    }
+}
 
-    void setDescription(string description)
-    {
-        this->description = description;
-    }
+void Hotel::addAmenity(string amenity) {
+    amenities.push_back(amenity);
+}
 
-    void setAmenities(vector<string> amenities)
-    {
-        this->amenities = amenities;
-    }
-
-    void setPricing(double pricing)
-    {
-        this->pricing = pricing;
-    }
-
-
-    // Getters
-    string getName()
-    {
-        return name;
-    }
-
-    string getLocation()
-    {
-        return location;
-    }
-
-    string getType()
-    {
-        return type;
-    }
-
-    string getDescription()
-    {
-        return description;
-    }
-
-    vector<string> getAmenities()
-    {
-        return amenities;
-    }
-
-    double getPricing()
-    {
-        return pricing;
-    }
-
-
-    // Methods
-    void showDetails()
-    {
-        cout << "Name: " << name << "\n";
-        cout << "Location: " << location << "\n";
-        cout << "Type: " << type << "\n";
-        cout << "Description: " << description << "\n";
-        cout << "Amenities:\n";
-        for (string amenity : amenities) {
-            cout << amenity << " ,";
-        }
-
-    }
-
-    void showPricing()
-    {
-        cout << "Pricing: " << pricing << "\n";
-    }
-
-    void showAmenities()
-    {
-        cout << "Amenities: " << "\n";
-        for (string amenity : amenities) {
-            cout << amenity << " ,";
-        }
-
-    }
-
-    void addAmenity(string amenity)
-    {
-        amenities.push_back(amenity);
-    }
-};
