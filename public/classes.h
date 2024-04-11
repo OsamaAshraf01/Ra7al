@@ -4,7 +4,7 @@
 
 #ifndef RA7AL_CLASSES_H
 #define RA7AL_CLASSES_H
-
+#include <bits/stdc++.h>
 
 /*=====List Example========
     List l1, l2, l3;
