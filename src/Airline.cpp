@@ -5,83 +5,54 @@
 
 using namespace std;
 
-class Airline {
 
-private:
-    string Name;
-    double Maxweight;
-    vector<string> availableFlights;
-    vector<string> availableAirports;
-    vector<string> supportedCountries;
+// setters
+void Airline::setName(string & Name) {
+    this->name = Name;
+}
 
-public:
+void Airline::setMaxWeight(double MaxWeight) {
+    this->maxWeight = MaxWeight;
+}
 
-    // setters
-    void setname(string Name)
-    {
-        this->Name = Name;
-    }
+void Airline::setAvailableFlights(string & AvailableFlights) {
+    this->availableFlights.push_back(AvailableFlights);
+}
 
-    void setMaxweight(double Maxweight)
-    {
-        this->Maxweight = Maxweight;
-    }
+void Airline::setAvailableAirports(string & AvailableAirports) {
+    this->availableAirports.push_back(AvailableAirports);
+}
 
-    void setavailableFlights(string availableFlights)
-    {
-        this->availableFlights.push_back(availableFlights);
-    }
-
-    void setavailableAirports(string availableAirports)
-    {
-        this->availableAirports.push_back(availableAirports);
-    }
-
-    void setsupportedCountries(string supportedCountries)
-    {
-        this->supportedCountries.push_back(supportedCountries);
-    }
+void Airline::setSupportedCountries(string & SupportedCountries) {
+    this->supportedCountries.push_back(SupportedCountries);
+}
 
 
-    //getters
-    string getName()
-    {
-        return Name;
-    }
+//getters
+string Airline::getName() {
+    return name;
+}
 
-    double getMaxweight()
-    {
-        return Maxweight;
-    }
+double Airline::getMaxWeight() const {
+    return maxWeight;
+}
 
-    vector<string> getavailableFlights()
-    {
-        return availableFlights;
-    }
+vector<string> Airline::getAvailableFlights() {
+    return availableFlights;
+}
 
-    vector<string> getavailableAirports()
-    {
-        return availableAirports;
-    }
+vector<string> Airline::getAvailableAirports() {
+    return availableAirports;
+}
 
-    vector<string> getsupportedCountries()
-    {
-        return supportedCountries;
-    }
+vector<string> Airline::getSupportedCountries() {
+    return supportedCountries;
+}
 
 
-    //methods
-    void printDetails() {
-        cout << "Name: " << Name << "\n";
-        cout << "Maxweight: " << Maxweight << "\n";
-        cout << "Available Flights:\n";
-
-    }
-};
-
-
-
-
-
-
-
+//methods
+void Airline::printDetails() {
+    cout << "Name: " << name << "\n";
+    cout << "Max Weight: " << maxWeight << "\n";
+    cout << "Available Flights:\n";
+}

@@ -9,8 +9,8 @@ using namespace std;
 
 class Airline {
 private:
-    string Name;
-    double Maxweight;
+    string name;
+    double maxWeight;
     vector<string> availableFlights;
     vector<string> availableAirports;
     vector<string> supportedCountries;
@@ -20,18 +20,18 @@ public:
     Airline();
 
     // setters
-    void setname(string Name);
-    void setMaxweight(double Maxweight);
-    void setavailableFlights(string availableFlights);
-    void setavailableAirports(string availableAirports);
-    void setsupportedCountries(string supportedCountries);
+    void setName(string& Name);
+    void setMaxWeight(double MaxWeight);
+    void setAvailableFlights(string& AvailableFlights);
+    void setAvailableAirports(string& AvailableAirports);
+    void setSupportedCountries(string& SupportedCountries);
 
     // getters
     string getName();
-    double getMaxweight();
-    vector<string> getavailableFlights();
-    vector<string> getavailableAirports();
-    vector<string> getsupportedCountries();
+    double getMaxWeight() const;
+    vector<string> getAvailableFlights();
+    vector<string> getAvailableAirports();
+    vector<string> getSupportedCountries();
 
     // method
     void printDetails();
