@@ -103,7 +103,10 @@ public:
 
     void showAmenities()
     {
-        cout << "Amenities: " << "amenities " << "\n";
+        cout << "Amenities: " << "\n";
+        for (string amenity : amenities) {
+            cout << amenity << " ,";
+        }
 
     }
 
