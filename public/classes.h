@@ -6,6 +6,20 @@
 #define RA7AL_CLASSES_H
 
 
+/*=====List Example========
+    List l1, l2, l3;
+    l1 = {"osama", 45, 98.5, 'A'};
+    l1.append(14.5);
+    l1.append("Ahmed");
+
+
+    l2 = {14, 89.4, "Omar"};
+
+
+    l3 = l1 + l2;
+    cout<<l3;
+ */
+//=====List definition=====
 class List{
 private:
     vector< variant<int, double, string, char> > values;
