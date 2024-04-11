@@ -6,28 +6,28 @@
 using namespace std;
 
 // Setters
-void Hotel::setName(string name) {
-    this->name = name;
+void Hotel::setName(string& Name) {
+    this->name = Name;
 }
 
-void Hotel::setLocation(string location) {
-    this->location = location;
+void Hotel::setLocation(string& Location) {
+    this->location = Location;
 }
 
-void Hotel::setType(string type) {
-    this->type = type;
+void Hotel::setType(string& Type) {
+    this->type = Type;
 }
 
-void Hotel::setDescription(string description) {
-    this->description = description;
+void Hotel::setDescription(string& Description) {
+    this->description = Description;
 }
 
-void Hotel::setAmenities(vector<string> amenities) {
-    this->amenities = amenities;
+void Hotel::setAmenities(vector<string>& Amenities) {
+    this->amenities = Amenities;
 }
 
-void Hotel::setPricing(double pricing) {
-    this->pricing = pricing;
+void Hotel::setPricing(double Pricing) {
+    this->pricing = Pricing;
 }
 
 
@@ -52,7 +52,7 @@ vector<string> Hotel::getAmenities() {
     return amenities;
 }
 
-double Hotel::getPricing() {
+double Hotel::getPricing() const {
     return pricing;
 }
 
@@ -64,25 +64,25 @@ void Hotel::showDetails() {
     cout << "Type: " << type << "\n";
     cout << "Description: " << description << "\n";
     cout << "Amenities:\n";
-    for (string amenity: amenities) {
+    for (string& amenity: amenities) {
         cout << amenity << " ,";
     }
 
 }
 
-void Hotel::showPricing() {
+void Hotel::showPricing() const {
     cout << "Pricing: " << pricing << "\n";
 }
 
 void Hotel::showAmenities() {
     cout << "Amenities: " << "\n";
-    for (string amenity: amenities) {
+    for (string& amenity: amenities) {
         cout << amenity << " ,";
     }
 
 }
 
-void Hotel::addAmenity(string amenity) {
+void Hotel::addAmenity(string& amenity) {
     amenities.push_back(amenity);
 }
 

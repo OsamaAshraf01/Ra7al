@@ -20,11 +20,11 @@ private:
 public:
 
     // Setters
-    void setName(string name);
-    void setLocation(string location);
-    void setType(string type);
-    void setDescription(string description);
-    void setAmenities(vector<string> amenities);
+    void setName(string& name);
+    void setLocation(string& location);
+    void setType(string& type);
+    void setDescription(string& description);
+    void setAmenities(vector<string>& amenities);
     void setPricing(double pricing);
 
     // Getters
@@ -33,13 +33,13 @@ public:
     string getType();
     string getDescription();
     vector<string> getAmenities();
-    double getPricing();
+    double getPricing() const;
 
     // Methods
     void showDetails();
-    void showPricing();
+    void showPricing() const;
     void showAmenities();
-    void addAmenity(string amenity);
+    void addAmenity(string& amenity);
 };
 
 #endif
