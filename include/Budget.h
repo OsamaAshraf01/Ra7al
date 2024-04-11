@@ -10,7 +10,6 @@ using namespace std;
 class Budget  {
 private :
 	map<string, double> categories;
-    double total_budget;
 public :
     //Constructor
 
@@ -28,6 +27,8 @@ public :
     void deposit(const string& category_name, double amount);
     void overview() const;
     void advice() const;
+    static double total_budget;
+
 };
 
 #endif 
