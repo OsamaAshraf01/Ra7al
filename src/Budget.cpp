@@ -36,30 +36,30 @@ double Budget::getBalance(const string& category_name) const {
 
 // Spend from a category
 void Budget::spend(const string& category_name, double amount) {
-    bool isFound = false;
-    for (auto& x : categories) {
-        if (category_name == x.first) {
-            isFound = true;
-            if (categories[category_name] >= amount) {
-                categories[category_name] -= amount;
-                total_budget = getRemaining();
-            }
-            break;
+    auto it = categories.find(category_name);  // Use map::find for efficient lookup
+
+    if (it != categories.end()) { // Category found
+        if (it->second >= amount) { 
+            it->second -= amount;
+            total_budget = getRemaining(); 
+        } else {
+            // Handle insufficient funds if needed (not shown in the original code)
         }
-    }
-    if (!isFound) {
+    } else {
         cout << "Error: Category '" << category_name << "' not found." << endl;
     }
 }
 
-// Deposit to a category
-void Budget::deposit(const string& category_name, double amount) {
-    for (auto& x : categories) {
-        if (category_name == x.first) {
 
-            categories[category_name] += amount; total_budget += amount;
-        }
-    }
+void Budget::deposit(const string& category_name, double amount) {
+    auto it = categories.find(category_name);
+
+    if (it != categories.end()) { 
+        it->second += amount;
+        total_budget += amount;
+    } else {
+        cout << "Error: Category '" << category_name << "' not found." << endl;
+    } 
 }
 
 // Calculate the total amount spent
