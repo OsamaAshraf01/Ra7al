@@ -90,6 +90,9 @@ public:
         cout << "Type: " << type << "\n";
         cout << "Description: " << description << "\n";
         cout << "Amenities:\n";
+        for (string amenity : amenities) {
+            cout << amenity << " ,";
+        }
 
     }
 
