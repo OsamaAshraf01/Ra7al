@@ -8,6 +8,8 @@
  c.header = {"Name", "Age"};
  c["Name"] = "Osama";
  c["Age"] = 19;
+
+ cout << c;
 */
 
 #ifndef RA7AL_CASE_H
