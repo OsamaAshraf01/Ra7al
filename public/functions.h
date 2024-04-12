@@ -33,6 +33,7 @@ List split(string &str, char delimiter) {
     string temp;
     for (char i: str) {
         if (i == delimiter) {
+            cout<<"++"<<temp<<"++\n";
             result.append(Transform(temp));
             temp = "";
         } else {
@@ -67,19 +68,21 @@ enum DataType {
 };
 
 static DataType determineType(const string &str) {
-    istringstream iss(str);
-    char c;
-    iss >> c;
-    if (!isdigit(c) && c != '-') {  // string or char
-        if (str.size() > 1)
-            return String;
-        else
-            return Char;
-    } else { // int or double
-        if (str.find('.') == -1)
-            return Integer;
-        else
+    try {
+        stoi(str);
+        for(char c : str)
+            if(!isdigit(c) && c != *str.begin()) // To handle Date values
+                return String;
+        return Integer;
+    } catch (const invalid_argument &) {
+        try {
+            stod(str);
             return Double;
+        } catch (const invalid_argument &) {
+            if (str.size() > 1)
+                return String;
+            return Char;
+        }
     }
 
 }
