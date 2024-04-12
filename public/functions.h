@@ -33,7 +33,6 @@ List split(string &str, char delimiter) {
     string temp;
     for (char i: str) {
         if (i == delimiter) {
-            cout<<"++"<<temp<<"++\n";
             result.append(Transform(temp));
             temp = "";
         } else {
