@@ -15,7 +15,9 @@ class Case {
 public:
     unordered_map<string, any> dict;
 
-    void print(List header);
+    void print(List& header);
+
+    any operator [](string& index){return dict[index];}
 };
 
 

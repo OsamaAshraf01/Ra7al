@@ -5,12 +5,12 @@
 #include "../../include/DataFrame/Case.h"
 #include <sstream>
 
-void Case::print(List header){
+void Case::print(List& header){
     List temp;
 
     for(auto e : header)
         temp.append(dict[get<string>(e)]);
 
-    cout<<join(temp, "\t\t")<<'\n';
+    cout<<join(temp, "\t")<<'\n';
 
 }
