@@ -1,24 +1,24 @@
 Origin Airport,Destination Airport,Departure Date,Airline,Price,Flight Code
 Cairo International Airport,Hurghada International Airport,15-04-2024,EgyptAir,500,MS101
-Cairo International Airport,Sharm El Sheikh International Airport,16-04-2024,Air Cairo,450,SM102
-Cairo International Airport,Aswan International Airport,17-04-2024,Nile Air,400,NP103
-Cairo International Airport,Luxor International Airport,18-04-2024,Air Arabia Egypt,300,G9104
-Cairo International Airport,Marsa Alam International Airport,19-04-2024,FlyEgypt,350,FT105
-Cairo International Airport,Borg El Arab International Airport,20-04-2024,AlMasria Universal Airlines,400,UT106
-Cairo International Airport,El Nouzha Airport,21-04-2024,Air Leisure,350,AL107
-Cairo International Airport,Asyut International Airport,22-04-2024,Air Go Airlines,400,AG108
-Hurghada International Airport,Sharm El Sheikh International Airport,23-04-2024,Air Sinai,550,S6113
-Hurghada International Airport,Luxor International Airport,24-04-2024,SkyBird Airlines,250,SB114
-Hurghada International Airport,Aswan International Airport,25-04-2024,EgyptAir,500,MS115
-Sharm El Sheikh International Airport,Luxor International Airport,26-04-2024,Nile Air,400,NP116
-Sharm El Sheikh International Airport,Marsa Alam International Airport,27-04-2024,Air Cairo,450,SM117
-Aswan International Airport,Borg El Arab International Airport,28-04-2024,Air Arabia Egypt,300,G91018
-Aswan International Airport,El Nouzha Airport,29-04-2024,FlyEgypt,350,FT119
-Luxor International Airport,Asyut International Airport,30-04-2024,AlMasria Universal Airlines,400,UT120
-Luxor International Airport,Marsa Alam International Airport,01-05-2024,EgyptAir,500,MS121
-Marsa Alam International Airport,Borg El Arab International Airport,02-05-2024,Air Go Airlines,400,AG122
-Marsa Alam International Airport,El Nouzha Airport,03-05-2024,Air Leisure,350,AL123
-Borg El Arab International Airport,Asyut International Airport,04-05-2024,Nile Air,400,NP124
-Borg El Arab International Airport,El Nouzha Airport,05-05-2024,Air Arabia Egypt,300,G91025
-El Nouzha Airport,Asyut International Airport,06-05-2024,SkyBird Airlines,250,SB126
-El Nouzha Airport,Hurghada International Airport,07-05-2024,FlyEgypt,350,FT127
+Cairo International Airport,Sharm El Sheikh International Airport,15-04-2024,Air Cairo,450,SM102
+Cairo International Airport,Aswan International Airport,15-04-2024,Nile Air,400,NP103
+Cairo International Airport,Luxor International Airport,16-04-2024,Air Arabia Egypt,300,G9104
+Cairo International Airport,Marsa Alam International Airport,16-04-2024,FlyEgypt,350,FT105
+Cairo International Airport,Borg El Arab International Airport,16-04-2024,AlMasria Universal Airlines,400,UT106
+Cairo International Airport,El Nouzha Airport,17-04-2024,Air Leisure,350,AL107
+Cairo International Airport,Asyut International Airport,17-04-2024,Air Go Airlines,400,AG108
+Hurghada International Airport,Sharm El Sheikh International Airport,17-04-2024,Air Sinai,550,S6113
+Hurghada International Airport,Luxor International Airport,18-04-2024,SkyBird Airlines,250,SB114
+Hurghada International Airport,Aswan International Airport,18-04-2024,EgyptAir,500,MS115
+Sharm El Sheikh International Airport,Luxor International Airport,18-04-2024,Nile Air,400,NP116
+Sharm El Sheikh International Airport,Marsa Alam International Airport,19-04-2024,Air Cairo,450,SM117
+Aswan International Airport,Borg El Arab International Airport,19-04-2024,Air Arabia Egypt,300,G91018
+Aswan International Airport,El Nouzha Airport,19-04-2024,FlyEgypt,350,FT119
+Luxor International Airport,Asyut International Airport,20-04-2024,AlMasria Universal Airlines,400,UT120
+Luxor International Airport,Marsa Alam International Airport,20-04-2024,EgyptAir,500,MS121
+Marsa Alam International Airport,Borg El Arab International Airport,20-04-2024,Air Go Airlines,400,AG122
+Marsa Alam International Airport,El Nouzha Airport,21-04-2024,Air Leisure,350,AL123
+Borg El Arab International Airport,Asyut International Airport,21-04-2024,Nile Air,400,NP124
+Borg El Arab International Airport,El Nouzha Airport,21-04-2024,Air Arabia Egypt,300,G91025
+El Nouzha Airport,Asyut International Airport,22-04-2024,SkyBird Airlines,250,SB126
+El Nouzha Airport,Hurghada International Airport,22-04-2024,FlyEgypt,350,FT127
