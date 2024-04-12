@@ -47,19 +47,36 @@ public:
     }
 
 
-    void printItem(int index) {
+    string getItem(int index) {
+        ostringstream oss;
         auto item = values[index];
         if (holds_alternative<int>(item)) {
-            cout << get<int>(item);
+            return to_string(get<int>(item));
         } else if (holds_alternative<double>(item)) {
-            cout << get<double>(item);
+            return to_string(get<double>(item));
         } else if (holds_alternative<string>(item)) {
-            cout << "\"" << get<string>(item) << "\"";
+            return get<string>(item);
         } else if (holds_alternative<char>(item)) {
-            cout << "\'" << get<char>(item) << "\'";
+            oss << get<char>(item);
+            return oss.str();
         } else {
-            cout << "Unknown type";
+            return "Unknown type";
         }
+    }
+
+
+    string toString() {
+        ostringstream oss;
+        oss << '{';
+        for (int i = 0; i < size(); i++) {
+            oss << getItem(i);
+            oss << (i < size() - 1 ? ", " : "");
+        }
+
+        oss << "}";
+
+
+        return oss.str();
     }
 
 
@@ -77,14 +94,7 @@ public:
 
     /// Operators
     friend ostream &operator<<(ostream &os, List l) {
-        os << '{';
-        for (int i = 0; i < l.size(); i++) {
-            l.printItem(i);
-            os << (i < l.size() - 1 ? ", " : "");
-        }
-
-        os << "}";
-
+        os << l.toString();
         return os;
     }
 
