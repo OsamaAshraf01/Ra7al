@@ -13,7 +13,7 @@ static List split(string &str, char delimiter = ' ');
 
 
 // A function to join vector of string values by a delimiter
-static string join(vector<string> &values, const string &delimiter);
+static string join(List &values, const string &delimiter);
 
 
 // A function to print a vector
@@ -44,10 +44,10 @@ List split(string &str, char delimiter) {
 }
 
 
-string join(vector<string> &values, const string &delimiter) {
+string join(List &values, const string &delimiter) {
     ostringstream oss;
     for (int i = 0; i < values.size(); i++)
-        oss << values[i] << (i + 1 != values.size() ? delimiter : "");
+        oss << values.getItem(i) << (i + 1 != values.size() ? delimiter : "");
 
     return oss.str();
 }
