@@ -22,15 +22,22 @@ private:
 
 //    vector<Series> columns;
     vector<Case> rows;
+
+    explicit DataFrame(List& header);
 public:
     explicit DataFrame(string databasePath);
-    void insert(Case);
-    DataFrame select(string conditionColumn, any conditionValue);
+    void insert(Case&);
+    DataFrame select(vector<string> conditionColumns, vector<any> conditionValues);
     DataFrame update(string conditionColumn, any conditionValue, any newValue);
     DataFrame sortBy(string columnName, bool descending=false);
     void print();
 
     void save();
+
+
+
+    // Operators
+    friend ostream& operator <<(ostream& os, DataFrame& d){d.print(); return os;}
 };
 
 #endif // RA7AL_DATAFRAME_H
