@@ -21,13 +21,14 @@ bool Card::processPayment() {
         cout << "No sufficient balance!";
         return false;
     }
-
-    if (cardNumber!= 16) {
+    string cardNumberStr = to_string(cardNumber);
+    string cvvStr = to_string(cvv);
+    if (cardNumberStr.length()!= 16) {
         cout << "Invalid card number!";
         return false;
     }
 
-    if (cvv!= 3) {
+    if (cvvStr.length()!= 3) {
         cout << "Invalid CVV!";
         return false;
     }
