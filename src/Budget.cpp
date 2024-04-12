@@ -5,7 +5,7 @@
 #include "../include/Budget.h"
 #include <iostream>
 #include <iomanip>
-#include "Budget.h"
+#include "../include/Budget.h"
 using namespace std;
 
 // Constructor 
@@ -63,7 +63,7 @@ void Budget::deposit(const string& category_name, double amount) {
 }
 
 // Calculate the total amount spent
-double Budget::getTotalSpent(double &total ) const {
+double Budget::getTotalSpent() const {
     return total_budget - getRemaining();
 }
 
@@ -89,8 +89,8 @@ void Budget::overview() const {
 }
 
 // Offer basic budget advice
-void Budget::advice()  {
-        double spent = getTotalSpent(total_budget);    
+void Budget::advice()  const{
+        double spent = getTotalSpent();
         if (spent > total_budget * 0.8) {
         cout << "Warning: You've spent over 80% of your budget. Consider reducing expenses.\n";
     }

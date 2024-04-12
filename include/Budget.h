@@ -13,7 +13,8 @@ private :
     double total_budget;
 public :
     //Constructor
-
+    Budget();
+    Budget(map<string, double>& categories);
     //setters
 
 
@@ -22,9 +23,8 @@ public :
     double getRemaining() const;
     double getBalance(const string& category_name) const;
     //methods
-    Budget();
     void spend(const string& category_name, double amount);
-    void add_category(const string& category_name);
+    void add_category(const string& category_name, double amount);
     void deposit(const string& category_name, double amount);
     void overview() const;
     void advice() const;
