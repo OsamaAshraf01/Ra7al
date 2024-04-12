@@ -1,6 +1,11 @@
-Airline,maxWeight(kg)
+Airline,Max Luggage Weight
 EgyptAir,23
 Air Cairo,20
-FlyEgypt,20
 Nile Air,23
-Air Arabia Egypt,20
+Air Arabia Egypt,30
+FlyEgypt,20
+AlMasria Universal Airlines,23
+Air Sinai,30
+SkyBird Airlines,20
+Air Leisure,30
+Air Go Airlines,20
