@@ -5,11 +5,11 @@
 #include "../../include/DataFrame/Case.h"
 #include <sstream>
 
-void Case::print(){
+void Case::print(List header){
     List temp;
 
-    for(const auto& i : dict)
-        temp.append(i.second);
+    for(auto e : header)
+        temp.append(dict[get<string>(e)]);
 
     cout<<join(temp, "\t\t")<<'\n';
 

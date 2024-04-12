@@ -13,9 +13,9 @@ using namespace std;
 
 class Case {
 public:
-    map<string, any> dict;
+    unordered_map<string, any> dict;
 
-    void print();
+    void print(List header);
 };
 
 
