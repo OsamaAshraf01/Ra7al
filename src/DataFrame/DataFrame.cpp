@@ -17,6 +17,7 @@ DataFrame::DataFrame(string DataFramePath): path (std::move(DataFramePath)), fou
     while(getline(fin, line)){
         List values = split(line, ',');
         Case temp;
+        temp.header = header;
         for(int i=0 ; i<header.size() ; i++){
             temp.dict[ get<string>(header[i]) ] = values[i];
         }
@@ -31,8 +32,8 @@ DataFrame::DataFrame(List& header): header(header){}
 
 void DataFrame::print(){
     cout<<join(header, "\t")<<'\n';
-    for(Case c : rows)
-        c.print(header);
+    for(Case& c : rows)
+        c.print();
 }
 
 DataFrame DataFrame::select(vector<string> conditionColumns, vector<any> conditionValues){
@@ -55,4 +56,13 @@ DataFrame DataFrame::select(vector<string> conditionColumns, vector<any> conditi
 
 void DataFrame::insert(Case& x){
     rows.push_back(x);
+}
+
+
+List DataFrame::Header(){return header;}
+
+
+// Operators
+Case& DataFrame::operator[](int index){
+    return rows[index];
 }

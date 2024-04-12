@@ -5,9 +5,9 @@
 #include "../../include/DataFrame/Case.h"
 #include <sstream>
 
-void Case::print(List& header){
+void Case::print(){
     List temp;
-
+    cout<<join(header, "\t")<<'\n';
     for(auto e : header)
         temp.append(dict[get<string>(e)]);
 
