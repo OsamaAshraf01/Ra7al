@@ -68,20 +68,23 @@ enum DataType {
 
 static DataType determineType(const string &str) {
     try {
-        stoi(str);
-        for(char c : str)
-            if(!isdigit(c) && c != *str.begin()) // To handle Date values
-                return String;
-        return Integer;
+        stod(str);
+        if (str.find('.') != -1)
+            return Double;
+        throw std::invalid_argument("");
     } catch (const invalid_argument &) {
         try {
-            stod(str);
-            return Double;
+            stoi(str);
+            for (char c: str)
+                if (!isdigit(c) && c != *str.begin()) // To handle Date values
+                    return String;
+            return Integer;
         } catch (const invalid_argument &) {
             if (str.size() > 1)
                 return String;
             return Char;
         }
+
     }
 
 }

@@ -7,6 +7,16 @@
     x = 14.7;
     x = "Osama";
     cout<<x;
+ ==================
+    Any x, y;
+    x = 5;
+    y = 6.6;
+    cout << y + x;    // 11.6
+ ==================
+    Any x, y;
+    cin >> x >> y;
+    cout << x + y << endl;
+    cout << (x > y);
  =====================================*/
 #ifndef RA7AL_ANY_H
 #define RA7AL_ANY_H
@@ -26,7 +36,18 @@ public:
 
 
     /// Operators
-    friend ostream& operator <<(ostream& os, Any& x){cout<<x.toString(); return os;}
+    friend ostream& operator <<(ostream& os, Any x);
+    friend istream& operator >>(istream& is, Any& x);
+    Any operator +(Any other);
+    Any operator -(Any other);
+    Any operator *(Any other);
+    Any operator /(Any other);
+    bool operator >(Any other);
+    bool operator <(Any other);
+    bool operator >=(Any other);
+    bool operator <=(Any other);
+    bool operator ==(Any other);
+    bool operator !=(Any other);
 };
 
 
