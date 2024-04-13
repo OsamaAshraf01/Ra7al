@@ -24,7 +24,6 @@ bool Card::processPayment() {
     string cardNumberStr = to_string(cardNumber);
     string cvvStr = to_string(cvv);
     if (cardNumberStr.length()!= 16) {
-        cout << "Invalid card number!";
         return false;
     }
 
