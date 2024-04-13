@@ -14,7 +14,7 @@
 
 #ifndef RA7AL_CASE_H
 #define RA7AL_CASE_H
-#include "../../public/classes.h"
+#include "../../public/classes/List.h"
 #include "../../public/functions.h"
 #include <bits/stdc++.h>
 #define any variant<int, double, string, char>

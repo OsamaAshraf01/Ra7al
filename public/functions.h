@@ -5,7 +5,7 @@
 #ifndef RA7AL_FUNCTIONS_H
 #define RA7AL_FUNCTIONS_H
 #include <bits/stdc++.h>
-#include "classes/classes.h"
+#include "classes/List.h"
 using namespace std;
 
 // A function to split a string based on specific delimiter (space by default)
