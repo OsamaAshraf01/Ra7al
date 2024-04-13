@@ -19,7 +19,7 @@ cout << d[0];  // to print a single case in the DataFrame
 #include <bits/stdc++.h>
 //#include "Series.h"
 #include "Case.h"
-#define any variant<int, double, string, char>
+
 using namespace std;
 
 
@@ -39,8 +39,8 @@ private:
 public:
     explicit DataFrame(string databasePath);
     void insert(Case&);
-    DataFrame select(vector<string> conditionColumns, vector<any> conditionValues);
-    DataFrame update(string conditionColumn, any conditionValue, any newValue);
+    DataFrame select(vector<string> conditionColumns, vector<Any> conditionValues);
+    DataFrame update(string conditionColumn, Any conditionValue, Any newValue);
     DataFrame sortBy(string columnName, bool descending=false);
     void print();
 

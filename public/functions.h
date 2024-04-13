@@ -22,7 +22,7 @@ static void printVec(vector<T> v);
 
 
 // A function to convert string to appropriate data type
-static variant<int, double, string, char> Transform(const string &str);
+static Any Transform(const string &str);
 
 
 ///====================================================================================
@@ -94,19 +94,19 @@ static T convert(const std::string &str) {
     return value;
 }
 
-static variant<int, double, string, char> Transform(const string &str) {
+static Any Transform(const string &str) {
     DataType type = determineType(str);
 
     // Convert the string to its appropriate data type
     switch (type) {
         case Integer:
-            return convert<int>(str);
+            return {convert<int>(str)};
         case Double:
-            return convert<double>(str);
+            return {convert<double>(str)};
         case String:
-            return str;
+            return {str};
         case Char:
-            return str[0];
+            return {str[0]};
         default: {
             cerr << "Unexpected data type" << endl;
             return {};

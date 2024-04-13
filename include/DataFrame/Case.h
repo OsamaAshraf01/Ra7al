@@ -17,19 +17,18 @@
 #include "../../public/classes/List.h"
 #include "../../public/functions.h"
 #include <bits/stdc++.h>
-#define any variant<int, double, string, char>
 
 using namespace std;
 
 class Case {
 public:
     List header;
-    unordered_map<string, any> dict;
+    unordered_map<string, Any> dict;
     // TODO: Add Constructor
 
     void print();
 
-    any& operator [](string index){return dict[index];}    // (&) to enable assigning values
+    Any& operator [](string index){return dict[index];}    // (&) to enable assigning values
     friend ostream& operator <<(ostream& os, Case& c){c.print(); return os;}
 };
 

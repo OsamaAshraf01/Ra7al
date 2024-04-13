@@ -8,7 +8,7 @@ using namespace std;
 
 
 /// Methods
-void List::append(const variant<int, double, string, char> &e) {
+void List::append(Any e) {
     values.emplace_back(e);
 }
 
@@ -54,7 +54,7 @@ string List::toString() {
 
 
 /// Iterators
-using Iterator = vector<variant<int, double, string, char>>::iterator;
+using Iterator = vector<Any>::iterator;
 
 Iterator List::begin() { return values.begin(); }
 
@@ -76,4 +76,4 @@ List List::operator+(List &other) {
     return temp;
 }
 
-variant<int, double, string, char>& List::operator[](int index) { return values[index]; }
+Any& List::operator[](int index) { return values[index]; }

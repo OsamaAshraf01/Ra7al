@@ -36,7 +36,7 @@ void DataFrame::print(){
         c.print();
 }
 
-DataFrame DataFrame::select(vector<string> conditionColumns, vector<any> conditionValues){
+DataFrame DataFrame::select(vector<string> conditionColumns, vector<Any> conditionValues){
     DataFrame temp(header);  bool isMatched;
     for(int i=0 ; i<rows.size() ; i++){
         Case x = rows[i];

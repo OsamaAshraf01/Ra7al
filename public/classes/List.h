@@ -18,12 +18,13 @@
 
 #ifndef RA7AL_LIST_H
 #define RA7AL_LIST_H
+#include "Any.h"
 #include <bits/stdc++.h>
 using namespace std;
 
 class List {
 private:
-    vector<variant<int, double, string, char> > values;
+    vector<Any> values;
 
 
 public:
@@ -44,14 +45,14 @@ public:
 
 
     /// Methods
-    void append(const variant<int, double, string, char> &e);
+    void append(Any e);
     string getItem(int index);
     string toString();
     int size();
 
 
     /// Iterators
-    using iterator = vector<variant<int, double, string, char>>::iterator;
+    using iterator = vector<Any>::iterator;
     iterator begin();
     iterator end();
 
@@ -60,7 +61,7 @@ public:
     /// Operators
     friend ostream &operator<<(ostream &os, List l);
     List operator+(List &other);
-    variant<int, double, string, char>& operator[](int index);
+    Any& operator[](int index);
 };
 
 
