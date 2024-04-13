@@ -6,21 +6,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/// Constructor
-template<typename... Args>
-List::List(Args... args) {
-    initialize(args...);
-}
-
-template<typename T, typename... Args>
-void List::initialize(T first, Args... rest) {
-    values.emplace_back(first);
-    initialize(rest...);
-}
-
-// Base Case
-void List::initialize() {}
-
 
 /// Methods
 void List::append(const variant<int, double, string, char> &e) {
@@ -91,4 +76,4 @@ List List::operator+(List &other) {
     return temp;
 }
 
-auto List::operator[](int index) { return values[index]; }
+variant<int, double, string, char>& List::operator[](int index) { return values[index]; }

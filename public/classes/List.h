@@ -25,14 +25,22 @@ class List {
 private:
     vector<variant<int, double, string, char> > values;
 
-    template<typename T, typename... Args>
-    void initialize(T first, Args... rest);
 
-    void initialize();
 public:
     /// Constructor
     template<typename... Args>
-    List(Args... args);
+    List(Args... args) {
+        this->initialize(args...);
+    }
+
+    template<typename T, typename... Args>
+    void initialize(T first, Args... rest) {
+        values.emplace_back(first);
+        this->initialize(rest...);
+    }
+
+    // Base Case
+    void initialize() {}
 
 
     /// Methods
@@ -52,7 +60,7 @@ public:
     /// Operators
     friend ostream &operator<<(ostream &os, List l);
     List operator+(List &other);
-    auto operator[](int index);
+    variant<int, double, string, char>& operator[](int index);
 };
 
 

@@ -17,7 +17,7 @@ cout << d[0];  // to print a single case in the DataFrame
 #ifndef RA7AL_DATAFRAME_H
 #define RA7AL_DATAFRAME_H
 #include <bits/stdc++.h>
-#include "Series.h"
+//#include "Series.h"
 #include "Case.h"
 #define any variant<int, double, string, char>
 using namespace std;
