@@ -14,20 +14,7 @@ void List::append(Any e) {
 
 
 string List::getItem(int index) {
-    ostringstream oss;
-    auto item = values[index];
-    if (holds_alternative<int>(item)) {
-        return to_string(get<int>(item));
-    } else if (holds_alternative<double>(item)) {
-        return to_string(get<double>(item));
-    } else if (holds_alternative<string>(item)) {
-        return get<string>(item);
-    } else if (holds_alternative<char>(item)) {
-        oss << get<char>(item);
-        return oss.str();
-    } else {
-        return "Unknown type";
-    }
+    return values[index].toString();
 }
 
 
