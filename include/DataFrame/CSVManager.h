@@ -48,6 +48,7 @@ using namespace std;
 
 class CSVManager {
 public:
+    CSVManager();
     CSVManager(const string& filename);
     vector<vector<string>> read();
     void write(const vector<vector<string>>& data);
