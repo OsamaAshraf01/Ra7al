@@ -53,15 +53,15 @@ public:
 
     //Modifying Finance Databases
 
-    void addCurrency(string& filename = "data/currencies");
-    void showCurrencies(string& filename="data/currencies");
-    void deleteCurrency(string& filename = "data/currencies");
-    void changeSpecificinfo(string& filename = "data/currencies");
+    void addCurrency(string& filename = "data/currencies.csv");
+    void showCurrencies(string& filename="data/currencies.csv");
+    void deleteCurrency(string& filename = "data/currencies.csv");
+    void changeSpecificinfo(string& filename = "data/currencies.csv");
 
-    void addCountry(string& filename = "data/countries");
-    void showAllcountriesData(string& filename = "data/countries");
-    void deleteCountry(string& filename = "data/countries");
-    void modifySpecificData(string& filename = "data/countries");
+    void addCountry(string& filename = "data/countries.csv");
+    void showAllcountriesData(string& filename = "data/countries.csv");
+    void deleteCountry(string& filename = "data/countries.csv");
+    void modifySpecificData(string& filename = "data/countries.csv");
 
     void addPaymentmethod();
     void deletePaymentmethod();
