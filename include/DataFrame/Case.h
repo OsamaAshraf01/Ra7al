@@ -26,7 +26,7 @@ public:
     unordered_map<string, Any> dict;
     // TODO: Add Constructor
 
-    void print();
+    void print(bool with_header=true);
 
     Any& operator [](string index){return dict[index];}    // (&) to enable assigning values
     friend ostream& operator <<(ostream& os, Case& c){c.print(); return os;}

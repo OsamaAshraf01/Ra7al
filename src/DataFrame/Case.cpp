@@ -5,9 +5,10 @@
 #include "../../include/DataFrame/Case.h"
 #include <sstream>
 
-void Case::print(){
+void Case::print(bool with_header){
     List temp;
-    cout<<join(header, "\t")<<'\n';
+    if(with_header)
+        cout<<join(header, "\t")<<'\n';
     for(auto e : header)
         temp.append(dict[get<string>(e)]);
 
