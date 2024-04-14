@@ -11,7 +11,7 @@ protected:
     string transactionID;
 public:
     PaymentMethod(double amountt, const string& TID);   
-    virtual bool processPayment() = 0;
+    virtual bool processPayment(double total_budget) = 0;
     virtual ~PaymentMethod();
 };
 

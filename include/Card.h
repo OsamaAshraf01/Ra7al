@@ -16,7 +16,7 @@ public:
     Card(double amt, const string& txnID, 
     const int& cardNum, 
     const Date& expDate, int cv);
-    bool processPayment() override;
+    bool processPayment(double total_budget) override;
     ~Card();
 };
 

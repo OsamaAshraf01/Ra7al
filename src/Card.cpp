@@ -16,8 +16,8 @@ Card::Card(double amt, const string& txnID, const int& cardNum, const Date& expD
     : PaymentMethod(amt, txnID), cardNumber(cardNum), expiryDate(expDate), cvv(cv) {}
 
 // Override the processPayment method
-bool Card::processPayment() {
-    if (amount >= Budget::total_budget) {
+bool Card::processPayment(double total_budget) {
+    if (amount >= total_budget) {
         cout << "No sufficient balance!";
         return false;
     }
