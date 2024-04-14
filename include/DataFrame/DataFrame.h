@@ -1,6 +1,6 @@
 //
 // Created by OSAMA ASHRAF on 3/25/2024.
-/*=============Example=============
+/*=============Examples=============
  DataFrame d("../data/flights.csv");
  DataFrame df1 = d.SELECT({"Origin Airport"}, {"Cairo International Airport"});
  cout<<df1;
@@ -10,14 +10,19 @@
  cout<<df2;
 
  ==================
- df3 = d.SELECT({"Price"}, {400}, [](Any a, Any b){return a >= b;}) // To get flights with price >= 400
+ df3 = d.SELECT({"Price"}, {400}, GREATER_OR_EQUAL) // To get flights with price >= 400
+
+ ==================
+ // Multiselect
+ DataFrame x = d.SELECT({"Departure Date", "Price"}, {"18-04-2024", 350}, LESS_OR_EQUAL)
+                .SELECT({"Origin Airport"}, {"Cairo International Airport"}, EQUAL);
 
  ==================
  d.UPDATE("Origin Airport", "Cairo International Airport", "Origin Airport", "Osama International Airport");
  cout << d;
 
  ==================
- d.UPDATE("Origin Airport", "Cairo International Airport", "Origin Airport", "Osama International Airport", [](Any a, Any b){return a < b;});
+ d.UPDATE("Origin Airport", "Cairo International Airport", "Origin Airport", "Osama International Airport", LESS);
  cout << d;
 
  ==================
@@ -26,12 +31,18 @@
  */
 #ifndef RA7AL_DATAFRAME_H
 #define RA7AL_DATAFRAME_H
-#include <bits/stdc++.h>
+#include <fstream>
+#include <functional>
 //#include "Series.h"
 #include "Case.h"
 
 using namespace std;
-
+#define EQUAL [](Any& a, const Any& b){return a == std::move(b);}
+#define GREATER [](Any& a, const Any& b){return a > std::move(b);}
+# define LESS [](Any& a, const Any& b){return a < std::move(b);}
+# define GREATER_OR_EQUAL [](Any& a, const Any& b){return a >= std::move(b);}
+# define LESS_OR_EQUAL [](Any& a, const Any& b){return a <= std::move(b);}
+# define NOT_EQUAL [](Any& a, const Any& b){return a != std::move(b);}
 
 class DataFrame
 {
@@ -49,10 +60,12 @@ public:
     explicit DataFrame(string databasePath);
     explicit DataFrame(List& header);
 
+
+
     // Methods
     void INSERT(Case&);
-    void UPDATE(string conditionColumn, Any conditionValue, string updateColumn, Any newValue, function<bool(Any, Any)> operation=[](Any a, Any b){return a == b;});
-    DataFrame SELECT(vector<string> conditionColumns, vector<Any> conditionValues);
+    void UPDATE(string conditionColumn, Any conditionValue, string updateColumn, Any newValue, function<bool(Any&, Any)> operation=EQUAL);
+    DataFrame SELECT(vector<string> conditionColumns, vector<Any> conditionValues, function<bool(Any&, Any)> operation=EQUAL);
     DataFrame SortBy(string columnName, bool descending=false);
     void print();
 

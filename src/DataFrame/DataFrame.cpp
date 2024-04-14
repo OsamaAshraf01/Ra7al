@@ -33,17 +33,18 @@ void DataFrame::print(){
         c.print(false); // To print the case without header
 }
 
-DataFrame DataFrame::SELECT(vector<string> conditionColumns, vector<Any> conditionValues){
-    DataFrame temp(header);  bool isMatched;
-    for(int i=0 ; i<rows.size() ; i++){
+DataFrame DataFrame::SELECT(vector<string> conditionColumns, vector<Any> conditionValues, function<bool(Any&, Any)> operation) {
+    DataFrame temp(header);
+    bool isMatched;
+    for (int i = 0; i < rows.size(); i++) {
         Case x = rows[i];
         isMatched = true;
-        for(int j=0 ; j<conditionColumns.size() ; j++){
-            if(x[ conditionColumns[j] ] != conditionValues[j])
+        for (int j = 0; j < conditionColumns.size(); j++) {
+            if (!operation(x[conditionColumns[j]], conditionValues[j]))
                 isMatched = false;
         }
 
-        if(isMatched)
+        if (isMatched)
             temp.INSERT(x);
     }
 
@@ -52,9 +53,10 @@ DataFrame DataFrame::SELECT(vector<string> conditionColumns, vector<Any> conditi
 
 void DataFrame::INSERT(Case& x){
     rows.push_back(x);
+    // TODO: Sort after adding sort function
 }
 
-void DataFrame::UPDATE(string conditionColumn, Any conditionValue, string updateColumn, Any newValue, function<bool(Any, Any)> operation){
+void DataFrame::UPDATE(string conditionColumn, Any conditionValue, string updateColumn, Any newValue, function<bool(Any&, Any)> operation){
     for(int i=0 ; i<rows.size() ; i++){
         if(operation(rows[i][conditionColumn], conditionValue))
             rows[i][updateColumn] = newValue;
