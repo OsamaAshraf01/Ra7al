@@ -16,7 +16,7 @@
 #define RA7AL_CASE_H
 #include "../../public/classes/List.h"
 #include "../../public/functions.h"
-#include <bits/stdc++.h>
+#include <unordered_map>
 
 using namespace std;
 

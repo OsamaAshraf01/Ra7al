@@ -19,7 +19,7 @@
 #ifndef RA7AL_LIST_H
 #define RA7AL_LIST_H
 #include "Any.h"
-#include <bits/stdc++.h>
+#include <vector>
 using namespace std;
 
 class List {

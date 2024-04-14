@@ -2,7 +2,10 @@
 // Created by OSAMA ASHRAF on 4/6/2024.
 //
 #include "../include/Time.h"
-#include <bits/stdc++.h>
+#include <sstream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 // Global Functions
 void toggle(string &period) {

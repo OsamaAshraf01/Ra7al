@@ -3,7 +3,9 @@
 //
 
 #include "../include/Date.h"
-#include <bits/stdc++.h>
+#include <vector>
+#include <sstream>
+#include <algorithm>
 using namespace std;
 int MAX_YEAR = 2024;
 int MIN_YEAR = 1800;
