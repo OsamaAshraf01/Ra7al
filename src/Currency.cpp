@@ -79,7 +79,7 @@ void Currency::setAmount(long amt) {
 // Initialize exchange rates from CSV
 void Currency::initializeExchangeRates() {
 
-    CSVManager csv("../data/currencies.csv");
+    CSVManager csv("data/currencies.csv");
     vector<vector<string>> exchangeData = csv.read();
     if (!exchangeData.empty()) {
         exchangeData.erase(exchangeData.begin());
