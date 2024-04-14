@@ -45,11 +45,10 @@ public:
     void addHotel();
     void deleteHotel(int id);
 
-    void showPaymentMethods();
-    void showPaymentMethod(int id);
-    void addPaymentMethod();
-    void deletePaymentMethod(int id);
-
+    void addCountry(string& filename = "data/countries.csv");
+    void showAllcountriesData(string& filename = "data/countries.csv");
+    void deleteCountry(string& filename = "data/countries.csv");
+    void modifySpecificData(string& filename = "data/countries.csv");
 
     //Modifying Finance Databases
 
@@ -58,13 +57,12 @@ public:
     void deleteCurrency(string& filename = "data/currencies.csv");
     void changeSpecificinfo(string& filename = "data/currencies.csv");
 
-    void addCountry(string& filename = "data/countries.csv");
-    void showAllcountriesData(string& filename = "data/countries.csv");
-    void deleteCountry(string& filename = "data/countries.csv");
-    void modifySpecificData(string& filename = "data/countries.csv");
 
-    void addPaymentmethod();
-    void deletePaymentmethod();
+
+    void showPaymentMethods();
+    void showPaymentMethod(int id);
+    void addPaymentMethod();
+    void deletePaymentMethod(int id);
 
     void editSettings();
 
