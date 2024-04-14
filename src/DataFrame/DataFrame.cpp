@@ -1,9 +1,6 @@
 //
 // Created by OSAMA ASHRAF on 3/25/2024.
 //
-
-#include <utility>
-
 #include "../../include/DataFrame/DataFrame.h"
 #include "../../public/functions.h"
 
@@ -33,10 +30,10 @@ DataFrame::DataFrame(List& header): header(header){}
 void DataFrame::print(){
     cout<<join(header, "\t")<<'\n';
     for(Case& c : rows)
-        c.print();
+        c.print(false); // To print the case without header
 }
 
-DataFrame DataFrame::select(vector<string> conditionColumns, vector<Any> conditionValues){
+DataFrame DataFrame::SELECT(vector<string> conditionColumns, vector<Any> conditionValues){
     DataFrame temp(header);  bool isMatched;
     for(int i=0 ; i<rows.size() ; i++){
         Case x = rows[i];
@@ -47,15 +44,21 @@ DataFrame DataFrame::select(vector<string> conditionColumns, vector<Any> conditi
         }
 
         if(isMatched)
-            temp.insert(x);
+            temp.INSERT(x);
     }
 
     return temp;
 }
 
-
-void DataFrame::insert(Case& x){
+void DataFrame::INSERT(Case& x){
     rows.push_back(x);
+}
+
+void DataFrame::UPDATE(string conditionColumn, Any conditionValue, string updateColumn, Any newValue, function<bool(Any, Any)> operation){
+    for(int i=0 ; i<rows.size() ; i++){
+        if(operation(rows[i][conditionColumn], conditionValue))
+            rows[i][updateColumn] = newValue;
+    }
 }
 
 

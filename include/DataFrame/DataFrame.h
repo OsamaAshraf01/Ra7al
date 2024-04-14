@@ -1,17 +1,27 @@
 //
 // Created by OSAMA ASHRAF on 3/25/2024.
 /*=============Example=============
-DataFrame d("../data/flights.csv");
-DataFrame df1 = d.select({"Origin Airport"}, {"Cairo International Airport"});
-cout<<df1;
+ DataFrame d("../data/flights.csv");
+ DataFrame df1 = d.SELECT({"Origin Airport"}, {"Cairo International Airport"});
+ cout<<df1;
 
+ ==================
+ DataFrame df2 = d.SELECT({"Departure Date", "Airline"}, {"15-04-2024", "Nile Air"});
+ cout<<df2;
 
-DataFrame df2 = d.select({"Departure Date", "Airline"}, {"15-04-2024", "Nile Air"});
-cout<<df2;
+ ==================
+ df3 = d.SELECT({"Price"}, {400}, [](Any a, Any b){return a >= b;}) // To get flights with price >= 400
 
+ ==================
+ d.UPDATE("Origin Airport", "Cairo International Airport", "Origin Airport", "Osama International Airport");
+ cout << d;
 
+ ==================
+ d.UPDATE("Origin Airport", "Cairo International Airport", "Origin Airport", "Osama International Airport", [](Any a, Any b){return a < b;});
+ cout << d;
 
-cout << d[0];  // to print a single case in the DataFrame
+ ==================
+ cout << d[0];  // to print a single case in the DataFrame
 
  */
 #ifndef RA7AL_DATAFRAME_H
@@ -34,14 +44,16 @@ private:
 
 //    vector<Series> columns;
     vector<Case> rows;
-
-    explicit DataFrame(List& header);
 public:
+    // Constructors
     explicit DataFrame(string databasePath);
-    void insert(Case&);
-    DataFrame select(vector<string> conditionColumns, vector<Any> conditionValues);
-    DataFrame update(string conditionColumn, Any conditionValue, Any newValue);
-    DataFrame sortBy(string columnName, bool descending=false);
+    explicit DataFrame(List& header);
+
+    // Methods
+    void INSERT(Case&);
+    void UPDATE(string conditionColumn, Any conditionValue, string updateColumn, Any newValue, function<bool(Any, Any)> operation=[](Any a, Any b){return a == b;});
+    DataFrame SELECT(vector<string> conditionColumns, vector<Any> conditionValues);
+    DataFrame SortBy(string columnName, bool descending=false);
     void print();
 
     void save();
