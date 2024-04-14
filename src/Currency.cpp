@@ -78,19 +78,16 @@ void Currency::setAmount(long amt) {
 
 // Initialize exchange rates from CSV
 void Currency::initializeExchangeRates() {
-    ifstream file("output.csv");
 
-    if (!file.is_open()) {
-        cout<<"Could not open csv file";
+    CSVManager csv("../data/currencies.csv");
+    vector<vector<string>> exchangeData = csv.read();
+    if (!exchangeData.empty()) {
+        exchangeData.erase(exchangeData.begin());
     }
-
-    string headerLine;
-    getline(file, headerLine);
-
-    string code, rateStr;
-    while (getline(file, code, ',') && getline(file, rateStr)) {
-        exchangeRates[code] = stod(rateStr);
+    for (const vector<string>& row : exchangeData) {
+        if (row.size() >= 2) {
+            exchangeRates[row[0]] = stod(row[1]);
+        }
     }
-
-    file.close();
 }
+
