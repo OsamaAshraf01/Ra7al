@@ -14,14 +14,14 @@ Flight::Flight()
 
 Flight::Flight(Airport origin, Airport destination, Date departure, Date arrival, Airline airline, double price, int flightNumber, Duration duration)
 {
-    this->origin = Airport();
-    this->destination = Airport();
-    this->departure = Date();
-    this->arrival = Date();
-    this->airline = Airline();
+    this->origin = origin;
+    this->destination = destination;
+    this->departure = departure;
+    this->arrival = arrival;
+    this->airline = airline;
     this->price = price;
     this->flightNumber = flightNumber;
-    this->duration = Duration();
+    this->duration = duration;
 }
 
 void Flight::showDetails()
