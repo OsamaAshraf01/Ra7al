@@ -4,6 +4,7 @@
 
 #ifndef RA7AL_ADMIN_H
 #define RA7AL_ADMIN_H
+#include "../include/DataFrame/CSVManager.h"
 
 #include "Person.h"
 
@@ -49,6 +50,21 @@ public:
     void addPaymentMethod();
     void deletePaymentMethod(int id);
 
+
+    //Modifying Finance Databases
+
+    void addCurrency(string& filename = "data/currencies");
+    void showCurrencies(string& filename="data/currencies");
+    void deleteCurrency(string& filename = "data/currencies");
+    void changeSpecificinfo(string& filename = "data/currencies");
+
+    void addCountry(string& filename = "data/countries");
+    void showAllcountriesData(string& filename = "data/countries");
+    void deleteCountry(string& filename = "data/countries");
+    void modifySpecificData(string& filename = "data/countries");
+
+    void addPaymentmethod();
+    void deletePaymentmethod();
 
     void editSettings();
 
