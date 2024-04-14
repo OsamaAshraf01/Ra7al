@@ -14,6 +14,10 @@
 #include <cmath>
 using namespace std;
 
+CSVManager::CSVManager()
+{
+}
+
 CSVManager::CSVManager(const string& filename) : filename(filename) {
     data = read();
 }
