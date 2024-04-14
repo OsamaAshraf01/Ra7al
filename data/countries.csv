@@ -1,21 +1,20 @@
-Country Name,Language,Currency,Capital City,Area (km²),Local Timezone,Population
-Italy,Italian,Euro,Rome,301340,UTC+1 (CET),60414495
-France,French,Euro,Paris,643801,UTC+1 (CET),64756584
-Spain,Spanish,Euro,Madrid,505990,UTC+1 (CET),47519628
-United States,English,US Dollar,Washington D.C.,9525067,UTC-5 to UTC-10,339996563[^1^][3]
-Greece,Greek,Euro,Athens,131957,UTC+2 (EET),10423054
-Australia,English,Australian Dollar,Canberra,7692024,UTC+8 to UTC+10.5,25499884
-New Zealand,English,New Zealand Dollar,Wellington,268021,UTC+12 (NZST),4822233
-Thailand,Thai,Baht,Bangkok,513120,UTC+7 (ICT),69799978
-Japan,Japanese,Yen,Tokyo,377975,UTC+9 (JST),123951692
-Brazil,Portuguese,Brazilian Real,Brasília,8515767,UTC-2 to UTC-5,212559417
-South Africa,English,South African Rand,Pretoria,1221037,UTC+2 (SAST),58558270
-Tahiti,French,CFP Franc,Pape'ete,4167,UTC-10 (TAHT),275918
-Banff,English,Canadian Dollar,Banff,6641,UTC-7 (MST),4037845
-Great Barrier Reef,English,Australian Dollar,Canberra,344400,UTC+10 (AEST),25499884
-Amsterdam,Dutch,Euro,Amsterdam,N/A,41543,UTC+1 (CET),17134872
-Barcelona,Catalan, Spanish,Euro,Barcelona,1019,UTC+1 (CET),47351567
-St. Lucia,English,East Caribbean Dollar,Castries,616,UTC-4 (AST),183627
-Sydney,English,Australian Dollar,Sydney,12368,UTC+10 (AEST),25499884
-Dubai,Arabic,UAE Dirham,Dubai,4114,UTC+4 (GST),9890402
-New York City,English,US Dollar,New York City,783.8,UTC-5 (EST),8336817
+Country Name, Country Population, Country Language, Country Capital City, Country Area in km²
+France, 64756584, French, Paris, 547557
+Italy, 58870762, Italian, Rome, 294140
+Spain, 47519628, Spanish, Madrid, 498800
+United States, 339996563, English, Washington D.C., 9147420
+Australia, 25499884, English, Canberra, 7682300
+New Zealand, 4822233, English, Wellington, 263310
+Japan, 123294513, Japanese, Tokyo, 364555
+Canada, 37364117, English and French, Ottawa, 9093507
+Argentina, 44494528, Spanish, Buenos Aires, 2736690
+Germany, 83294633, German, Berlin, 348560
+Mexico, 128455567, Spanish, Mexico City, 1943950
+Thailand, 71801279, Thai, Bangkok, 510890
+Brazil, 216422446, Portuguese, Brasília, 8358140
+Peru, 33105273, Spanish, Lima, 1280000
+Greece, 10423054, Greek, Athens, 130647
+Turkey, 85816199, Turkish, Ankara, 769630
+India, 1428627663, Hindi, New Delhi, 2973190
+Vietnam, 98858950, Vietnamese, Hanoi, 310070
+Costa Rica, 5094118, Spanish, San José, 51060
