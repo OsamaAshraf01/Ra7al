@@ -18,7 +18,7 @@ private:
 public:
     // Constructor
     Airline();
-
+    Airline(const string& name, double maxWeight,const vector<string>& availableFlights, const vector<string>& availableAirports, const vector<string>& supportedCountries);
     // setters
     void setName(string& Name);
     void setMaxWeight(double MaxWeight);
