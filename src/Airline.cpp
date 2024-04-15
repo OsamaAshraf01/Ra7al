@@ -6,15 +6,19 @@
 using namespace std;
 
 // Constructors
-Airline::Airline() : maxWeight(0), name("N/A") {}
+Airline::Airline(){
+    maxWeight = 0;
+    name = "N/A";
+}
 
 Airline::Airline(const string &name, double maxWeight, const vector<string> &availableFlights,
-                 const vector<string> &availableAirports, const vector<string> &supportedCountries) :
-        name(name),
-        maxWeight(maxWeight),
-        availableAirports(availableAirports),
-        availableFlights(availableFlights),
-        supportedCountries(supportedCountries) {}
+                 const vector<string> &availableAirports, const vector<string> &supportedCountries) {
+    this->name = name;
+    this->maxWeight = maxWeight;
+    this->availableAirports = availableAirports;
+    this->availableFlights = availableFlights;
+    this->supportedCountries = supportedCountries;
+}
 
 
 // setters
