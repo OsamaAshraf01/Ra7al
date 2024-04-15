@@ -90,8 +90,8 @@ void Budget::overview() const {
 
 // Offer basic budget advice
 void Budget::advice()  const{
-        double spent = getTotalSpent();
-        if (spent > total_budget * 0.8) {
+    double spent = getTotalSpent();
+    if (spent > total_budget * 0.8) {
         cout << "Warning: You've spent over 80% of your budget. Consider reducing expenses.\n";
     }
     else {
