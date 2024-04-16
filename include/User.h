@@ -4,9 +4,9 @@
 
 #ifndef RA7AL_USER_H
 #define RA7AL_USER_H
+#include "Person.h"
 
-
-class User {
+class User : public Person{
 
 };
 
