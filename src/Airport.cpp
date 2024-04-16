@@ -7,9 +7,9 @@
 
 
 //setters
-void Airport::setName(string Name)
+void Airport::setName(string name)
 {
-    this->name = Name;
+    this->name = name;
 }
 
 void Airport::setCode(string Code)
