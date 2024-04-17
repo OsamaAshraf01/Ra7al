@@ -5,6 +5,8 @@
 #ifndef RA7AL_FUNCTIONS_H
 #define RA7AL_FUNCTIONS_H
 #include "classes/List.h"
+#include <string>
+#include <algorithm>
 using namespace std;
 
 // A function to split a string based on specific delimiter (space by default)
@@ -13,6 +15,10 @@ static List split(string &str, char delimiter = ' ');
 
 // A function to join vector of string values by a delimiter
 static string join(List &values, const string &delimiter);
+
+
+// A function to strip a string from a specific character
+static string strip(const string &str, const string &characters = " ");
 
 
 // A function to print a vector
@@ -49,6 +55,32 @@ string join(List &values, const string &delimiter) {
         oss << values.getItem(i) << (i + 1 != values.size() ? delimiter : "");
 
     return oss.str();
+}
+
+
+string strip(const string &str, const string &characters) {
+    string result = str;
+    int begin = 0;
+    int end = (int)str.size() - 1;
+
+    for(char c : result){
+        if(characters.find(c) != -1)
+            begin++;
+        else
+            break;
+    }
+
+    reverse(result.begin(), result.end());
+
+    for(char c : result) {
+        if (characters.find(c) != -1)
+            end--;
+        else
+            break;
+    }
+
+
+    return str.substr(begin, end+1);
 }
 
 
