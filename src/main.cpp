@@ -1,14 +1,19 @@
 #include <iostream>
-#include "../include/Time.h"
+#include "../public/functions.h"
+#include "../include/DataFrame/DataFrame.h"
+#include "../include/Date.h"
+#include "../include/Duration.h"
 using namespace std;
 
+// TODO: Config Directory and file
+// TODO: Testing Directory
+
 int main() {
-    Time t(5, 0, 0, "AM");
-    cout<<t.toString()<<'\n';
-    t.addHours(7);
-    t.addMinutes(30);
-    t.addSeconds(40);
-    cout << t.toString("hh:mm") <<'\n';
+    DataFrame d("../data/flights.csv");
+    DataFrame x = d.SELECT({"Departure Date", "Price"}, {"18-04-2024", 350}, LESS_OR_EQUAL)
+                   .SELECT({"Origin Airport"}, {"Cairo International Airport"});
+
+    cout << x;
 
     return 0;
 }
