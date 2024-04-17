@@ -114,3 +114,49 @@ void Date::addMonths(int months) {
 void Date::addYears(int years) {
     year += years;
 }
+
+Duration Date::calcDistance(Date other) {
+    int days = 0, months = 0, years = 0;
+    Date copy = *this;
+
+    if (year == other.year && month == other.month && day == other.day)
+        return {};
+
+    if (year > other.year || (year == other.year && month > other.month) || (year == other.year && month == other.month && day > other.day)){
+        Date temp = *this;
+        *this = other;
+        other = temp;
+    }
+
+    while (year < other.year || month < other.month || day < other.day){
+        days++;
+        day++;
+        if (day > dayLimit(month, year)){
+            day = 1;
+            month++;
+            if (month > 12){
+                month = 1;
+                year++;
+            }
+        }
+    }
+    int virtualMonth=1, virtualYear=1;
+    while (days >= dayLimit(virtualMonth, virtualYear)){
+        months++;
+        days -= dayLimit(virtualMonth, virtualYear);
+        virtualMonth++;
+        if (virtualMonth > 12){
+            virtualMonth = 1;
+            virtualYear++;
+        }
+    }
+
+    while (months >= 12){
+        years++;
+        months -= 12;
+    }
+
+    *this = copy;
+
+    return {0, 0, 0, days, months, years};
+}

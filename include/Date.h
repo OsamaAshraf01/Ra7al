@@ -1,7 +1,7 @@
 //
 // Created by OSAMA ASHRAF on 3/23/2024.
 //
-/* ---Validation---
+/* ========Validation========
     #include "Date.h"
 
     Date d;
@@ -12,17 +12,24 @@
     } while(!d.isValid() && cout<<"Enter valid date!\n");
 
 
-  ---Adding---
+  ========Adding========
   Date d{1, 1, 2003};
   d.addYears(3);
   d.addMonths(1);
   d.addDays(28);
   cout<<d.toString();
+
+  ========Distance========
+  Date d1{1, 1, 2000};
+  Date d2{1, 1, 2005};
+  cout<<d1.calcDistance(d2);
+
 */
 
 #ifndef RA7AL_DATE_H
 #define RA7AL_DATE_H
 #include <string>
+#include "Duration.h"
 using namespace std;
 
 class Date
@@ -55,7 +62,7 @@ public:
     void addYears(int years);
 
     bool isValid() const;
-    // Duration calcDistance(Date other);
+    Duration calcDistance(Date other);
 };
 
 #endif // RA7AL_DATE_H
