@@ -24,10 +24,9 @@ private:
 
 public:
     Flight();
-
     Flight(Airport origin, Airport destination, Date departure, Date arrival, Airline airline, double price, int flightNumber, Duration duration);
-
     void showDetails();
+    double getPrice();
 };
 
 #endif

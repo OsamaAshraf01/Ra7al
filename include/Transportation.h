@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Location.h"
 #include "Time.h"
+#include "Duration.h"
 using namespace std;
 
 class Transportation
@@ -40,7 +41,8 @@ public:
     bool setPassengers(int p);
 
     void cancelBooking();
-    // Duration duration(); Lama OsOs y3ml class Duration :)
+    Duration duration();
+    void showDetails();
 
     ~Transportation();
 };

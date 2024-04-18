@@ -38,7 +38,7 @@ public:
 
     // Duration getDuration();
     bool isAvailableAt(Location l);
-    void show();
+    void showDetails();
 
     ~Activity();
 };

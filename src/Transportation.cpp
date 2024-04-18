@@ -123,3 +123,24 @@ void Transportation::cancelBooking()
 {
     delete this;
 }
+
+Duration Transportation::duration()
+{
+    return Duration(departureTime, arrivalTime);
+}
+
+void Transportation::showDetails()
+{
+    cout << "Transportation" << endl;
+    cout << "Type: " << type << endl;
+    cout << "Origin: ";
+    origin.toString();
+    cout << "Destination: ";
+    destination.toString();
+    cout << "Departure Time: ";
+    departureTime.toString();
+    cout << "Arrival Time: ";
+    arrivalTime.toString();
+    cout << "Price: " << price << endl;
+    cout << "Passengers: " << passengers << endl;
+}
