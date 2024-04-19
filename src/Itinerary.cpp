@@ -8,7 +8,7 @@ Itinerary::Itinerary()
     popularity = 0;
 }
 
-Itinerary::Itinerary(Date startDate, Date endDate, vector<Hotel> hotels, vector<Flight> flights, vector<Transportation> transportations, vector<Destination> destinations, vector<Activity> activities)
+Itinerary::Itinerary(Date startDate, Date endDate, vector<Hotel> hotels, vector<Flight> flights, vector<Transportation> transportations, vector<Destination> destinations, vector<Activity> activities, int popularity)
 {
     this->startDate = startDate;
     this->endDate = endDate;
@@ -17,7 +17,7 @@ Itinerary::Itinerary(Date startDate, Date endDate, vector<Hotel> hotels, vector<
     this->transportations = transportations;
     this->destinations = destinations;
     this->activities = activities;
-    popularity = 0;
+    this->popularity = popularity;
 }
 
 void Itinerary::show()
@@ -56,9 +56,9 @@ void Itinerary::show()
     }
 
     cout << "Start Date: ";
-    startDate.show();
+    startDate.toString();
     cout << "End Date: ";
-    endDate.show();
+    endDate.toString();
 }
 
 double Itinerary::getTotalCost()

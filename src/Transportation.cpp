@@ -134,13 +134,13 @@ void Transportation::showDetails()
     cout << "Transportation" << endl;
     cout << "Type: " << type << endl;
     cout << "Origin: ";
-    origin.toString();
+    cout << origin.toString() << endl;
     cout << "Destination: ";
-    destination.toString();
+    cout << destination.toString() << endl;
     cout << "Departure Time: ";
-    departureTime.toString();
+    cout << departureTime.toString() << endl;
     cout << "Arrival Time: ";
-    arrivalTime.toString();
+    cout << arrivalTime.toString() << endl;
     cout << "Price: " << price << endl;
     cout << "Passengers: " << passengers << endl;
 }

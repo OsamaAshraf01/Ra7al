@@ -7,27 +7,40 @@
 #include "PaymentMethod.h"
 #include "Budget.h"
 #include "Language.h"
+#include "Person.h"
 using namespace std;
 
-class User
+// The User class will inherit
+// from the Person class
+
+class User : public Person // User inherits from Person
 {
 private:
-    string email;
-    string password;
     vector<Itinerary> itineraries;
     vector<PaymentMethod> payments;
     Budget budget;
+    vector<Language> languages;
     vector<string> preferences;
-    Language language;
 
 public:
     User();
-    User(string email, string password, vector<Itinerary> itineraries, vector<PaymentMethod> payments, Budget budget, vector<string> preferences, Language language);
-    void login(string email, string password);
-    void logout();
-    bool isLogged();
-    bool validEmail(string email);
+    User(string nameInput, string emailInput);
+
+    // Setters
+    void addItinerary(Itinerary newItinerary);
+    void addPayment(PaymentMethod newPayment);
+    void setBudget(Budget newBudget);
+    void addLanguage(Language newLanguage);
+
+    // Getters
+    vector<Itinerary> getItineraries();
+    vector<PaymentMethod> getPayment();
+    Budget getBudget();
+    vector<Language> getLanguages();
+
+    // Methods
     void showPreferences();
+    void printDetails();
 };
 
 #endif

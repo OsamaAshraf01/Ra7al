@@ -26,6 +26,7 @@ public:
     void setEmail(string newEmail);
 
     // Getters
+    int getID();
     string getName();
     string getEmail();
 

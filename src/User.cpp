@@ -32,38 +32,75 @@ User::User(string email, string password, vector<Itinerary> itineraries, vector<
     this->itineraries = itineraries;
     this->payments = payments;
     this->budget = budget;
-    this->preferences = preferences;
     this->language = language;
+    this->preferences = preferences;
 }
 
-void User::login(string email, string password)
+void User::addItinerary(Itinerary newItinerary)
 {
-    // to be implemented when database is ready
-    // verify email and password
-    // if valid, set user as logged in
-    // else, show error message
+    itineraries.push_back(newItinerary);
 }
 
-void User::logout()
+void User::addPaymentMethod(PaymentMethod newPayment)
 {
-    // to be implemented when database is ready
-    // set user as logged out
+    payments.push_back(newPayment);
 }
 
-bool User::isLogged()
+void User::setBudget(Budget newBudget)
 {
-    // to be implemented when database is ready
-    // check if user is logged in
+    budget = newBudget;
 }
 
-bool User::validEmail(string email)
+void User::addLanguage(Language newLanguage)
 {
-    static const std::regex email_regex(R"([a-zA-Z0-9\._%+\-]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,})"); // regex for email
-    return regex_match(email, email_regex);
+    language = newLanguage;
+}
+
+vector<Itinerary> User::getItineraries()
+{
+    return itineraries;
+}
+
+vector<PaymentMethod> User::getPaymentMethods()
+{
+    return payments;
+}
+
+Budget User::getBudget()
+{
+    return budget;
+}
+
+Language User::getLanguage()
+{
+    return language;
 }
 
 void User::showPreferences()
 {
+    for (int i = 0; i < preferences.size(); i++)
+    {
+        cout << preferences[i] << endl;
+    }
+}
+
+void User::printDetails()
+{
+    cout << "Email: " << email << endl;
+    cout << "Password: " << password << endl;
+    cout << "Itineraries: " << endl;
+    for (int i = 0; i < itineraries.size(); i++)
+    {
+        cout << itineraries[i].show() << endl;
+    }
+    cout << "Payments: " << endl;
+    for (int i = 0; i < payments.size(); i++)
+    {
+        cout << payments[i].getCardNumber() << endl; // to be implemented
+    }
+    cout << "Budget: " << budget.overview() << endl;
+    cout << "Language: " << language.getLanguage() << endl;
+    cout << "Preferences: " << endl;
     for (int i = 0; i < preferences.size(); i++)
     {
         cout << preferences[i] << endl;
