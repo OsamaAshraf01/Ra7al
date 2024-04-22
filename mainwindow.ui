@@ -45,7 +45,7 @@
        <item row="0" column="0">
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="Home_page">
           <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -279,7 +279,7 @@ Ra7al</string>
               </widget>
              </item>
              <item row="6" column="1">
-              <widget class="QLabel" name="label">
+              <widget class="QLabel" name="Login_Email_Label">
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -388,7 +388,7 @@ Ra7al</string>
               </spacer>
              </item>
              <item row="8" column="1">
-              <widget class="QLabel" name="label_2">
+              <widget class="QLabel" name="Login_Password_Label">
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -575,7 +575,7 @@ Ra7al</string>
                  </spacer>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="Login_Button_3">
+                 <widget class="QPushButton" name="Register_Button">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -657,7 +657,7 @@ Ra7al</string>
               </widget>
              </item>
              <item row="6" column="1">
-              <widget class="QLabel" name="name_label">
+              <widget class="QLabel" name="Name_Label">
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -682,7 +682,7 @@ Ra7al</string>
               </widget>
              </item>
              <item row="8" column="1">
-              <widget class="QLabel" name="label_3">
+              <widget class="QLabel" name="Register_Email_Label">
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -711,7 +711,7 @@ Ra7al</string>
               </widget>
              </item>
              <item row="10" column="1">
-              <widget class="QLabel" name="label_4">
+              <widget class="QLabel" name="Register_Password_Label">
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>

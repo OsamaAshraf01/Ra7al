@@ -24,6 +24,17 @@ MainWindow::MainWindow(QWidget *parent)
     ui->welcome->setText(text("Welcome to<br>Ra7al", CONFIG.main_color));
     ui->home_login->setStyleSheet(Style("background-color", CONFIG.main_color));
     ui->home_register->setStyleSheet(Style("background-color", CONFIG.main_color));
+    ui->login_label->setStyleSheet(Style("color", CONFIG.main_color));
+    ui->register_label->setStyleSheet(Style("color", CONFIG.main_color));
+
+    ui->Login_Password_Label->setStyleSheet(Style("color", CONFIG.main_color));
+    ui->Login_Email_Label->setStyleSheet(Style("color", CONFIG.main_color));
+    ui->Register_Email_Label->setStyleSheet(Style("color", CONFIG.main_color));
+    ui->Register_Password_Label->setStyleSheet(Style("color", CONFIG.main_color));
+    ui->Name_Label->setStyleSheet(Style("color", CONFIG.main_color));
+
+    ui->Register_Button->setStyleSheet(Style("color", CONFIG.main_color));
+    ui->Login_Button->setStyleSheet(Style("color", CONFIG.main_color));
 
     // Buttons
     QPixmap pixmap(CONFIG.go_back_path);
