@@ -20,7 +20,7 @@ Budget::Budget(map<string, double>& categories) : categories(categories), total_
 void Budget::add_category(const string& category_name, double amount){
     for (auto& x : categories) {
         if (category_name != x.first) {
-            categories[category_name] = 0.0;
+            categories[category_name] = amount;
         }
         else {
             cout<<"THis category is already exist !\n" ;
