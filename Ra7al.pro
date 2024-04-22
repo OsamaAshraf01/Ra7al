@@ -30,6 +30,7 @@ SOURCES += \
 HEADERS += \
     mainwindow.h \
     config.h \
+    build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/registered_users.csv\
     headers/Date.h \
     headers/User.h \
     headers/Person.h \
