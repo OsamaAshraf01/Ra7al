@@ -59,8 +59,8 @@ List split(string &str, char delimiter) {
 
 string join(List &values, const string &delimiter) {
     ostringstream oss;
-    for (int i = 0; i < values.size(); i++)
-        oss << values.getItem(i) << (i + 1 != values.size() ? delimiter : "");
+    for (int i = 0; i < (int)values.size(); i++)
+        oss << values.getItem(i) << (i + 1 != (int)values.size() ? delimiter : "");
 
     return oss.str();
 }
@@ -95,8 +95,8 @@ string strip(const string &str, const string &characters) {
 template<typename T>
 void printVec(vector<T> v) {
     cout << '{';
-    for (int i = 0; i < v.size(); i++)
-        cout << v[i] << (i < v.size() - 1 ? ", " : "");
+    for (int i = 0; i < (int)v.size(); i++)
+        cout << v[i] << (i < (int)v.size() - 1 ? ", " : "");
     cout << "}\n";
 }
 
@@ -119,7 +119,7 @@ static DataType determineType(const string &str) {
                     return String;
             return Integer;
         } catch (const invalid_argument &) {
-            if (str.size() > 1)
+            if ((int)str.size() > 1)
                 return String;
             return Char;
         }

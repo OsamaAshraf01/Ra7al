@@ -15,7 +15,7 @@ DataFrame::DataFrame(string DataFramePath): path (std::move(DataFramePath)), fou
         List values = split(line, ',');
         Case temp;
         temp.header = header;
-        for(int i=0 ; i<header.size() ; i++){
+        for(int i=0 ; i<(int)header.size() ; i++){
             temp.dict[ get<string>(header[i]) ] = values[i];
         }
 
@@ -39,10 +39,10 @@ void DataFrame::print(){
 DataFrame DataFrame::SELECT(vector<string> conditionColumns, vector<Any> conditionValues, function<bool(Any&, Any)> operation) {
     DataFrame temp(header);
     bool isMatched;
-    for (int i = 0; i < rows.size(); i++) {
+    for (int i = 0; i < (int)rows.size(); i++) {
         Case x = rows[i];
         isMatched = true;
-        for (int j = 0; j < conditionColumns.size(); j++) {
+        for (int j = 0; j < (int)conditionColumns.size(); j++) {
             if (!operation(x[conditionColumns[j]], conditionValues[j]))
                 isMatched = false;
         }
@@ -60,7 +60,7 @@ void DataFrame::INSERT(Case& x){
 }
 
 void DataFrame::UPDATE(string conditionColumn, Any conditionValue, string updateColumn, Any newValue, function<bool(Any&, Any)> operation){
-    for(int i=0 ; i<rows.size() ; i++){
+    for(int i=0 ; i<(int)rows.size() ; i++){
         if(operation(rows[i][conditionColumn], conditionValue))
             rows[i][updateColumn] = newValue;
     }

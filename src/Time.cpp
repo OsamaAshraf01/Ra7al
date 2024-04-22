@@ -95,8 +95,8 @@ string Time::toString(string format, string separator) {
     sort(index.begin(), index.end());
 
     ostringstream oss;
-    for (int i = 0; i < index.size(); i++)
-        oss << index[i].second << (i < index.size() - 1 ? separator : " ");
+    for (int i = 0; i < (int)index.size(); i++)
+        oss << index[i].second << (i < (int)index.size() - 1 ? separator : " ");
     oss << period;
 
     return oss.str();

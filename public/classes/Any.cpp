@@ -42,7 +42,7 @@ static DataType determineType(const string &str) {
                     return String;
             return Integer;
         } catch (const invalid_argument &) {
-            if (str.size() > 1)
+            if ((int)str.size() > 1)
                 return String;
             return Char;
         }
