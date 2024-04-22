@@ -5,29 +5,32 @@ using namespace std;
 
 class Person
 {
-private:
+protected:
     static int currentID;
     int id;
     string name;
     string email;
+    string password;
 
 public:
     // Default constructor
     Person();
 
     // Constructor with parameters
-    Person(string nameInput, string emailInput);
+    Person(string nameInput, string emailInput, string passwordInput);
 
     // Make sure the email is in the correct format
     bool isValidEmail(const string &email) const;
 
     // Setters
-    void setName(string newName);
-    void setEmail(string newEmail);
+    bool setName(string newName);
+    bool setEmail(string newEmail);
+    bool setPassword(string newPassword);
 
     // Getters
     string getName();
     string getEmail();
+    string getPassword();
 
     void printDetails();
 };

@@ -10,14 +10,16 @@ Person::Person()
 {
     id = currentID++;
     name = "Unknown";
+    password = "";
     email = "N/A";
 }
 
 // Constructor with parameters
-Person::Person(string nameInput, string emailInput)
+Person::Person(string nameInput, string emailInput, string passwordInput)
 {
     name = nameInput;
     email = emailInput;
+    password = passwordInput;
 }
 
 // Make sure the email is in the correct format
@@ -28,12 +30,38 @@ bool Person::isValidEmail(const string &email) const
 }
 
 // Setters
-void Person::setName(string newName){name = newName;}
-void Person::setEmail(string newEmail){email = newEmail;}
+bool Person::setName(string newName){
+    if(!newName.empty()){
+        name = newName;
+        return true;
+    }
+
+    return false;
+}
+bool Person::setEmail(string newEmail){
+    if(isValidEmail(newEmail)){
+        email = newEmail;
+        return true;
+    }
+
+    return false;
+}
+
+bool Person::setPassword(string newPassword){
+    // TODO: Password Validation
+
+    if(!newPassword.empty()){
+        password = newPassword;
+        return true;
+    }
+
+    return false;
+}
 
 // Getters
 string Person::getName(){return name;}
 string Person::getEmail(){return email;}
+string Person::getPassword(){return password;}
 
 
 // Methods
