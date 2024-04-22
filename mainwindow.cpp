@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "headers/Dataframe/DataFrame.h"
+#include "headers/User.h"
 #include "config.h"
 #include <QPixmap>
 
@@ -17,8 +18,9 @@ MainWindow::MainWindow(QWidget *parent)
     // Aligning Labels
     ui->login_label->setAlignment(Qt::AlignCenter);
     ui->register_label->setAlignment(Qt::AlignCenter);
-    ui->Login_msg_2->setAlignment(Qt::AlignCenter);
+    ui->Register_Error_Label->setAlignment(Qt::AlignCenter);
     ui->welcome->setAlignment(Qt::AlignCenter);
+    ui->Login_msg->setAlignment(Qt::AlignCenter);
 
     // Styles
     ui->welcome->setText(text("Welcome to<br>Ra7al", CONFIG.main_color));
@@ -56,6 +58,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_home_register_clicked()
 {
+    ui->Register_Error_Label->setText("");
     ui->stackedWidget->setCurrentIndex(Register_Page);
 }
 void MainWindow::on_home_login_clicked()
@@ -76,7 +79,6 @@ void MainWindow::on_Login_Button_clicked()
 
     DataFrame data("registered_users.csv");
     DataFrame users = data.SELECT({"Email", "Password"}, {email, password});
-    ui->Login_msg->setText(users.toQstring());
 
     if(users.isEmpty())
         ui->Login_msg->setText("Invalid Email or Password");
@@ -104,21 +106,44 @@ void MainWindow::on_back_button_2_clicked()
 
 void MainWindow::on_Register_Button_clicked()
 {
+    ui->Register_Error_Label->setText("");
+
     string name = ui->Name_Field->text().toStdString();
     string email = ui->Register_Email_Field->text().toStdString();
-    string password = ui->Register_Password_Field->text.toStdString();
+    string password = ui->Register_Password_Field->text().toStdString();
+
     // Validate Email
+    User new_user;
+    if(!new_user.setEmail(email)){ // Validate Email
+        ui->Register_Error_Label->setText("Please Enter a valid email !");
+        return;
+    }
 
+    if(!new_user.setName(name)){ // Validate Name
+        ui->Register_Error_Label->setText("Please Enter a valid name !");
+        return;
+    }
 
+    if(!new_user.setPassword(password)){
+        ui->Register_Error_Label->setText("Please Enter a valid Password !");
+        return;
+    }
 
     // Check that email doesn't exist in database
-
+    DataFrame users("registered_users.csv");
+    if(!users.SELECT({"Email"}, {email}).isEmpty()){
+        ui->Register_Error_Label->setText("Email already exists !");
+        return;
+    }
 
     // Clear Text
-
+    ui->Name_Field->setText("");
+    ui->Register_Email_Field->setText("");
+    ui->Register_Password_Field->setText("");
 
     // Add new user to database  ---> use User.register()
-
+    new_user.Register();
+    ui->Register_Error_Label->setText("Registered Succefully!");
 
     // Admins will be hard added to database
 }

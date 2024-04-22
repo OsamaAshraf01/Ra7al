@@ -695,7 +695,7 @@ Ra7al</string>
               </widget>
              </item>
              <item row="13" column="1" colspan="2">
-              <widget class="QLabel" name="Login_msg_2">
+              <widget class="QLabel" name="Register_Error_Label">
                <property name="styleSheet">
                 <string notr="true">opacity: rgba(0, 0, 0, 0.5);</string>
                </property>
