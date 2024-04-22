@@ -2,7 +2,6 @@
 // Created by OSAMA ASHRAF on 3/25/2024.
 //
 #include "headers/DataFrame/DataFrame.h"
-#include "public/functions.h"
 
 // Constructors
 DataFrame::DataFrame(string DataFramePath): path (std::move(DataFramePath)), fout(path, ios::app), fin(path){
@@ -36,7 +35,7 @@ void DataFrame::print(){
         c.print(false); // To print the case without header
 }
 
-DataFrame DataFrame::SELECT(vector<string> conditionColumns, vector<Any> conditionValues, function<bool(Any&, Any)> operation) {
+DataFrame DataFrame::SELECT(vector<string> conditionColumns, vector<Any> conditionValues, function<bool(Any, Any)> operation) {
     DataFrame temp(header);
     bool isMatched;
     for (int i = 0; i < (int)rows.size(); i++) {
@@ -59,7 +58,7 @@ void DataFrame::INSERT(Case& x){
     // TODO: Sort after adding sort function
 }
 
-void DataFrame::UPDATE(string conditionColumn, Any conditionValue, string updateColumn, Any newValue, function<bool(Any&, Any)> operation){
+void DataFrame::UPDATE(string conditionColumn, Any conditionValue, string updateColumn, Any newValue, function<bool(Any, Any)> operation){
     for(int i=0 ; i<(int)rows.size() ; i++){
         if(operation(rows[i][conditionColumn], conditionValue))
             rows[i][updateColumn] = newValue;
@@ -79,6 +78,16 @@ QString DataFrame::toQstring(){
     return QString::fromStdString(oss.str());
 }
 
+void DataFrame::save(){
+    fstream clear_and_fout(CONFIG.registered_path);
+    clear_and_fout << join(header, ",") <<'\n';
+
+    for(auto row : rows){
+        clear_and_fout << row.toString() << '\n';
+    }
+
+    clear_and_fout.close();
+}
 
 // Operators
 Case& DataFrame::operator[](int index){
