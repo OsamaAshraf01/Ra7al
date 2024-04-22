@@ -18,12 +18,8 @@ void Case::print(bool with_header){
 
 string Case::toString(){
     ostringstream oss;
-    oss << "{";
-    for(auto& p : dict){
-        oss << p.first <<":"<<p.second<<", ";
+    for(auto col : header){
+        oss << dict[get<string>(col)] << ',';
     }
-    // loop over map instead
-
-    oss << "}";
-    return oss.str();
+    return strip(oss.str(), ","); // remove any redundant commas before returning
 }
