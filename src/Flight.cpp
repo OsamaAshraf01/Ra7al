@@ -32,3 +32,8 @@ void Flight::showDetails()
     cout << "Airline: " << airline.getName() << endl;
     cout << "Price: " << price << endl;
 }
+
+double Flight::getPrice()
+{
+    return price;
+}

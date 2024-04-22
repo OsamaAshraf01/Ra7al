@@ -108,7 +108,7 @@ bool Activity::isAvailableAt(Location l)
 }
 
 // methods
-void Activity::show()
+void Activity::showDetails()
 {
     cout << "Name: " << name << endl;
     cout << "Description: " << description << endl;

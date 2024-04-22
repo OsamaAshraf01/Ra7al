@@ -28,18 +28,18 @@ bool Person::isValidEmail(const string &email) const
 }
 
 // Setters
-void Person::setName(string newName){name = newName;}
-void Person::setEmail(string newEmail){email = newEmail;}
+void Person::setName(string newName) { name = newName; }
+void Person::setEmail(string newEmail) { email = newEmail; }
 
 // Getters
-string Person::getName(){return name;}
-string Person::getEmail(){return email;}
-
+int Person::getID() { return id; }
+string Person::getName() { return name; }
+string Person::getEmail() { return email; }
 
 // Methods
 void Person::printDetails()
 {
     cout << "ID: " << id
          << "\nName: " << name
-         << "\nEmail: " << email <<'\n';
+         << "\nEmail: " << email << '\n';
 }
