@@ -104,7 +104,11 @@ void MainWindow::on_back_button_2_clicked()
 
 void MainWindow::on_Register_Button_clicked()
 {
+    string name = ui->Name_Field->text().toStdString();
+    string email = ui->Register_Email_Field->text().toStdString();
+    string password = ui->Register_Password_Field->text.toStdString();
     // Validate Email
+
 
 
     // Check that email doesn't exist in database
