@@ -4,8 +4,8 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include "../include/Airline.h"
-#include "../include/Date.h"
+#include "headers/Airline.h"
+#include "headers/Date.h"
 //#include "Duration.h" // Not implemented yet
 //#include "Airport.h"
 using namespace std;

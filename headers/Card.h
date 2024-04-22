@@ -2,8 +2,8 @@
 
 #ifndef CARD_H
 #define CARD_H
-#include "../include/Date.h"
-#include "../include/PaymentMethod.h"
+#include "headers/Date.h"
+#include "headers/PaymentMethod.h"
 #include <string>
 using namespace std ;
 class Card : public PaymentMethod {

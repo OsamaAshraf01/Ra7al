@@ -1,4 +1,4 @@
-#include "../include/person.h"
+#include "headers/person.h"
 #include <iostream>
 #include <regex>
 using namespace std;

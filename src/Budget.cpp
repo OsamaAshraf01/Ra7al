@@ -2,10 +2,10 @@
 
 
 
-#include "../include/Budget.h"
+#include "headers/Budget.h"
 #include <iostream>
 #include <iomanip>
-#include "../include/Budget.h"
+#include "headers/Budget.h"
 using namespace std;
 
 // Constructor 

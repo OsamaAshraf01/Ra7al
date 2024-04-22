@@ -1,4 +1,4 @@
-#include"../include/Hotel.h"
+#include"headers/Hotel.h"
 #include <iostream> 
 #include <string>
 #include <vector>

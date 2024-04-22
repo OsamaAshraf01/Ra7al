@@ -1,8 +1,8 @@
 //
 // Created by OSAMA ASHRAF on 3/25/2024.
 //
-#include "../../include/DataFrame/DataFrame.h"
-#include "../../public/functions.h"
+#include "headers/DataFrame/DataFrame.h"
+#include "public/functions.h"
 
 // Constructors
 DataFrame::DataFrame(string DataFramePath): path (std::move(DataFramePath)), fout(path, ios::app), fin(path){
@@ -26,6 +26,9 @@ DataFrame::DataFrame(string DataFramePath): path (std::move(DataFramePath)), fou
 DataFrame::DataFrame(List& header): header(header){}
 
 // Methods
+bool DataFrame::isEmpty(){
+    return rows.empty();
+}
 
 void DataFrame::print(){
     cout<<join(header, "\t")<<'\n';
@@ -63,8 +66,18 @@ void DataFrame::UPDATE(string conditionColumn, Any conditionValue, string update
     }
 }
 
-
 List DataFrame::Header(){return header;}
+
+QString DataFrame::toQstring(){
+    ostringstream oss;
+    oss << "{";
+    for(Case& x : rows){
+        oss<<x.toString();
+    }
+    oss << "}";
+
+    return QString::fromStdString(oss.str());
+}
 
 
 // Operators

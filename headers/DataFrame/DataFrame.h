@@ -33,8 +33,10 @@
 #define RA7AL_DATAFRAME_H
 #include <fstream>
 #include <functional>
+#include <sstream>
 //#include "Series.h"
 #include "Case.h"
+#include "mainwindow.h"
 
 using namespace std;
 #define EQUAL [](Any& a, const Any& b){return a == std::move(b);}
@@ -71,6 +73,9 @@ public:
 
     void save();
     List Header();
+    bool isEmpty();
+
+    QString toQstring();
 
 
 

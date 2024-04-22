@@ -17,7 +17,7 @@
 #define RA7AL_DURATION_H
 #include <string>
 #include <sstream>
-#include "../public/functions.h"
+#include "public/functions.h"
 using namespace std;
 
 class Duration {

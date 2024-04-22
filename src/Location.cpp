@@ -2,7 +2,7 @@
 // Created by OSAMA ASHRAF on 4/5/2024.
 //
 
-#include "../include/Location.h"
+#include "headers/Location.h"
 #include <sstream>
 #include <cmath>
 using namespace std;
