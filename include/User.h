@@ -1,6 +1,6 @@
 #ifndef RA7AL_USER_H
 #define RA7AL_USER_H
-
+#include "Person.h"
 #include <vector>
 #include <string>
 #include "Itinerary.h"
@@ -9,9 +9,6 @@
 #include "Language.h"
 #include "Person.h"
 using namespace std;
-
-// The User class will inherit
-// from the Person class
 
 class User : public Person // User inherits from Person
 {
