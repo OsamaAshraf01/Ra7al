@@ -27,11 +27,11 @@ public:
     void setSupportedCountries(string& SupportedCountries);
 
     // getters
-    string getName();
+    string getName()const;
     double getMaxWeight() const;
-    vector<string> getAvailableFlights();
-    vector<string> getAvailableAirports();
-    vector<string> getSupportedCountries();
+    vector<string> getAvailableFlights()const;
+    vector<string> getAvailableAirports()const;
+    vector<string> getSupportedCountries()const;
 
     // method
     void printDetails();
