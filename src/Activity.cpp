@@ -1,4 +1,4 @@
-#include "../include/Activity.h"
+#include "../headers/Activity.h"
 
 // constructors
 Activity::Activity()
