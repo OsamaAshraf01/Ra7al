@@ -2,11 +2,11 @@
 
 #ifndef DESTINATION_H
 #define DESTINATION_H
-#include "Activity.h"
-#include "Airline.h"
-#include "Hotel.h"
-#include "Country.h"
-#include "CSVManager.h"
+#include "../headers/Activity.h"
+#include "../headers/Airline.h"
+#include "../headers/Hotel.h"
+#include "../headers/Country.h"
+#include "../headers/DataFrame/CSVManager.h"
 #include <vector>
 #include <string>
 using namespace std;
