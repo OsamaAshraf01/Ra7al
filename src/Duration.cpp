@@ -2,8 +2,7 @@
 // Created by OSAMA ASHRAF on 4/15/2024.
 //
 
-#include "../include/Duration.h"
-
+#include "../headers/Duration.h"
 
 // Constructors
 Duration::Duration(int seconds, int minutes, int hours, int days, int months, int years) : seconds(seconds),
@@ -12,35 +11,34 @@ Duration::Duration(int seconds, int minutes, int hours, int days, int months, in
                                                                                            months(months),
                                                                                            years(years) {}
 
-
-
 // Duration::getters
-int Duration::getSeconds() {return seconds;}
+int Duration::getSeconds() { return seconds; }
 
-int Duration::getMinutes() {return minutes;}
+int Duration::getMinutes() { return minutes; }
 
-int Duration::getHours() {return hours;}
+int Duration::getHours() { return hours; }
 
-int Duration::getDays() {return days;}
+int Duration::getDays() { return days; }
 
-int Duration::getMonths() {return months;}
+int Duration::getMonths() { return months; }
 
-int Duration::getYears() {return years;}
+int Duration::getYears() { return years; }
 
 // Methods
-string Duration::toString() {
+string Duration::toString()
+{
     ostringstream oss;
-    if(years)
+    if (years)
         oss << years << " years, ";
-    if(months)
+    if (months)
         oss << months << " months, ";
-    if(days)
+    if (days)
         oss << days << " days, ";
-    if(hours)
+    if (hours)
         oss << hours << " hours, ";
-    if(minutes)
+    if (minutes)
         oss << minutes << " minutes, ";
-    if(seconds)
+    if (seconds)
         oss << seconds << " seconds";
 
     string result = strip(oss.str(), ", ");
@@ -48,14 +46,15 @@ string Duration::toString() {
     return result;
 }
 
-
 // Duration::operators
-ostream& operator << (ostream& os, Duration d){
+ostream &operator<<(ostream &os, Duration d)
+{
     os << d.toString();
     return os;
 }
 
-Duration Duration::operator+(Duration &other) {
+Duration Duration::operator+(Duration &other)
+{
     int secondsSum = seconds + other.seconds;
     int minutesSum = minutes + other.minutes + secondsSum / 60;
     int hoursSum = hours + other.hours + minutesSum / 60;
@@ -73,7 +72,8 @@ Duration Duration::operator+(Duration &other) {
     return {tempSeconds, tempMinutes, tempHours, tempDays, tempMonths, tempYears};
 }
 
-Duration Duration::operator-(Duration &other) {
+Duration Duration::operator-(Duration &other)
+{
     if (other > *this)
         return {};
     int secondsDiff = seconds - other.seconds;
@@ -93,58 +93,63 @@ Duration Duration::operator-(Duration &other) {
     return {tempSeconds, tempMinutes, tempHours, tempDays, tempMonths, tempYears};
 }
 
-bool Duration::operator==(Duration &other) {
+bool Duration::operator==(Duration &other)
+{
     return years == other.years && months == other.months && days == other.days && hours == other.hours &&
            minutes == other.minutes && seconds == other.seconds;
 }
 
-bool Duration::operator!=(Duration &other) {
+bool Duration::operator!=(Duration &other)
+{
     return !(*this == other);
 }
 
-bool Duration::operator<=(Duration &other) {
+bool Duration::operator<=(Duration &other)
+{
     return !(*this > other);
 }
 
-bool Duration::operator>=(Duration &other) {
+bool Duration::operator>=(Duration &other)
+{
     return !(*this < other);
 }
 
-bool Duration::operator<(Duration &other) {
+bool Duration::operator<(Duration &other)
+{
     return !(*this > other) && !(*this == other);
 }
 
-bool Duration::operator>(Duration &other) {
-    if(years > other.years)
+bool Duration::operator>(Duration &other)
+{
+    if (years > other.years)
         return true;
-    if(years < other.years)
+    if (years < other.years)
         return false;
 
-    if(months > other.months)
+    if (months > other.months)
         return true;
-    if(months < other.months)
+    if (months < other.months)
         return false;
 
-    if(days > other.days)
+    if (days > other.days)
         return true;
-    if(days < other.days)
+    if (days < other.days)
         return false;
 
-    if(hours > other.hours)
+    if (hours > other.hours)
         return true;
-    if(hours < other.hours)
+    if (hours < other.hours)
         return false;
 
-    if(minutes > other.minutes)
+    if (minutes > other.minutes)
         return true;
-    if(minutes < other.minutes)
+    if (minutes < other.minutes)
         return false;
 
-    if(seconds > other.seconds)
+    if (seconds > other.seconds)
         return true;
-    if(seconds < other.seconds)
+    if (seconds < other.seconds)
         return false;
 
     return false;
 }
-

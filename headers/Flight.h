@@ -4,27 +4,27 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include "../include/Airline.h"
-#include "../include/Date.h"
-//#include "Duration.h" // Not implemented yet
-//#include "Airport.h"
+#include "../headers/Airline.h"
+#include "../headers/Date.h"
+#include "Duration.h"
+#include "Airport.h"
 using namespace std;
 
 class Flight
 {
 private:
-//    Airport origin; // Not implemented yet
-//    Airport destination;
+    Airport origin;
+    Airport destination;
     Date departure;
     Date arrival;
     Airline airline;
     double price;
     int flightNumber;
-//    Duration duration;
+    Duration duration;
 
 public:
     Flight();
-  
+
     Flight(Airport origin, Airport destination, Date departure, Date arrival, Airline airline, double price, int flightNumber, Duration duration);
 
     void showDetails();

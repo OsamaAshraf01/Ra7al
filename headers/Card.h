@@ -1,23 +1,24 @@
-// Created by Ahmed Hamdy Kotp 
+// Created by Ahmed Hamdy Kotp
 
 #ifndef CARD_H
 #define CARD_H
-#include "../include/Date.h"
-#include "../include/PaymentMethod.h"
+#include "../headers/Date.h"
+#include "../headers/PaymentMethod.h"
 #include <string>
-using namespace std ;
-class Card : public PaymentMethod {
+using namespace std;
+class Card : public PaymentMethod
+{
 private:
     int cardNumber;
     Date expiryDate;
-    int cvv; 
-public:
+    int cvv;
 
-    Card(double amt, const string& txnID, 
-    const int& cardNum, 
-    const Date& expDate, int cv);
+public:
+    Card(double amt, const string &txnID,
+         const int &cardNum,
+         const Date &expDate, int cv);
     bool processPayment(double total_budget) override;
     ~Card();
 };
 
-#endif 
+#endif

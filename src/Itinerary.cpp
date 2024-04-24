@@ -1,4 +1,4 @@
-#include "../include/Itinerary.h"
+#include "../headers/Itinerary.h"
 #include <iostream>
 
 using namespace std;
@@ -46,13 +46,13 @@ void Itinerary::show()
     cout << "Destinations: " << endl;
     for (int i = 0; i < destinations.size(); i++)
     {
-        destinations[i].showDetails();
+        destinations[i].showDestination();
     }
 
     cout << "Activities: " << endl;
     for (int i = 0; i < activities.size(); i++)
     {
-        activities[i].show();
+        activities[i].showDetails();
     }
 
     cout << "Start Date: ";

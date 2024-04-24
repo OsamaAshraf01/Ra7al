@@ -1,27 +1,27 @@
-#include "../include/Flight.h"
+#include "../headers/Flight.h"
 
 Flight::Flight()
 {
-//    origin = Airport();
-//    destination = Airport();
+    origin = Airport();
+    destination = Airport();
     departure = Date();
     arrival = Date();
     airline = Airline();
     price = 0.0;
     flightNumber = 0;
-//    duration = Duration();
+    duration = Duration();
 }
 
-Flight::Flight(Date departure, Date arrival, Airline airline, double price, int flightNumber)
+Flight::Flight(Airport origin, Airport destination, Date departure, Date arrival, Airline airline, double price, int flightNumber, Duration duration)
 {
-//    this->origin = origin;
-//    this->destination = destination;
+    this->origin = origin;
+    this->destination = destination;
     this->departure = departure;
     this->arrival = arrival;
     this->airline = airline;
     this->price = price;
     this->flightNumber = flightNumber;
-//    this->duration = duration;
+    this->duration = duration;
 }
 
 void Flight::showDetails()
