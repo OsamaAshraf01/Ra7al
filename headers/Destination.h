@@ -20,15 +20,16 @@ private :
 	string countryName;
 	Activity myActivities;
 public:
+	CSVManager x;
 	Destination();
 	Destination(string&desc,string&country);
 	
-	vector<Activity> getActivities(string& countryname)const;
-	vector<Hotel> getHotels(string & countryname)const;
+	vector<Activity> getActivities(const string& countryname)const;
+	vector<Hotel> getHotels(const string & countryname)const;
 	vector <Airline> getAirline(const string& countryname) const;
-	string getdescription(string& countryname );
+	string getDescription(const string& countryname) const;
 
-	void showDestination(string& countryname);
+	void showDestination(const string& countryname)const;
 };
 
 
