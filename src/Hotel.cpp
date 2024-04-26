@@ -37,39 +37,32 @@ void Hotel::setPricing(double Pricing)
 }
 
 // Getters
-string Hotel::getName()
-{
+string Hotel::getName()const {
     return name;
 }
 
-string Hotel::getLocation()
-{
+string Hotel::getLocation() const{
     return location;
 }
 
-string Hotel::getType()
-{
+string Hotel::getType() const{
     return type;
 }
 
-string Hotel::getDescription()
-{
+string Hotel::getDescription() const{
     return description;
 }
 
-vector<string> Hotel::getAmenities()
-{
+vector<string> Hotel::getAmenities()const {
     return amenities;
 }
 
-double Hotel::getPricing() const
-{
+double Hotel::getPricing() const{
     return pricing;
 }
 
 // Methods
-void Hotel::showDetails()
-{
+void Hotel::showDetails() const{
     cout << "Name: " << name << "\n";
     cout << "Location: " << location << "\n";
     cout << "Type: " << type << "\n";
@@ -86,12 +79,10 @@ void Hotel::showPricing() const
     cout << "Pricing: " << pricing << "\n";
 }
 
-void Hotel::showAmenities()
-{
-    cout << "Amenities: "
-         << "\n";
-    for (string &amenity : amenities)
-    {
+
+void Hotel::showAmenities() const{
+    cout << "Amenities: " << "\n";
+    for (string& amenity: amenities) {
         cout << amenity << " ,";
     }
 }
