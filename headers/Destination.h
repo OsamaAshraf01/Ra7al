@@ -11,10 +11,10 @@
 #include <string>
 using namespace std;
 
-class Destination : Country {
-private :
-	vector<Activity>activities;
-	vector<Hotel>hotels;
+class Destination : public Country {
+private:
+	vector<Activity> activities;
+	vector<Hotel> hotels;
 	vector<Airline> airlines;
 	string description;
 	string countryName;
@@ -22,15 +22,24 @@ private :
 public:
 	CSVManager x;
 	Destination();
-	Destination(string&desc,string&country);
-	
-	vector<Activity> getActivities(const string& countryname)const;
-	vector<Hotel> getHotels(const string & countryname)const;
-	vector <Airline> getAirline(const string& countryname) const;
-	string getDescription(const string& countryname) const;
+	Destination(string& desc, string& country);
 
-	void showDestination(const string& countryname)const;
+	// Getters
+	vector<Activity> getActivities() const;
+	vector<Hotel> getHotels() const;
+	vector <Airline> getAirlines() const;
+	string getDescription() const;
+	string getCountryName() const;
+
+	// Setters
+	void setActivities(const vector<Activity>& activities);
+	void setHotels(const vector<Hotel>& hotels);
+	void setAirlines(const vector<Airline>& airlines);
+	void setDescription(const string& description);
+	void setCountryName(const string& countryName);
+	//Methods
+	void showDestination(const string& countryname) const;
+	void addActivity(const Activity& activity);
 };
-
 
 #endif

@@ -23,7 +23,7 @@ private:
 
 public:
     Itinerary();
-    Itinerary(Date startDate, Date endDate, vector<Hotel> hotels, vector<Flight> flights, vector<Transportation> transportations, vector<Destination> destinations, vector<Activity> activities);
+    Itinerary(Date startDate, Date endDate, vector<Hotel> hotels, vector<Flight> flights, vector<Transportation> transportations, vector<Destination> destinations, vector<Activity> activities, int popularity);
     void show();
     double getTotalCost();
 };

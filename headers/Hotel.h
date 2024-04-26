@@ -28,17 +28,17 @@ public:
     void setPricing(double pricing);
 
     // Getters
-    string getName();
-    string getLocation();
-    string getType();
-    string getDescription();
-    vector<string> getAmenities();
+    string getName()const;
+    string getLocation()const;
+    string getType()const;
+    string getDescription()const;
+    vector<string> getAmenities()const;
     double getPricing() const;
 
     // Methods
-    void showDetails();
+    void showDetails()const;
     void showPricing() const;
-    void showAmenities();
+    void showAmenities()const;
     void addAmenity(string& amenity);
 };
 

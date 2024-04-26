@@ -1,32 +1,34 @@
 //
 // Created by OSAMA ASHRAF on 4/6/2024.
 //
-#include "../include/Time.h"
+#include "../headers/Time.h"
 #include <sstream>
 #include <vector>
 #include <algorithm>
 
 using namespace std;
 // Global Functions
-void toggle(string &period) {
-    if (period == "AM") period = "PM";
-    else period = "AM";
+void toggle(string &period)
+{
+    if (period == "AM")
+        period = "PM";
+    else
+        period = "AM";
 }
-string timeFormat(int x, bool isHour = false){
+string timeFormat(int x, bool isHour = false)
+{
     ostringstream oss;
-    if(x < 10 && !isHour)
+    if (x < 10 && !isHour)
         oss << 0;
-    oss<< x;
+    oss << x;
 
     return oss.str();
 }
 
 // Constructors
-Time::Time(int hours, int minutes, int seconds, string period) :
-        seconds(seconds), minutes(minutes), hours(hours), period(period) {}
+Time::Time(int hours, int minutes, int seconds, string period) : seconds(seconds), minutes(minutes), hours(hours), period(period) {}
 
 Time::Time() : Time(0, 0, 0, "AM") {}
-
 
 // Getters
 int Time::getSeconds() const { return seconds; }
@@ -37,7 +39,6 @@ int Time::getHours() const { return hours; }
 
 string Time::getPeriod() const { return period; }
 
-
 // Setters
 bool Time::setSeconds(int s) { return !(s > 59 || s < 1) && (seconds = s); }
 
@@ -47,29 +48,33 @@ bool Time::setHours(int h) { return !(h > 24 || h < 1) && (hours = h); }
 
 bool Time::setPeriod(string p) { return (p == "AM" || p == "PM") && (period = p, true); }
 
-
 // Methods
-bool Time::isValid() {
+bool Time::isValid()
+{
     if (setSeconds(seconds) && setMinutes(minutes) && setHours(hours) && setPeriod(period))
         return true;
 
     return false;
 }
 
-void Time::addSeconds(int s) {
+void Time::addSeconds(int s)
+{
     int sum = seconds + s;
 
     seconds = sum % 60;
     addMinutes(sum / 60);
 }
 
-void Time::addMinutes(int m) {
+void Time::addMinutes(int m)
+{
     addHours((minutes + m) / 60);
     minutes = (minutes + m) % 60;
 }
 
-void Time::addHours(int h) {
-    while (h--) {
+void Time::addHours(int h)
+{
+    while (h--)
+    {
         hours++;
 
         if (hours == 12)
@@ -80,7 +85,8 @@ void Time::addHours(int h) {
     }
 }
 
-string Time::toString(string format, string separator) {
+string Time::toString(string format, string separator)
+{
     vector<pair<int, string>> index;
 
     int h_index = format.find("hh"), m_index = format.find("mm"), s_index = format.find("ss");
