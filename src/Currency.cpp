@@ -1,12 +1,11 @@
-//Created By Ahmed Hamdy Kotp
+// Created By Ahmed Hamdy Kotp
 
-
-#include "../include/Currency.h"
-#include <sstream> 
-#include <algorithm> 
+#include "../headers/Currency.h"
+#include <sstream>
+#include <algorithm>
 #include <cmath>
-#include <limits> 
-#include <fstream> 
+#include <limits>
+#include <fstream>
 using namespace std;
 
 // Static member initialization
@@ -15,21 +14,25 @@ map<string, double> Currency::exchangeRates;
 // Constructors
 Currency::Currency() : currencyCode("USD"), amount(0) {} // Default to USD
 
-Currency::Currency(const string& code, long amt) {
+Currency::Currency(const string &code, long amt)
+{
     setCurrencyCode(code); // Reuse setCurrencyCode for validation
     setAmount(amt);
 }
 
 // Output operator
-ostream& operator<<(ostream& os, const Currency& c) {
+ostream &operator<<(ostream &os, const Currency &c)
+{
     os << c.currencyCode << " " << c.amount;
     return os;
 }
 
 // Conversion Method
-void Currency::convert(const string& newCode) {
-    if (currencyCode == newCode) {
-        return;  // Already the same currency
+void Currency::convert(const string &newCode)
+{
+    if (currencyCode == newCode)
+    {
+        return; // Already the same currency
     }
 
     double rate = Currency::getExchangeRate(newCode);
@@ -38,56 +41,68 @@ void Currency::convert(const string& newCode) {
 }
 
 // Static method to fetch an exchange rate
-double Currency::getExchangeRate(const string& otherCode) {
+double Currency::getExchangeRate(const string &otherCode)
+{
     auto G = exchangeRates.find(otherCode);
 
-    if (G != exchangeRates.end()) {
+    if (G != exchangeRates.end())
+    {
         return G->second; // Rate found
     }
-    else {
-        cout<<"Exchange rate not found for code: " << otherCode;
+    else
+    {
+        cout << "Exchange rate not found for code: " << otherCode;
     }
 }
 
 // Error Handling
-bool Currency::validateCurrencyCode(const string& code) const {
+bool Currency::validateCurrencyCode(const string &code) const
+{
     // For simplicity, let's assume only 3-letter uppercase codes
     return code.length() == 3;
 }
 
-void Currency::checkForOverflow(long newAmount) const {
+void Currency::checkForOverflow(long newAmount) const
+{
     // Adjust this logic to your overflow handling preference
-    if (newAmount >LLONG_MAX ||
-        newAmount < LLONG_MIN) {
-        cout<<"Currency arithmetic overflow";
+    if (newAmount > LLONG_MAX ||
+        newAmount < LLONG_MIN)
+    {
+        cout << "Currency arithmetic overflow";
     }
 }
 
 // Getters and Setters (with validation)
-void Currency::setCurrencyCode(const string& code) {
-    if (!validateCurrencyCode(code)) {
-        cout<<"Invalid currency code";
+void Currency::setCurrencyCode(const string &code)
+{
+    if (!validateCurrencyCode(code))
+    {
+        cout << "Invalid currency code";
     }
     currencyCode = code;
 }
 
-void Currency::setAmount(long amt) {
+void Currency::setAmount(long amt)
+{
     checkForOverflow(amt);
     amount = amt;
 }
 
 // Initialize exchange rates from CSV
-void Currency::initializeExchangeRates() {
+void Currency::initializeExchangeRates()
+{
 
     CSVManager csv("data/currencies.csv");
     vector<vector<string>> exchangeData = csv.read();
-    if (!exchangeData.empty()) {
+    if (!exchangeData.empty())
+    {
         exchangeData.erase(exchangeData.begin());
     }
-    for (const vector<string>& row : exchangeData) {
-        if (row.size() >= 2) {
+    for (const vector<string> &row : exchangeData)
+    {
+        if (row.size() >= 2)
+        {
             exchangeRates[row[0]] = stod(row[1]);
         }
     }
 }
-

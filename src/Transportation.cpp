@@ -1,4 +1,4 @@
-#include "../include/Transportation.h"
+#include "../headers/Transportation.h"
 
 // Destructor
 
@@ -126,7 +126,20 @@ void Transportation::cancelBooking()
 
 Duration Transportation::duration()
 {
-    return Duration(departureTime, arrivalTime);
+    int seconds = arrivalTime.getSeconds() - departureTime.getSeconds();
+    int minutes = arrivalTime.getMinutes() - departureTime.getMinutes();
+    int hours = arrivalTime.getHours() - departureTime.getHours();
+    if (seconds < 0)
+    {
+        seconds += 60;
+        minutes--;
+    }
+    if (minutes < 0)
+    {
+        minutes += 60;
+        hours--;
+    }
+    return Duration(seconds, minutes, hours, 0, 0, 0);
 }
 
 void Transportation::showDetails()
