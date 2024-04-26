@@ -48,9 +48,9 @@ void Airline::setSupportedCountries(string &SupportedCountries)
     this->supportedCountries.push_back(SupportedCountries);
 }
 
-// getters
-string Airline::getName()
-{
+
+//getters
+string Airline::getName() const{
     return name;
 }
 
@@ -59,18 +59,16 @@ double Airline::getMaxWeight() const
     return maxWeight;
 }
 
-vector<string> Airline::getAvailableFlights()
-{
+
+vector<string> Airline::getAvailableFlights()const {
     return availableFlights;
 }
 
-vector<string> Airline::getAvailableAirports()
-{
+vector<string> Airline::getAvailableAirports()const {
     return availableAirports;
 }
 
-vector<string> Airline::getSupportedCountries()
-{
+vector<string> Airline::getSupportedCountries()const {
     return supportedCountries;
 }
 
