@@ -31,57 +31,14 @@ string Destination::getCountryName() const {
 // Setters
 void Destination::setActivities(const vector<Activity>& activities) {
     this->activities = activities;
-    for (auto& activity : this->activities) {
-        string name = activity.getName();
-        string description = activity.getDescription();
-        vector<Location> locations = activity.getLocations();
-        double price = activity.getPrice();
-        Date startDate = activity.getStartDate();
-        Date endDate = activity.getEndDate();
-
-        activity.setName(name);
-        activity.setDescription(description);
-        activity.setLocations(locations);
-        activity.setPrice(price);
-        activity.setStartDate(startDate);
-        activity.setEndDate(endDate);
-    }
 }
 
 void Destination::setHotels(const vector<Hotel>& hotels) {
     this->hotels = hotels;
-    for (auto& hotel : this->hotels) {
-        string name = hotel.getName();
-        string location = hotel.getLocation();
-        string type = hotel.getType();
-        string description = hotel.getDescription();
-        vector<string> amenities = hotel.getAmenities();
-        double pricing = hotel.getPricing();
-
-        hotel.setName(name);
-        hotel.setLocation(location);
-        hotel.setType(type);
-        hotel.setDescription(description);
-        hotel.setAmenities(amenities);
-        hotel.setPricing(pricing);
-    }
 }
 
 void Destination::setAirlines(const vector<Airline>& airlines) {
     this->airlines = airlines;
-    for (auto& airline : this->airlines) {
-        string name = airline.getName();
-        double maxWeight = airline.getMaxWeight();
-        string availableFlights = airline.getAvailableFlights();
-        string availableAirports = airline.getAvailableAirports();
-        string supportedCountries = airline.getSupportedCountries();
-
-        airline.setName(name);
-        airline.setMaxWeight(maxWeight);
-        airline.setAvailableFlights(availableFlights);
-        airline.setAvailableAirports(availableAirports);
-        airline.setSupportedCountries(supportedCountries);
-    }
 }
 
 
