@@ -5,7 +5,8 @@
 #include "config.h"
 #include <QPixmap>
 
-enum pages_index {Home_Page, Login_Page, Register_Page};
+enum pages_index {Home_Page, Login_Page, Register_Page, User_Dashboard};
+enum user_dashboard {};
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
