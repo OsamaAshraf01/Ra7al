@@ -42,7 +42,7 @@ static DataType determineType(const string &str) {
                     return String;
             return Integer;
         } catch (const invalid_argument &) {
-            if (str.size() > 1)
+            if ((int)str.size() > 1)
                 return String;
             return Char;
         }
@@ -236,28 +236,17 @@ bool Any::operator !=(Any other){
     }
     cerr << "Unknown type";
 }
-istream& operator >>(istream& is, Any& x){
-    string input;
-    is >> input;
-    DataType type = determineType(input);
-    switch (type) {
-        case Integer:
-            x = stoi(input);
-            break;
-        case Double:
-            x = stod(input);
-            break;
-        case String:
-            x = input;
-            break;
-        case Char:
-            x = input[0];
-            break;
-    }
 
-    return is;
-}
+
 ostream& operator <<(ostream& os, Any x){
-    visit([](auto arg){ cout << arg; }, x);
+    if (isInt(x))
+        os << get<int>(x);
+    else if(isDouble(x))
+        os << get<double>(x);
+    else if(isString(x))
+        os << get<string>(x);
+    else
+        os << get<char>(x);
     return os;
 }
+

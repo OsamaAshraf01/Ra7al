@@ -14,8 +14,8 @@
 
 #ifndef RA7AL_CASE_H
 #define RA7AL_CASE_H
-#include "../../public/classes/List.h"
-#include "../../public/functions.h"
+#include "public/classes/List.h"
+#include "public/functions.h"
 #include <unordered_map>
 
 using namespace std;
@@ -27,6 +27,7 @@ public:
     // TODO: Add Constructor
 
     void print(bool with_header=true);
+    string toString();
 
     Any& operator [](string index){return dict[index];}    // (&) to enable assigning values
     friend ostream& operator <<(ostream& os, Case& c){c.print(); return os;}

@@ -2,7 +2,7 @@
 // Created by OSAMA ASHRAF on 4/11/2024.
 //
 
-#include "../../include/DataFrame/Case.h"
+#include "headers/DataFrame/Case.h"
 #include <sstream>
 
 void Case::print(bool with_header){
@@ -14,4 +14,12 @@ void Case::print(bool with_header){
 
     cout<<join(temp, "\t")<<'\n';
 
+}
+
+string Case::toString(){
+    ostringstream oss;
+    for(auto col : header){
+        oss << dict[get<string>(col)] << ',';
+    }
+    return strip(oss.str(), ","); // remove any redundant commas before returning
 }

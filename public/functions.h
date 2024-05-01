@@ -4,9 +4,10 @@
 
 #ifndef RA7AL_FUNCTIONS_H
 #define RA7AL_FUNCTIONS_H
-#include "classes/List.h"
+#include "public/classes/List.h"
 #include <string>
 #include <algorithm>
+#include <QString>
 using namespace std;
 
 // A function to split a string based on specific delimiter (space by default)
@@ -30,6 +31,13 @@ static void printVec(vector<T> v);
 static Any Transform(const string &str);
 
 
+// A function to generate text with color
+static QString text(string txt, string color);
+
+// A function to initialize attribute with value
+static QString Style(string attribute_name, string value);
+
+
 ///====================================================================================
 ///=====================================Definition=====================================
 ///====================================================================================
@@ -51,8 +59,8 @@ List split(string &str, char delimiter) {
 
 string join(List &values, const string &delimiter) {
     ostringstream oss;
-    for (int i = 0; i < values.size(); i++)
-        oss << values.getItem(i) << (i + 1 != values.size() ? delimiter : "");
+    for (int i = 0; i < (int)values.size(); i++)
+        oss << values.getItem(i) << (i + 1 != (int)values.size() ? delimiter : "");
 
     return oss.str();
 }
@@ -64,7 +72,7 @@ string strip(const string &str, const string &characters) {
     int end = (int)str.size() - 1;
 
     for(char c : result){
-        if(characters.find(c) != -1)
+        if((int)characters.find(c) != -1)
             begin++;
         else
             break;
@@ -73,7 +81,7 @@ string strip(const string &str, const string &characters) {
     reverse(result.begin(), result.end());
 
     for(char c : result) {
-        if (characters.find(c) != -1)
+        if ((int)characters.find(c) != -1)
             end--;
         else
             break;
@@ -87,8 +95,8 @@ string strip(const string &str, const string &characters) {
 template<typename T>
 void printVec(vector<T> v) {
     cout << '{';
-    for (int i = 0; i < v.size(); i++)
-        cout << v[i] << (i < v.size() - 1 ? ", " : "");
+    for (int i = 0; i < (int)v.size(); i++)
+        cout << v[i] << (i < (int)v.size() - 1 ? ", " : "");
     cout << "}\n";
 }
 
@@ -100,7 +108,7 @@ enum DataType {
 static DataType determineType(const string &str) {
     try {
         stod(str);
-        if (str.find('.') != -1)
+        if ((int)str.find('.') != -1)
             return Double;
         throw std::invalid_argument("");
     } catch (const invalid_argument &) {
@@ -111,7 +119,7 @@ static DataType determineType(const string &str) {
                     return String;
             return Integer;
         } catch (const invalid_argument &) {
-            if (str.size() > 1)
+            if ((int)str.size() > 1)
                 return String;
             return Char;
         }
@@ -147,4 +155,20 @@ static Any Transform(const string &str) {
         }
     }
 }
+
+static QString text(string txt, string color){
+    ostringstream oss;
+    oss<<"<font color='"<<color<<"'>";
+    oss<<txt;
+    oss<<"</font>";
+
+    return QString::fromStdString(oss.str());
+}
+
+static QString Style(string attribute_name, string value){
+    ostringstream oss;
+    oss << attribute_name <<": "<<value<<";";
+    return QString::fromStdString(oss.str());
+}
+
 #endif // RA7AL_FUNCTIONS_H

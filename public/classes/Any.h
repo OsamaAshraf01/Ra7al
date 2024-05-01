@@ -39,8 +39,6 @@ public:
 
 
     /// Operators
-    friend ostream& operator <<(ostream& os, Any x);
-    friend istream& operator >>(istream& is, Any& x);
     Any operator +(Any other);
     Any operator -(Any other);
     Any operator *(Any other);
@@ -51,6 +49,7 @@ public:
     bool operator <=(Any other);
     bool operator ==(Any other);
     bool operator !=(Any other);
+    friend ostream& operator <<(ostream& os, Any x);
 };
 
 

@@ -33,16 +33,20 @@
 #define RA7AL_DATAFRAME_H
 #include <fstream>
 #include <functional>
+#include <sstream>
 //#include "Series.h"
 #include "Case.h"
+#include "public/functions.h"
+#include "config.h"
+#include "mainwindow.h"
 
 using namespace std;
-#define EQUAL [](Any& a, const Any& b){return a == std::move(b);}
-#define GREATER [](Any& a, const Any& b){return a > std::move(b);}
-# define LESS [](Any& a, const Any& b){return a < std::move(b);}
-# define GREATER_OR_EQUAL [](Any& a, const Any& b){return a >= std::move(b);}
-# define LESS_OR_EQUAL [](Any& a, const Any& b){return a <= std::move(b);}
-# define NOT_EQUAL [](Any& a, const Any& b){return a != std::move(b);}
+#define EQUAL [](Any a, Any b){return a == b;}
+#define GREATER [](Any a, Any b){return a > b;}
+# define LESS [](Any a, Any b){return a < b;}
+# define GREATER_OR_EQUAL [](Any a, Any b){return a >= b;}
+# define LESS_OR_EQUAL [](Any a, Any b){return a <= b;}
+# define NOT_EQUAL [](Any a, Any b){return a != b;}
 
 class DataFrame
 {
@@ -64,13 +68,16 @@ public:
 
     // Methods
     void INSERT(Case&);
-    void UPDATE(string conditionColumn, Any conditionValue, string updateColumn, Any newValue, function<bool(Any&, Any)> operation=EQUAL);
-    DataFrame SELECT(vector<string> conditionColumns, vector<Any> conditionValues, function<bool(Any&, Any)> operation=EQUAL);
+    void UPDATE(string conditionColumn, Any conditionValue, string updateColumn, Any newValue, function<bool(Any, Any)> operation=EQUAL);
+    DataFrame SELECT(vector<string> conditionColumns, vector<Any> conditionValues, function<bool(Any, Any)> operation=EQUAL);
     DataFrame SortBy(string columnName, bool descending=false);
     void print();
 
     void save();
     List Header();
+    bool isEmpty();
+
+    QString toQstring();
 
 
 
