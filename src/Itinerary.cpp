@@ -20,46 +20,46 @@ Itinerary::Itinerary(Date startDate, Date endDate, vector<Hotel> hotels, vector<
     this->popularity = popularity;
 }
 
-void Itinerary::show()
-{
-    cout << "Itinerary" << endl;
-    cout << "Popularity: " << popularity << endl;
+// void Itinerary::show()
+// {
+//     cout << "Itinerary" << endl;
+//     cout << "Popularity: " << popularity << endl;
 
-    cout << "Hotels: " << endl;
-    for (int i = 0; i < hotels.size(); i++)
-    {
-        hotels[i].showDetails();
-    }
+//     cout << "Hotels: " << endl;
+//     for (int i = 0; i < hotels.size(); i++)
+//     {
+//         hotels[i].showDetails();
+//     }
 
-    cout << "Flights: " << endl;
-    for (int i = 0; i < flights.size(); i++)
-    {
-        flights[i].showDetails();
-    }
+//     cout << "Flights: " << endl;
+//     for (int i = 0; i < flights.size(); i++)
+//     {
+//         flights[i].showDetails();
+//     }
 
-    cout << "Transportations: " << endl;
-    for (int i = 0; i < transportations.size(); i++)
-    {
-        transportations[i].showDetails();
-    }
+//     cout << "Transportations: " << endl;
+//     for (int i = 0; i < transportations.size(); i++)
+//     {
+//         transportations[i].showDetails();
+//     }
 
-    cout << "Destinations: " << endl;
-    for (int i = 0; i < destinations.size(); i++)
-    {
-        destinations[i].showDestination();
-    }
+//     cout << "Destinations: " << endl;
+//     for (int i = 0; i < destinations.size(); i++)
+//     {
+//         destinations[i].showDestination();
+//     }
 
-    cout << "Activities: " << endl;
-    for (int i = 0; i < activities.size(); i++)
-    {
-        activities[i].showDetails();
-    }
+//     cout << "Activities: " << endl;
+//     for (int i = 0; i < activities.size(); i++)
+//     {
+//         activities[i].showDetails();
+//     }
 
-    cout << "Start Date: ";
-    startDate.toString();
-    cout << "End Date: ";
-    endDate.toString();
-}
+//     cout << "Start Date: ";
+//     startDate.toString();
+//     cout << "End Date: ";
+//     endDate.toString();
+// }
 
 double Itinerary::getTotalCost()
 {

@@ -1,43 +1,38 @@
-#include "../headers/Hotel.h"
-#include <iostream>
+#include"headers/Hotel.h"
+#include <iostream> 
 #include <string>
 #include <vector>
 
 using namespace std;
 
 // Setters
-void Hotel::setName(string &Name)
-{
+void Hotel::setName(string& Name) {
     this->name = Name;
 }
 
-void Hotel::setLocation(string &Location)
-{
+void Hotel::setLocation(string& Location) {
     this->location = Location;
 }
 
-void Hotel::setType(string &Type)
-{
+void Hotel::setType(string& Type) {
     this->type = Type;
 }
 
-void Hotel::setDescription(string &Description)
-{
+void Hotel::setDescription(string& Description) {
     this->description = Description;
 }
 
-void Hotel::setAmenities(vector<string> &Amenities)
-{
+void Hotel::setAmenities(vector<string>& Amenities) {
     this->amenities = Amenities;
 }
 
-void Hotel::setPricing(double Pricing)
-{
+void Hotel::setPricing(double Pricing) {
     this->pricing = Pricing;
 }
 
+
 // Getters
-string Hotel::getName()const {
+string Hotel::getName() const{
     return name;
 }
 
@@ -53,13 +48,14 @@ string Hotel::getDescription() const{
     return description;
 }
 
-vector<string> Hotel::getAmenities()const {
+vector<string> Hotel::getAmenities() const{
     return amenities;
 }
 
-double Hotel::getPricing() const{
+double Hotel::getPricing() const {
     return pricing;
 }
+
 
 // Methods
 void Hotel::showDetails() const{
@@ -68,26 +64,25 @@ void Hotel::showDetails() const{
     cout << "Type: " << type << "\n";
     cout << "Description: " << description << "\n";
     cout << "Amenities:\n";
-    for (string &amenity : amenities)
-    {
+    for (auto& amenity: amenities) {
         cout << amenity << " ,";
     }
+
 }
 
-void Hotel::showPricing() const
-{
+void Hotel::showPricing() const {
     cout << "Pricing: " << pricing << "\n";
 }
 
-
 void Hotel::showAmenities() const{
     cout << "Amenities: " << "\n";
-    for (string& amenity: amenities) {
+    for (auto& amenity: amenities) {
         cout << amenity << " ,";
     }
+
 }
 
-void Hotel::addAmenity(string &amenity)
-{
+void Hotel::addAmenity(string& amenity) {
     amenities.push_back(amenity);
 }
+

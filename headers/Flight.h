@@ -13,8 +13,8 @@ using namespace std;
 class Flight
 {
 private:
-    Airport origin;
-    Airport destination;
+    // Airport origin;
+    // Airport destination;
     Date departure;
     Date arrival;
     Airline airline;
@@ -25,7 +25,7 @@ private:
 public:
     Flight();
 
-    Flight(Airport origin, Airport destination, Date departure, Date arrival, Airline airline, double price, int flightNumber, Duration duration);
+    Flight(/*Airport origin, Airport destination, */Date departure, Date arrival, Airline airline, double price, int flightNumber, Duration duration);
 
     void showDetails();
     double getPrice();

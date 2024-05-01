@@ -13,19 +13,29 @@ SOURCES += \
     mainwindow.cpp \
     public/classes/List.cpp \
     public/classes/Any.cpp \
+    src/DataFrame/DataFrame.cpp \
+    src/DataFrame/Case.cpp \
+    src/DataFrame/CSVManager.cpp \
+    src/DataFrame/Series.cpp \
+    src/Activity.cpp\
+    src/Admin.cpp \
+    src/Airline.cpp \
+    src/Airport.cpp \
+    src/Budget.cpp \
+    src/Card.cpp\
+    src/Country.cpp\
+    src/Currency.cpp\
     src/Date.cpp \
     src/Duration.cpp \
-    src/User.cpp \
-    src/Person.cpp \
-    src/DataFrame/DataFrame.cpp \
-    src/Admin.cpp \
-    src/Location.cpp \
-    src/Time.cpp \
-    src/PaymentMethod.cpp \
-    src/DataFrame/Case.cpp \
-    src/Airline.cpp \
+    src/Flight.cpp\
     src/Hotel.cpp \
-    src/Budget.cpp
+    src/Itinerary.cpp\
+    src/Location.cpp \
+    src/PaymentMethod.cpp \
+    src/Person.cpp \
+    src/Time.cpp \
+    src/Transportation.cpp\
+    src/User.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -55,7 +65,8 @@ HEADERS += \
     headers/Activity.h \
     headers/Flight.h \
     headers/Duration.h \
-    headers/Airport.h
+    headers/Airport.h \
+    headers/Itinerary.h
 
 FORMS += \
     mainwindow.ui

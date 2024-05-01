@@ -38,7 +38,7 @@ public:
 	void setDescription(const string& description);
 	void setCountryName(const string& countryName);
 	//Methods
-	void showDestination(const string& countryname) const;
+    void showDestination() const;
 	void addActivity(const Activity& activity);
 };
 

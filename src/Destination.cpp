@@ -3,9 +3,9 @@
 #include "../headers/Destination.h"
 
 // Constructors
-Destination::Destination() {}
+// Destination::Destination() {}
 
-Destination::Destination(string& desc, string& country) : description(desc), countryName(country) {}
+// Destination::Destination(string& desc, string& country) : description(desc), countryName(country) {}
 
 // Getters
 vector<Activity> Destination::getActivities() const {
@@ -50,7 +50,7 @@ void Destination::setCountryName(const string& countryName) {
     this->countryName = countryName;
 }
 
-void Destination::showDestination(const string& countryname) const {
+void Destination::showDestination() const {
     cout << "Country: " << countryName << endl;
     cout << "Description: " << description << endl;
 

@@ -22,7 +22,7 @@ private:
     Country country;
     Location Loc;
     vector <Airline> airlines;
-    vector <Flight> flights;
+    // vector <Flight> flights;
 
 public:
 
@@ -37,7 +37,7 @@ public:
 
     void setAirlines(vector<Airline> Airlines);
 
-    void setFlights(vector <Flight> Flights);
+    // void setFlights(vector <Flight> Flights);
 
 
     //getters
@@ -51,10 +51,10 @@ public:
 
     vector <Airline> getAirlines();
 
-    vector <Flight> getFlights();
+    // vector <Flight> getFlights();
 
     //methods 
-    vector<Flight> getFlightsTo(const string& flightCode);
+    // vector<Flight> getFlightsTo(const string& flightCode);
 
     vector<Airline> getFlightsByAirline(const string& airlineName);
 
