@@ -20,7 +20,7 @@ private:
 
 public:
     Activity();
-    Activity(string name = "", string description = "", vector<Location> locations = {}, double price = 0.0, Date startDate = Date(), Date endDate = Date());
+    Activity(string name, string description, vector<Location> locations, double price, Date startDate, Date endDate);
 
     string getName() const;
     string getDescription() const;

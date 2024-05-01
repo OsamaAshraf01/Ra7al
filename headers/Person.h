@@ -28,7 +28,6 @@ public:
     bool setPassword(string newPassword);
 
     // Getters
-    int getID();
     string getName();
     string getEmail();
     string getPassword();
