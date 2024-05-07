@@ -17,6 +17,11 @@ private:
     double price;
     Date startDate;
     Date endDate;
+    Date endDate;
+    Date endDate;
+    Date endDate;
+    Date endDate;
+    Date endDate;
 
 public:
     Activity();
