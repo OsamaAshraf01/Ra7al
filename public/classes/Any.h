@@ -31,9 +31,8 @@ using Variant = variant<int, double, string, char>;
 
 
 class Any : public Variant{
-private:
-    string toString();
 public:
+    string toString();
     using Variant::variant;   // bringing all variant's constructors
     friend class List;
 
