@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>690</width>
+    <width>768</width>
     <height>544</height>
    </rect>
   </property>
@@ -45,7 +45,7 @@
        <item row="0" column="0">
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>4</number>
          </property>
          <widget class="QWidget" name="Home_page">
           <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -898,12 +898,36 @@ Ra7al</string>
           <layout class="QHBoxLayout" name="mainHorizontalLayout">
            <item>
             <widget class="QFrame" name="sidebarFrame">
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
              <layout class="QVBoxLayout" name="sidebarLayout">
-              <item>
+              <item alignment="Qt::AlignHCenter">
                <widget class="QLabel" name="profilePicture">
+                <property name="minimumSize">
+                 <size>
+                  <width>100</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
                 <property name="pixmap">
                  <pixmap>path/to/profile/picture.png</pixmap>
                 </property>
@@ -914,6 +938,18 @@ Ra7al</string>
               </item>
               <item>
                <widget class="QLabel" name="labelUserName">
+                <property name="font">
+                 <font>
+                  <pointsize>-1</pointsize>
+                  <italic>true</italic>
+                  <bold>true</bold>
+                  <underline>false</underline>
+                  <strikeout>false</strikeout>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font-size: 20px;</string>
+                </property>
                 <property name="text">
                  <string>John Doe</string>
                 </property>
@@ -927,7 +963,39 @@ Ra7al</string>
                </widget>
               </item>
               <item>
+               <spacer name="verticalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Home</string>
+                </property>
+               </widget>
+              </item>
+              <item>
                <widget class="QPushButton" name="buttonNewItinerary">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
                 <property name="text">
                  <string>New Itinerary</string>
                 </property>
@@ -935,6 +1003,12 @@ Ra7al</string>
               </item>
               <item>
                <widget class="QPushButton" name="buttonMyItineraries">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
                 <property name="text">
                  <string>My Itineraries</string>
                 </property>
@@ -942,8 +1016,27 @@ Ra7al</string>
               </item>
               <item>
                <widget class="QPushButton" name="buttonMyBudget">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
                 <property name="text">
                  <string>My Budget</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="logOutButton">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Log out</string>
                 </property>
                </widget>
               </item>
@@ -953,81 +1046,317 @@ Ra7al</string>
            <item>
             <widget class="QStackedWidget" name="User_Dashboard_Pages">
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
-             <widget class="QWidget" name="DashboardPage">
+             <widget class="QWidget" name="WelcomePage">
               <layout class="QVBoxLayout" name="verticalLayoutDashboard">
-               <item>
+               <item alignment="Qt::AlignHCenter">
                 <widget class="QLabel" name="labelDashboardInfo">
+                 <property name="font">
+                  <font>
+                   <pointsize>24</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
                  <property name="text">
-                  <string>Welcome, John! Here's your quick info:</string>
+                  <string>Dashboard</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelMoreInfo">
+                <spacer name="verticalSpacer_28">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_9">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
-                  <string>More detailed user-specific information can be shown here.</string>
+                  <string>User info:</string>
                  </property>
                 </widget>
+               </item>
+               <item>
+                <layout class="QGridLayout" name="gridLayout_2">
+                 <item row="1" column="0" alignment="Qt::AlignRight">
+                  <widget class="QLabel" name="label_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Email:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="label_3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>John Mohsen Doe</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0" alignment="Qt::AlignRight">
+                  <widget class="QLabel" name="label_5">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Budget Remaining:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLabel" name="label_7">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>1000$</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0" alignment="Qt::AlignRight">
+                  <widget class="QLabel" name="label">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Name:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLabel" name="label_4">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>example@gmail.com</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QLabel" name="label_8">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0" alignment="Qt::AlignRight">
+                  <widget class="QLabel" name="label_6">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Total Itineraries:</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_27">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_29">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
               </layout>
              </widget>
              <widget class="QWidget" name="NewItineraryPage">
               <layout class="QFormLayout" name="formLayoutNewItinerary">
-               <item row="0" column="0">
+               <item row="4" column="1">
+                <spacer name="verticalSpacer_30">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="5" column="0">
                 <widget class="QLabel" name="labelDestination">
                  <property name="text">
                   <string>Destination:</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1">
+               <item row="5" column="1">
                 <widget class="QComboBox" name="comboBoxDestination"/>
                </item>
-               <item row="1" column="0">
+               <item row="6" column="0">
                 <widget class="QLabel" name="labelDate">
                  <property name="text">
                   <string>Date:</string>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="1">
+               <item row="6" column="1">
                 <widget class="QDateEdit" name="dateEditDate"/>
                </item>
-               <item row="2" column="0">
+               <item row="7" column="0">
                 <widget class="QLabel" name="labelFlight">
                  <property name="text">
                   <string>Flight:</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="1">
+               <item row="7" column="1">
                 <widget class="QComboBox" name="comboBoxFlight"/>
                </item>
-               <item row="3" column="0">
+               <item row="8" column="0">
                 <widget class="QLabel" name="labelHotel">
                  <property name="text">
                   <string>Hotel:</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
+               <item row="8" column="1">
                 <widget class="QComboBox" name="comboBoxHotel"/>
                </item>
-               <item row="4" column="0">
+               <item row="9" column="0">
                 <widget class="QLabel" name="labelActivities">
                  <property name="text">
                   <string>Activities:</string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
+               <item row="9" column="1">
                 <widget class="QListWidget" name="listWidgetActivities">
                  <property name="selectionMode">
                   <enum>QAbstractItemView::MultiSelection</enum>
                  </property>
                 </widget>
+               </item>
+               <item row="10" column="1">
+                <spacer name="verticalSpacer_31">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="3" column="0" colspan="2">
+                <widget class="QLabel" name="label_10">
+                 <property name="font">
+                  <font>
+                   <pointsize>24</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>New Itinerary</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <spacer name="verticalSpacer_32">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
               </layout>
              </widget>
