@@ -77,6 +77,10 @@ void Budget::deposit(const string &category_name, double amount)
     }
 }
 
+void Budget::setBudget(double amount){
+    total_budget = amount;
+}
+
 // Calculate the total amount spent
 double Budget::getTotalSpent() const
 {
@@ -92,6 +96,10 @@ double Budget::getRemaining() const
         totalRemaining += item.second;
     }
     return totalRemaining;
+}
+
+double Budget::getTotalBudget() const{
+    return total_budget;
 }
 
 // Provide a formatted overview of the budget
