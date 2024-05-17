@@ -12,6 +12,7 @@ Person::Person()
     name = "Unknown";
     password = "";
     email = "N/A";
+    budget = new Budget();
 }
 
 // Constructor with parameters
@@ -20,6 +21,12 @@ Person::Person(string nameInput, string emailInput, string passwordInput)
     name = nameInput;
     email = emailInput;
     password = passwordInput;
+}
+
+Person::Person(Case &x){
+    name = x["Name"].toString();
+    password = x["Password"].toString();
+    email = x["Email"].toString();
 }
 
 // Make sure the email is in the correct format
@@ -46,7 +53,6 @@ bool Person::setEmail(string newEmail){
 
     return false;
 }
-
 bool Person::setPassword(string newPassword){
     // TODO: Password Validation
 
@@ -57,11 +63,15 @@ bool Person::setPassword(string newPassword){
 
     return false;
 }
+bool Person::setBudget(double amount){
+    budget->setBudget(amount);
+}
 
 // Getters
 string Person::getName(){return name;}
 string Person::getEmail(){return email;}
 string Person::getPassword(){return password;}
+double Person::getBudget(){return budget->getTotalBudget();}
 
 
 // Methods
