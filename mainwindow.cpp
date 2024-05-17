@@ -5,8 +5,9 @@
 #include "config.h"
 #include <QPixmap>
 
-enum pages_index {Home_Page, Login_Page, Register_Page, User_Dashboard};
-enum user_dashboard {};
+enum pages_index {Home_Page, Login_Page, Register_Page, Admin_Dashboard, User_Dashboard};
+enum user_dashboard {Welocme_Page, New_Itinerary_Page, Itineraries_Page, Budget_Page};
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -85,7 +86,8 @@ void MainWindow::on_Login_Button_clicked()
         ui->Login_msg->setText("Invalid Email or Password");
     else{
         ui->Login_msg->setText("Logged in succefully !");
-        // TODO: new Page
+        ui->stackedWidget->setCurrentIndex(User_Dashboard);
+        ui->User_Dashboard_Pages->setCurrentIndex(Welocme_Page);
     }
 }
 

@@ -891,10 +891,10 @@ Ra7al</string>
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="MainWindow">
+         <widget class="QWidget" name="MainWindow_3">
           <layout class="QHBoxLayout" name="mainHorizontalLayout"/>
          </widget>
-         <widget class="QWidget" name="MainWindow">
+         <widget class="QWidget" name="User_Dashboard">
           <layout class="QHBoxLayout" name="mainHorizontalLayout">
            <item>
             <widget class="QFrame" name="sidebarFrame">
@@ -951,9 +951,9 @@ Ra7al</string>
             </widget>
            </item>
            <item>
-            <widget class="QStackedWidget" name="contentStackedWidget">
+            <widget class="QStackedWidget" name="User_Dashboard_Pages">
              <property name="currentIndex">
-              <number>1</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="DashboardPage">
               <layout class="QVBoxLayout" name="verticalLayoutDashboard">
