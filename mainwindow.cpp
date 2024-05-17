@@ -6,8 +6,14 @@
 #include <QPixmap>
 
 enum pages_index {Home_Page, Login_Page, Register_Page, Admin_Dashboard, User_Dashboard};
-enum user_dashboard {Welocme_Page, New_Itinerary_Page, Itineraries_Page, Budget_Page};
+enum user_dashboard {Welcome_Page, New_Itinerary_Page, Itineraries_Page, Budget_Page};
 
+// Custom Functions
+
+void load_user_data(Ui::MainWindow* ui, User* user){
+    ui->labelUserName->setText(QString::fromStdString(user->getName()));
+    ui->labelUserBudget->setText("Budget: " + QString::number(user->getBudget(), 'f', 2) + "$"); // Float Number with 2 digits
+}
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -40,6 +46,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->Register_Button->setStyleSheet(Style("color", CONFIG.main_color));
     ui->Login_Button->setStyleSheet(Style("color", CONFIG.main_color));
 
+
+
     // Buttons
     QPixmap pixmap(CONFIG.go_back_path);
     QIcon ButtonIcon(pixmap);
@@ -50,6 +58,9 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap  pixmap2(CONFIG.logo_path);
     ui->logo->setPixmap(pixmap2);
     ui->logo->setAlignment(Qt::AlignCenter);
+
+    QPixmap pixmap3(CONFIG.profile_pic_path);
+    ui->profilePicture->setPixmap(pixmap3);
 }
 
 MainWindow::~MainWindow()
@@ -84,10 +95,17 @@ void MainWindow::on_Login_Button_clicked()
 
     if(users.isEmpty())
         ui->Login_msg->setText("Invalid Email or Password");
-    else{
-        ui->Login_msg->setText("Logged in succefully !");
+    else if(users[0]["Type"] == "user"){
+        // Load data from database
+        User* user = new User(users[0]);
+
         ui->stackedWidget->setCurrentIndex(User_Dashboard);
-        ui->User_Dashboard_Pages->setCurrentIndex(Welocme_Page);
+        ui->User_Dashboard_Pages->setCurrentIndex(Welcome_Page);
+        user->setBudget(1000.0);  // will be replaced by the true budget from budgets table
+        load_user_data(ui, user);
+    }
+    else if(users[0]["Type"] == "admin"){
+        ui->stackedWidget->setCurrentIndex(Admin_Dashboard);
     }
 }
 
@@ -98,7 +116,6 @@ void MainWindow::on_back_button_1_clicked()
 {
     ui->stackedWidget->setCurrentIndex(Home_Page);
 }
-
 
 
 void MainWindow::on_back_button_2_clicked()
@@ -149,5 +166,35 @@ void MainWindow::on_Register_Button_clicked()
     ui->Register_Error_Label->setText("Registered Succefully!");
 
     // Admins will be hard added to database
+}
+
+
+void MainWindow::on_logOutButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(Home_Page);
+}
+
+
+void MainWindow::on_buttonNewItinerary_clicked()
+{
+    ui->User_Dashboard_Pages->setCurrentIndex(New_Itinerary_Page);
+}
+
+
+void MainWindow::on_buttonMyItineraries_clicked()
+{
+    ui->User_Dashboard_Pages->setCurrentIndex(Itineraries_Page);
+}
+
+
+void MainWindow::on_buttonMyBudget_clicked()
+{
+    ui->User_Dashboard_Pages->setCurrentIndex(Budget_Page);
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->User_Dashboard_Pages->setCurrentIndex(Welcome_Page);
 }
 

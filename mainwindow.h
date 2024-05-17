@@ -30,6 +30,16 @@ private slots:
 
     void on_Register_Button_clicked();
 
+    void on_logOutButton_clicked();
+
+    void on_buttonNewItinerary_clicked();
+
+    void on_buttonMyItineraries_clicked();
+
+    void on_buttonMyBudget_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
