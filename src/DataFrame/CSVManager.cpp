@@ -57,21 +57,21 @@ void CSVManager::addRow(const vector<string>& row) {
 }
 
 void CSVManager::deleteRow(int rowIndex) {
-    if (rowIndex < data.size()) {
+    if (rowIndex < (int)data.size()) {
         data.erase(data.begin() + rowIndex);
         write(data);
     }
 }
 
 void CSVManager::updateCell(int rowIndex, int colIndex, const string& newValue) {
-    if (rowIndex < data.size() && colIndex < data[rowIndex].size()) {
+    if (rowIndex < (int)data.size() && colIndex < (int)data[rowIndex].size()) {
         data[rowIndex][colIndex] = newValue;
         write(data);
     }
 }
 
 void CSVManager::addColumn(const vector<string>& column) {
-    if (column.size() == data.size()) {
+    if ((int)column.size() == (int)data.size()) {
         for (size_t i = 0; i < data.size(); ++i) {
             data[i].push_back(column[i]);
         }
@@ -81,7 +81,7 @@ void CSVManager::addColumn(const vector<string>& column) {
 
 void CSVManager::deleteColumn(int colIndex) {
     for (auto& row : data) {
-        if (colIndex < row.size()) {
+        if (colIndex < (int)row.size()) {
             row.erase(row.begin() + colIndex);
         }
     }
@@ -89,8 +89,8 @@ void CSVManager::deleteColumn(int colIndex) {
 }
 
 pair<int, int> CSVManager::findCell(const string& value) {
-    for (size_t i = 0; i < data.size(); ++i) {
-        for (size_t j = 0; j < data[i].size(); ++j) {
+    for (size_t i = 0; i < (size_t)data.size(); ++i) {
+        for (size_t j = 0; j < (size_t)data[i].size(); ++j) {
             if (data[i][j] == value) {
                 return make_pair(i, j);
             }
@@ -109,7 +109,7 @@ double CSVManager::getColumnMean(int colIndex) {
     double sum = 0.0;
     int count = 0;
     for (const auto& row : data) {
-        if (colIndex < row.size()) {
+        if (colIndex < (int)row.size()) {
             sum += stod(row[colIndex]);
             ++count;
         }
