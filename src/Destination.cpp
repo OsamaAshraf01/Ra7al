@@ -3,9 +3,9 @@
 #include "../headers/Destination.h"
 
 // Constructors
-// Destination::Destination() {}
+Destination::Destination() {}
 
-// Destination::Destination(string& desc, string& country) : description(desc), countryName(country) {}
+Destination::Destination(string& desc, string& country) : description(desc), countryName(country) {}
 
 // Getters
 vector<Activity> Destination::getActivities() const {
