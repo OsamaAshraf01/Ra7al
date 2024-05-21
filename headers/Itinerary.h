@@ -2,30 +2,31 @@
 #define RA7AL_ITINERARY_H
 
 #include <vector>
-#include "Hotel.h"
-#include "Flight.h"
-#include "Transportation.h"
-#include "Destination.h"
-#include "Activity.h"
-#include "Date.h"
+#include "headers/Hotel.h"
+#include "headers/Flight.h"
+#include "headers/Transportation.h"
+#include "headers/Destination.h"
+#include "headers/Activity.h"
+#include "headers/Date.h"
 
 class Itinerary
 {
 private:
     int popularity;
-    vector<Hotel> hotels;
-    vector<Flight> flights;
-    vector<Transportation> transportations;
-    vector<Destination> destinations;
-    vector<Activity> activities;
-    Date startDate;
-    Date endDate;
+    // Hotel hotel;
+    // vector<Hotel> hotels;
+    // vector<Flight> flights;
+    // vector<Transportation> transportations;
+    // vector<Destination> destinations;
+    // vector<Activity> activities;
+    // Date startDate;
+    // Date endDate;
 
 public:
     Itinerary();
-    Itinerary(Date startDate, Date endDate, vector<Hotel> hotels, vector<Flight> flights, vector<Transportation> transportations, vector<Destination> destinations, vector<Activity> activities, int popularity);
-    void show();
-    double getTotalCost();
+    // Itinerary(Date startDate, Date endDate, vector<Hotel> hotels, vector<Flight> flights, vector<Transportation> transportations, vector<Destination> destinations, vector<Activity> activities, int popularity);
+    // void show();
+    // double getTotalCost();
 };
 
 #endif
