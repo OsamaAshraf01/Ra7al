@@ -34,9 +34,6 @@ using namespace std;
 
 class Date
 {
-    /*
-     * TODO: Distance between two dates
-     */
 private:
     int day, month, year;
 
