@@ -28,10 +28,10 @@ enum DataType {
     Integer, Double, Char, String
 };
 
-static DataType determineType(const string &str) {
+[[maybe_unused]]static DataType determineType(const string &str) {
     try {
         stod(str);
-        if (str.find('.') != -1)
+        if ((int)str.find('.') != -1)
             return Double;
         throw std::invalid_argument("");
     } catch (const invalid_argument &) {
@@ -66,7 +66,7 @@ Any Any::operator +(Any other){
             return get<double>(*this) + get<double>(other);
         }
     }
-    cerr << "Unknown type";
+    return INT_MIN;
 }
 Any Any::operator -(Any other){
     if (isInt(*this)){
@@ -82,7 +82,8 @@ Any Any::operator -(Any other){
             return get<double>(*this) - get<double>(other);
         }
     }
-    cerr << "Unknown type";
+    return INT_MIN;
+
 }
 Any Any::operator *(Any other){
     if (isInt(*this)){
@@ -98,7 +99,7 @@ Any Any::operator *(Any other){
             return get<double>(*this) * get<double>(other);
         }
     }
-    cerr << "Unknown type";
+    return INT_MIN;
 }
 Any Any::operator /(Any other){
     if (isInt(*this)){
@@ -114,7 +115,7 @@ Any Any::operator /(Any other){
             return get<double>(*this) / get<double>(other);
         }
     }
-    cerr << "Unknown type";
+    return INT_MIN;
 }
 bool Any::operator >(Any other) {
     if (isInt(*this)) {
@@ -134,7 +135,7 @@ bool Any::operator >(Any other) {
     } else if (isChar(*this) && isChar(other)) {
         return get<char>(*this) > get<char>(other);
     }
-    cerr << "Unknown type";
+    return INT_MIN;
 }
 bool Any::operator <(Any other){
     if (isInt(*this)){
@@ -154,7 +155,7 @@ bool Any::operator <(Any other){
     } else if (isChar(*this) && isChar(other)){
         return get<char>(*this) < get<char>(other);
     }
-    cerr << "Unknown type";
+    return INT_MIN;
 }
 bool Any::operator >=(Any other){
     if (isInt(*this)){
@@ -174,7 +175,7 @@ bool Any::operator >=(Any other){
     } else if (isChar(*this) && isChar(other)){
         return get<char>(*this) >= get<char>(other);
     }
-    cerr << "Unknown type";
+    return INT_MIN;
 }
 bool Any::operator <=(Any other){
     if (isInt(*this)){
@@ -194,7 +195,7 @@ bool Any::operator <=(Any other){
     } else if (isChar(*this) && isChar(other)){
         return get<char>(*this) <= get<char>(other);
     }
-    cerr << "Unknown type";
+    return INT_MIN;
 }
 bool Any::operator ==(Any other){
     if (isInt(*this)){
@@ -214,7 +215,7 @@ bool Any::operator ==(Any other){
     } else if (isChar(*this) && isChar(other)){
         return get<char>(*this) == get<char>(other);
     }
-    cerr << "Unknown type";
+    return INT_MIN;
 }
 bool Any::operator !=(Any other){
     if (isInt(*this)){
@@ -234,7 +235,7 @@ bool Any::operator !=(Any other){
     } else if (isChar(*this) && isChar(other)){
         return get<char>(*this) != get<char>(other);
     }
-    cerr << "Unknown type";
+    return INT_MIN;
 }
 
 
