@@ -46,5 +46,6 @@ public:
     // Destructor
     ~Person(){
         delete budget;
+        budget = nullptr;
     }
 };
