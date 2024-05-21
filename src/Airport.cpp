@@ -70,8 +70,9 @@ vector <Airline> Airport::getAirlines()
 //methods 
 // vector<Flight> Airport::getFlightsTo(const string& flightCode){}
 
-vector<Airline> Airport::getFlightsByAirline(const string& airlineName){}
 
-vector<string> Airport::getSupportedAirlines(){}
+// vector<Airline> Airport::getFlightsByAirline(const string& airlineName){}
 
-double Airport::distanceTo(const Airport& other){}
+// vector<string> Airport::getSupportedAirlines(){}
+
+// double Airport::distanceTo(const Airport& other){}
