@@ -17,7 +17,7 @@ Budget::Budget(map<string, double> &categories) : categories(categories), total_
 }
 
 // Add a new budget category or update an existing one
-void Budget::add_category(const string &category_name, double amount)
+void Budget::add_category(const string &category_name)
 {
     for (auto &x : categories)
     {

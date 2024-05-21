@@ -26,7 +26,7 @@ public :
 
     //methods
     void spend(const string& category_name, double amount);
-    void add_category(const string& category_name, double amount);
+    void add_category(const string& category_name);
     void deposit(const string& category_name, double amount);
     void overview() const;
     void advice() const;
