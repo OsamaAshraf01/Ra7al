@@ -26,6 +26,7 @@ SOURCES += \
     src/Country.cpp\
     src/Currency.cpp\
     src/Date.cpp \
+    src/Destination.cpp \
     src/Duration.cpp \
     src/Flight.cpp\
     src/Hotel.cpp \
@@ -40,7 +41,16 @@ SOURCES += \
 HEADERS += \
     mainwindow.h \
     config.h \
-    build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/registered_users.csv \
+    data/registered_users.csv \ #TODO: add all data files here, then call them by their names, delete build file from Git
+    data/airlines.csv\
+    data/airports.csv\
+    data/countries.csv\
+    data/countries_airlines.csv\
+    data/currencies.csv\
+    data/flights.csv\
+    data/hotels.csv\
+    data/activities.csv\
+    data/itineraries.csv\
     headers/Date.h \
     headers/User.h \
     headers/Person.h \
