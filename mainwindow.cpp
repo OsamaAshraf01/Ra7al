@@ -7,7 +7,7 @@
 #define Q(x) QString::fromStdString(x)
 enum pages_index {Home_Page, Login_Page, Register_Page, Admin_Dashboard, User_Dashboard};
 enum user_dashboard {Welcome_Page, New_Itinerary_Page, Itineraries_Page, Budget_Page};
-
+User* current_user = nullptr;
 
 /*
 TODO: Goblal User Pointer
@@ -127,6 +127,7 @@ void reset_new_itinerary_page(Ui::MainWindow* ui){
     ui->Destination_Airport_List->insertItem(0, "--Select Destination First--");
     ui->Hotels_List->insertItem(0, "--Select Destination First--");
     ui->listWidgetActivities->insertItem(0, "--Select Hotel First--");
+    ui->Budget_Sufficiency_Label->setText("");
     ui->Date_Field->setDate({2000, 1, 1});
 }
 
@@ -170,6 +171,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->Register_Button->setStyleSheet(Style("color", CONFIG.main_color));
     ui->Login_Button->setStyleSheet(Style("color", CONFIG.main_color));
+    ui->Budget_Sufficiency_Label->setStyleSheet("color:red;");
 
 
 
@@ -191,6 +193,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+    // delete current_user;
 }
 
 
@@ -222,12 +225,12 @@ void MainWindow::on_Login_Button_clicked()
         ui->Login_msg->setText("Invalid Email or Password");
     else if(users[0]["Type"] == "user"){
         // Load data from database
-        User* user = new User(users[0]);
+        current_user = new User(users[0]);
 
         ui->stackedWidget->setCurrentIndex(User_Dashboard);
         ui->User_Dashboard_Pages->setCurrentIndex(Welcome_Page);
-        user->setBudget(1000.0);  // will be replaced by the true budget from budgets table
-        load_user_data(ui, user);
+        current_user->setBudget(1000.0);  // will be replaced by the true budget from budgets table
+        load_user_data(ui, current_user);
     }
     else if(users[0]["Type"] == "admin"){
         ui->stackedWidget->setCurrentIndex(Admin_Dashboard);
@@ -322,7 +325,7 @@ void MainWindow::on_buttonNewItinerary_clicked()
 void MainWindow::on_buttonMyItineraries_clicked()
 {
     // Load Itineraries
-    int user_id = ui->User_ID->text().toInt();
+    int user_id = current_user->getID();
     DataFrame itineraries(CONFIG.itineraries_table);
     itineraries = itineraries.WHERE({"User_ID"}, {user_id});
     List header = itineraries.Header();
@@ -368,10 +371,7 @@ void MainWindow::on_buttonMyBudget_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     // Update Itineraries Count
-    string email = ui->User_Email->text().toStdString();
-    DataFrame users(CONFIG.registered_users_table);
-    users = users.WHERE({"Email"}, {email});
-    int id = get<int>(users[0]["ID"]);
+    int id = current_user->getID();
     ui->User_Itineraries_Count->setNum(count_itineraries(id));
 
     // Load Page
@@ -477,7 +477,7 @@ void MainWindow::on_Hotels_List_currentTextChanged(const QString &hotel)
 void MainWindow::on_Add_New_Itinerary_clicked()
 {
     // DataFrame users(CONFIG.registered_users_table);
-    string user_id = ui->User_ID->text().toStdString();
+    string user_id = to_string(current_user->getID());
     string origin_airport = ui->Origin_Airport_List->currentText().toStdString();
     string destination_airport = ui->Destination_Airport_List->currentText().toStdString();
     string date = ui->Date_Field->date().toString("dd-MM-yyyy").toStdString();
@@ -510,16 +510,25 @@ void MainWindow::on_Add_New_Itinerary_clicked()
 
     // Calculate Price
     DataFrame flights(CONFIG.flights_table);
-    flights = flights.WHERE({"User_ID", "Origin Airport", "Destination Airport"}, {user_id, origin_airport, destination_airport});
-    int price = get<int>(flights[0]["Price"]);
-    int current_budget = ui->User_Budget->text().toInt();
+    flights = flights.WHERE({"Origin Airport", "Destination Airport", "Departure Date", "Airline"}, {origin_airport, destination_airport, date, airline});
 
-    if(price <= current_budget){
-        ui->User_Budget->setNum(current_budget - price);
-        itineraries.INSERT(itinerary);
-        itineraries.save();
+    if(flights.isEmpty()){
+        ui->Budget_Sufficiency_Label->setText("No avialable flights");
+    }
+    else{
+        int price = get<int>(flights[0]["Price"]);
+        int current_budget = ui->User_Budget->text().toInt();
+
+        if(price <= current_budget){
+            ui->User_Budget->setNum(current_budget - price);
+            itineraries.INSERT(itinerary);
+            itineraries.save();
+
+            reset_new_itinerary_page(ui);
+        } else{
+            ui->Budget_Sufficiency_Label->setText("Insufficient Budget");
+        }
     }
 
-    reset_new_itinerary_page(ui);
 }
 
