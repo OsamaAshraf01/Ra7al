@@ -69,13 +69,14 @@ public:
     // Methods
     void INSERT(Case&);
     void UPDATE(string conditionColumn, Any conditionValue, string updateColumn, Any newValue, function<bool(Any, Any)> operation=EQUAL);
-    DataFrame SELECT(vector<string> conditionColumns, vector<Any> conditionValues, function<bool(Any, Any)> operation=EQUAL);
+    DataFrame WHERE(vector<string> conditionColumns, vector<Any> conditionValues, function<bool(Any, Any)> operation=EQUAL);
     DataFrame SortBy(string columnName, bool descending=false);
     void print();
 
     void save();
     List Header();
     bool isEmpty();
+    int size();
 
     QString toQstring();
 

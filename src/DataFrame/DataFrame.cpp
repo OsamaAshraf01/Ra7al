@@ -29,13 +29,17 @@ bool DataFrame::isEmpty(){
     return rows.empty();
 }
 
+int DataFrame::size(){
+    return (int)rows.size();
+}
+
 void DataFrame::print(){
     cout<<join(header, "\t")<<'\n';
     for(Case& c : rows)
         c.print(false); // To print the case without header
 }
 
-DataFrame DataFrame::SELECT(vector<string> conditionColumns, vector<Any> conditionValues, function<bool(Any, Any)> operation) {
+DataFrame DataFrame::WHERE(vector<string> conditionColumns, vector<Any> conditionValues, function<bool(Any, Any)> operation) {
     DataFrame temp(header);
     bool isMatched;
     for (int i = 0; i < (int)rows.size(); i++) {
@@ -79,7 +83,7 @@ QString DataFrame::toQstring(){
 }
 
 void DataFrame::save(){
-    fstream clear_and_fout(CONFIG.registered_path);
+    fstream clear_and_fout(path);
     clear_and_fout << join(header, ",") <<'\n';
 
     for(auto row : rows){
