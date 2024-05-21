@@ -8,6 +8,7 @@ Country::Country()
 
 Country::Country(string name)
 {
+    this->name = name;
 }
 
 void Country::initialize(const string &filename)
