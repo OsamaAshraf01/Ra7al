@@ -24,7 +24,8 @@ class Case {
 public:
     List header;
     unordered_map<string, Any> dict;
-    // TODO: Add Constructor
+
+    Case();
 
     void print(bool with_header=true);
     string toString();

@@ -5,6 +5,9 @@
 #include "headers/DataFrame/Case.h"
 #include <sstream>
 
+Case::Case(){}
+
+
 void Case::print(bool with_header){
     List temp;
     if(with_header)
