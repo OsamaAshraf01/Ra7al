@@ -40,6 +40,20 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_Destinations_List_currentTextChanged(const QString &arg1);
+
+    void on_Airlines_List_currentTextChanged(const QString &arg1);
+
+    void on_Origins_List_currentTextChanged(const QString &arg1);
+
+    void on_Origin_Airport_List_currentTextChanged(const QString &arg1);
+
+    void on_Destination_Airport_List_currentTextChanged(const QString &arg1);
+
+    void on_Hotels_List_currentTextChanged(const QString &arg1);
+
+    void on_Add_New_Itinerary_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

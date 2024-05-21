@@ -4,16 +4,141 @@
 #include "headers/User.h"
 #include "config.h"
 #include <QPixmap>
-
+#define Q(x) QString::fromStdString(x)
 enum pages_index {Home_Page, Login_Page, Register_Page, Admin_Dashboard, User_Dashboard};
 enum user_dashboard {Welcome_Page, New_Itinerary_Page, Itineraries_Page, Budget_Page};
 
+
+/*
+TODO: Goblal User Pointer
+TODO: calc total price and subtract it from user's budget
+TODO: check if budget allows first
+TODO: My Itineraries ---> load itineraries + read_only
+*/
+
 // Custom Functions
 
-void load_user_data(Ui::MainWindow* ui, User* user){
-    ui->labelUserName->setText(QString::fromStdString(user->getName()));
-    ui->labelUserBudget->setText("Budget: " + QString::number(user->getBudget(), 'f', 2) + "$"); // Float Number with 2 digits
+int count_itineraries(int user_id){
+    DataFrame itineraries(CONFIG.itineraries_table);
+    itineraries = itineraries.WHERE({"User_ID"}, {user_id});
+
+    return itineraries.size();
 }
+
+QList<QString> List_to_QList(List& input){
+    QList<QString> list;
+    for(Any& value:input)
+        list.append(QString::fromStdString(value.toString()));
+
+    return list;
+}
+
+void load_user_data(Ui::MainWindow* ui, User* user){
+    ui->labelUserName->setText(Q(user->getName()));
+
+    // Home Page
+    ui->User_Budget->setNum(user->getBudget());
+    ui->User_Email->setText(Q(user->getEmail()));
+    ui->User_ID->setNum(user->getID());
+    ui->User_Itineraries_Count->setNum(count_itineraries(user->getID()));
+}
+
+void update_origin_airports_list(Ui::MainWindow* ui, const QString& Country){
+    ui->Origin_Airport_List->clear();
+    string country_name = Country.toStdString();
+    DataFrame airports(CONFIG.airports_table);
+    DataFrame matched_airports = airports.WHERE({"Country"}, {country_name});
+
+    if(matched_airports.size() != 0){ // Make sure that country already exists
+        ui->Origin_Airport_List->insertItem(0, "--Select Airport--");
+
+        for(int i=0 ; i<matched_airports.size() ; i++){
+            string airport_name = matched_airports[i]["Airport"].toString()
+                                  +" ("
+                                  +matched_airports[i]["Code"].toString()
+                                  +")";
+
+            ui->Origin_Airport_List->insertItem(i+1, Q(airport_name));
+        }
+    }
+    else{
+        ui->Origin_Airport_List->clear();
+        ui->Origin_Airport_List->insertItem(0, "--Select Origin First--");
+    }
+}
+
+void update_destination_airports_list(Ui::MainWindow* ui, const QString& Country){
+    ui->Destination_Airport_List->clear();
+    string country_name = Country.toStdString();
+    DataFrame airports(CONFIG.airports_table);
+    DataFrame matched_airports = airports.WHERE({"Country"}, {country_name});
+
+    if(matched_airports.size() != 0){ // Make sure that country already exists
+        ui->Destination_Airport_List->insertItem(0, "--Select Airport--");
+
+        for(int i=0 ; i<matched_airports.size() ; i++){
+            string airport_name = matched_airports[i]["Airport"].toString()
+                                  +" ("
+                                  +matched_airports[i]["Code"].toString()
+                                  +")";
+
+            ui->Destination_Airport_List->insertItem(i+1, Q(airport_name));
+        }
+    }
+    else
+        ui->Destination_Airport_List->insertItem(0, "--Select Destination First--");
+}
+
+void update_airlines_list(Ui::MainWindow* ui, const QString& Country){
+    ui->Airlines_List->clear();
+    ui->Airlines_List->insertItem(0, "--Select Airline--");
+    DataFrame airlines(CONFIG.airlines_table);
+
+    string country = Country.toStdString();
+    country = remove_code(country);
+
+    airlines = airlines.WHERE({"Country"}, {country});
+
+    if(airlines.size()){
+        string all_country_airlines = airlines[0]["Airlines"].toString();
+        List airlines_names = split(all_country_airlines, '-');
+        for(int i=0 ; i<airlines_names.size() ; i++){
+            ui->Airlines_List->insertItem(i+1, Q(airlines_names[i].toString()));
+        }
+    }
+    else{
+        ui->Airlines_List->clear();
+        ui->Airlines_List->insertItem(0, "--Select Origin First--");
+    }
+}
+
+void reset_new_itinerary_page(Ui::MainWindow* ui){
+    ui->Destinations_List->clear();
+    ui->Origins_List->clear();
+    ui->Airlines_List->clear();
+    ui->Origin_Airport_List->clear();
+    ui->Destination_Airport_List->clear();
+    ui->Hotels_List->clear();
+
+    ui->Destinations_List->insertItem(0, "--Select Destination--");
+    ui->Origins_List->insertItem(0, "--Select Origin--");
+    ui->Airlines_List->insertItem(0, "--Select Origin First--");
+    ui->Origin_Airport_List->insertItem(0, "--Select Origin First--");
+    ui->Destination_Airport_List->insertItem(0, "--Select Destination First--");
+    ui->Hotels_List->insertItem(0, "--Select Destination First--");
+    ui->listWidgetActivities->insertItem(0, "--Select Hotel First--");
+    ui->Date_Field->setDate({2000, 1, 1});
+}
+
+string get_flight_code(string origin_airport, string destination_airport, string date){
+    DataFrame flights(CONFIG.flights_table);
+    flights = flights.WHERE({"Origin Airport", "Destination Airport", "Departure Date"}, {origin_airport, destination_airport, date});
+    return flights[0]["Flight Code"].toString();
+}
+
+
+
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -90,8 +215,8 @@ void MainWindow::on_Login_Button_clicked()
     ui->email->setText("");
     ui->password->setText("");
 
-    DataFrame data("registered_users.csv");
-    DataFrame users = data.SELECT({"Email", "Password"}, {email, password});
+    DataFrame data(CONFIG.registered_users_table);
+    DataFrame users = data.WHERE({"Email", "Password"}, {email, password});
 
     if(users.isEmpty())
         ui->Login_msg->setText("Invalid Email or Password");
@@ -150,8 +275,8 @@ void MainWindow::on_Register_Button_clicked()
     }
 
     // Check that email doesn't exist in database
-    DataFrame users("registered_users.csv");
-    if(!users.SELECT({"Email"}, {email}).isEmpty()){
+    DataFrame users(CONFIG.registered_users_table);
+    if(!users.WHERE({"Email"}, {email}).isEmpty()){
         ui->Register_Error_Label->setText("Email already exists !");
         return;
     }
@@ -177,12 +302,59 @@ void MainWindow::on_logOutButton_clicked()
 
 void MainWindow::on_buttonNewItinerary_clicked()
 {
+    reset_new_itinerary_page(ui);
+
+
+    // Load Countries
+    DataFrame destinations(CONFIG.countries_table);
+    for(int i=0 ; i<destinations.size() ; i++){
+        QString country_name = QString::fromStdString(destinations[i]["Country Name"].toString());
+        ui->Destinations_List->insertItem(i+1, country_name);
+        ui->Origins_List->insertItem(i+1, country_name);
+    }
+
+
+
     ui->User_Dashboard_Pages->setCurrentIndex(New_Itinerary_Page);
 }
 
 
 void MainWindow::on_buttonMyItineraries_clicked()
 {
+    // Load Itineraries
+    int user_id = ui->User_ID->text().toInt();
+    DataFrame itineraries(CONFIG.itineraries_table);
+    itineraries = itineraries.WHERE({"User_ID"}, {user_id});
+    List header = itineraries.Header();
+
+    // Modify table settings
+    ui->My_Itineraries_Table->clearContents();
+    ui->My_Itineraries_Table->setColumnCount(header.size());
+    ui->My_Itineraries_Table->setRowCount(itineraries.size());
+    ui->My_Itineraries_Table->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->My_Itineraries_Table->setHorizontalHeaderLabels(List_to_QList(header));
+
+    for(int j=0 ; j<itineraries.size() ; j++){
+        QTableWidgetItem *newItem = new QTableWidgetItem(Q(itineraries[j]["User_ID"].toString()));
+        ui->My_Itineraries_Table->setItem(j, 0, newItem);
+        newItem = new QTableWidgetItem(Q(itineraries[j]["Origin_Airport"].toString()));
+        ui->My_Itineraries_Table->setItem(j, 1, newItem);
+        newItem = new QTableWidgetItem(Q(itineraries[j]["Destination_Airport"].toString()));
+        ui->My_Itineraries_Table->setItem(j, 2, newItem);
+        newItem = new QTableWidgetItem(Q(itineraries[j]["Date"].toString()));
+        ui->My_Itineraries_Table->setItem(j, 3, newItem);
+        newItem = new QTableWidgetItem(Q(itineraries[j]["Airline"].toString()));
+        ui->My_Itineraries_Table->setItem(j, 4, newItem);
+        newItem = new QTableWidgetItem(Q(itineraries[j]["Hotel"].toString()));
+        ui->My_Itineraries_Table->setItem(j, 5, newItem);
+        newItem = new QTableWidgetItem(Q(itineraries[j]["Activities"].toString()));
+        ui->My_Itineraries_Table->setItem(j, 6, newItem);
+    }
+
+
+
+
+    // Load Page
     ui->User_Dashboard_Pages->setCurrentIndex(Itineraries_Page);
 }
 
@@ -195,6 +367,159 @@ void MainWindow::on_buttonMyBudget_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
+    // Update Itineraries Count
+    string email = ui->User_Email->text().toStdString();
+    DataFrame users(CONFIG.registered_users_table);
+    users = users.WHERE({"Email"}, {email});
+    int id = get<int>(users[0]["ID"]);
+    ui->User_Itineraries_Count->setNum(count_itineraries(id));
+
+    // Load Page
     ui->User_Dashboard_Pages->setCurrentIndex(Welcome_Page);
+}
+
+
+void MainWindow::on_Destinations_List_currentTextChanged(const QString &chosenCountry)
+{
+    update_destination_airports_list(ui, chosenCountry);
+
+    // Update hotels List
+    ui->Hotels_List->clear();
+    ui->Hotels_List->insertItem(0, "--Select Hotel--");
+
+    string country = chosenCountry.toStdString();
+    DataFrame hotels(CONFIG.hotels_table);
+    hotels = hotels.WHERE({"Country"}, {country});
+
+    if(hotels.size()){
+        string all_country_hotels = hotels[0]["Hotels"].toString();
+        List hotels = split(all_country_hotels, '-');
+        for(int i=0 ; i<hotels.size() ; i++){
+            ui->Hotels_List->insertItem(i+1, Q(hotels[i].toString()));
+        }
+
+    } else{
+        ui->Hotels_List->clear();
+        ui->Hotels_List->insertItem(0, "--Select Destination First--");
+    }
+}
+
+
+void MainWindow::on_Airlines_List_currentTextChanged(const QString &chosenAirline)
+{ // TODO: Origin & Destination Airports
+    // ui->Origin_Airport_List->clear();
+    // string airline_name = chosenAirline.toStdString();
+    // DataFrame flights(CONFIG.flights_table);
+    // flights = flights.WHERE({"Airline"}, {chosenAirline});
+
+    // if(flights.size() != 0){
+    //     ui->Origin_Airport_List->insertItem(0, "--Select Airline--");
+
+    //     for(int i=0  ; i<flights.size() ; i++){
+    //     string airlines_names = country_airlines[0]["Popular Airlines"].toString();
+    //     List airlines = split(airlines_names, '-');
+    //     for(int i=1 ; i<airlines.size() ; i++){
+    //         QString flight = QString::fromStdString(airlines[i].toString());
+    //         ui->Origin_Airport_List->insertItem(i, flight);
+    //     }
+    // }
+    // else
+    //     ui->Origin_Airport_List->insertItem(0, "--Select Airline First--");
+}
+
+
+void MainWindow::on_Origins_List_currentTextChanged(const QString &origin)
+{
+    update_origin_airports_list(ui, origin);
+    update_airlines_list(ui, origin);
+}
+
+
+void MainWindow::on_Origin_Airport_List_currentTextChanged(const QString &origin_airport)
+{
+    // QString destination_airport = ui->Destination_Airport_List->currentText();
+
+    // update_airlines_list(ui, origin_airport, destination_airport);
+}
+
+
+void MainWindow::on_Destination_Airport_List_currentTextChanged(const QString &destination_airport)
+{
+    // string origin_airport = ui->Origin_Airport_List->currentText().toStdString();
+
+    // Check of Origin Airport is a valid Aiport
+    // if(origin_airport[0] == '-')
+    //     return;
+
+    // // Valid
+    // DataFrame flights(CONFIG.flights_table);
+    // flights = flights.WHERE({"Origin Airport", "Destination Airport"}, {origin_airport, destination_airport.toStdString()});
+    // int price = get<int>(flights[0]["Price"]);
+    // int current_price = ui->Total_Price_Label->text().toInt();
+    // ui->Total_Price_Label->setNum(current_price + price);
+}
+
+
+void MainWindow::on_Hotels_List_currentTextChanged(const QString &hotel)
+{
+    // Load Activities
+    ui->listWidgetActivities->clear();
+    if(hotel.toStdString()[0] != '-'){
+        DataFrame activities(CONFIG.activities_table);
+        for(int i=0 ; i<activities.size() ; i++){
+            QString activity = QString::fromStdString(activities[i]["Name"].toString());
+            ui->listWidgetActivities->insertItem(i, activity);
+        }
+    }
+}
+
+
+void MainWindow::on_Add_New_Itinerary_clicked()
+{
+    // DataFrame users(CONFIG.registered_users_table);
+    string user_id = ui->User_ID->text().toStdString();
+    string origin_airport = ui->Origin_Airport_List->currentText().toStdString();
+    string destination_airport = ui->Destination_Airport_List->currentText().toStdString();
+    string date = ui->Date_Field->date().toString("dd-MM-yyyy").toStdString();
+    string airline = ui->Airlines_List->currentText().toStdString();
+    string hotel = ui->Hotels_List->currentText().toStdString();
+    destination_airport = remove_code(destination_airport);
+    origin_airport = remove_code(origin_airport);
+    // string flight_code = get_flight_code(origin_airport, destination_airport, date);
+
+    QList selected_activities = ui->listWidgetActivities->selectedItems();
+    List activities;
+    for(QListWidgetItem* activity : selected_activities)
+        activities.append(activity->text().toStdString());
+
+
+    DataFrame itineraries(CONFIG.itineraries_table);
+    Case itinerary;
+    itinerary.header = itineraries.Header();
+    itinerary.dict["User_ID"] = user_id;
+    itinerary.dict["Origin_Airport"] = origin_airport;
+    itinerary.dict["Destination_Airport"] = destination_airport;
+    itinerary.dict["Date"] = date;
+    itinerary.dict["Flight_Code"] = "flight_code";
+    itinerary.dict["Airline"] = airline;
+    itinerary.dict["Hotel"] = hotel;
+    itinerary.dict["Activities"] = join(activities, "-");
+
+
+
+
+    // Calculate Price
+    DataFrame flights(CONFIG.flights_table);
+    flights = flights.WHERE({"User_ID", "Origin Airport", "Destination Airport"}, {user_id, origin_airport, destination_airport});
+    int price = get<int>(flights[0]["Price"]);
+    int current_budget = ui->User_Budget->text().toInt();
+
+    if(price <= current_budget){
+        ui->User_Budget->setNum(current_budget - price);
+        itineraries.INSERT(itinerary);
+        itineraries.save();
+    }
+
+    reset_new_itinerary_page(ui);
 }
 
