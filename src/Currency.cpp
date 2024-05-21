@@ -52,6 +52,7 @@ double Currency::getExchangeRate(const string &otherCode)
     else
     {
         cout << "Exchange rate not found for code: " << otherCode;
+        return -1;
     }
 }
 
@@ -62,15 +63,16 @@ bool Currency::validateCurrencyCode(const string &code) const
     return code.length() == 3;
 }
 
-void Currency::checkForOverflow(long newAmount) const
-{
-    // Adjust this logic to your overflow handling preference
-    if (newAmount > LLONG_MAX ||
-        newAmount < LLONG_MIN)
-    {
-        cout << "Currency arithmetic overflow";
-    }
-}
+/// Not Working: D:\Career\PROJECTS\Ra7al\src\Currency.cpp:69: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+// void Currency::checkForOverflow(long newAmount) const
+// {
+//     // Adjust this logic to your overflow handling preference
+//     if (newAmount > LLONG_MAX ||
+//         newAmount < LLONG_MIN)
+//     {
+//         cout << "Currency arithmetic overflow";
+//     }
+// }
 
 // Getters and Setters (with validation)
 void Currency::setCurrencyCode(const string &code)
@@ -84,7 +86,7 @@ void Currency::setCurrencyCode(const string &code)
 
 void Currency::setAmount(long amt)
 {
-    checkForOverflow(amt);
+    // checkForOverflow(amt);
     amount = amt;
 }
 
