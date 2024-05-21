@@ -1,0 +1,12 @@
+ID,Name,Email,Password,Type
+1,Osama,admin,admin,admin
+2,example1,example1@gmail.com,abc,user
+3,example2,example2@gmail.com,123,user
+4,example3,example3@gmail.com,abc123,user
+5,Ahmed Mohamed,ahmed@gmail.com,abc,user
+6,Osama,osama@gmail.com,123,user
+7,Osama Ashraf,osama_ashraf@gmail.com,osama123,user
+8,Omar Nabil,omar@gmail.com,123,user
+9,Mohammad,mohammad@saad.com,123,user
+10,Mohamed Radwan,mohamed@radwan.com,abc,user
+11,Osama Ashraf,osama@ashraf.com,aaa,user

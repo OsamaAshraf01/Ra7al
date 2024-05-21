@@ -1,11 +1,22 @@
-Airline,Max Luggage Weight
-EgyptAir,23
-Air Cairo,20
-Nile Air,23
-Air Arabia Egypt,30
-FlyEgypt,20
-AlMasria Universal Airlines,23
-Air Sinai,30
-SkyBird Airlines,20
-Air Leisure,30
-Air Go Airlines,20
+Country,Airlines,Max_Luggage_Weight
+Afghanistan,Ariana Afghan Airlines-Kam Air-Safi Airways-East Horizon Airlines-KAM Air International,30
+Algeria,Air Algérie-Tassili Airlines-Air Express Algeria-Star Aviation-Air Méditerranée,23
+Bangladesh,Biman Bangladesh Airlines-US-Bangla Airlines-Regent Airways-Novoair-GMG Airlines,20
+Egypt,EgyptAir-Air Cairo-Nile Air-FlyEgypt-Air Arabia Egypt,32
+Indonesia,Garuda Indonesia-Lion Air-Batik Air-Citilink-Sriwijaya Air,30
+Iran,Iran Air-Mahan Air-Aseman Airlines-Kish Air-Qeshm Airlines,30
+Iraq,Iraqi Airways-FlyBaghdad-Zagrosjet-Air Baghdad-Al-Naser Airlines,30
+Malaysia,Malaysia Airlines-AirAsia-Malindo Air-Firefly-Berjaya Air,30
+Morocco,Royal Air Maroc-Air Arabia Maroc-RAM Express-Royal Air Maroc Express-Jetairfly,23
+Nigeria,Arik Air-Air Peace-Dana Air-Med-View Airline-Azman Air,23
+Pakistan,Pakistan International Airlines-Airblue-Serene Air-Shaheen Air-AirSial,30
+Palestine,Palestinian Airlines-Arab Air Carriers-Air Arabia-Royal Jordanian-EgyptAir,23
+Saudi Arabia,Saudia-Flynas-Flyadeal-SaudiGulf Airlines-Nesma Airlines,32
+Senegal,Air Senegal-Transair Senegal-Senegal Airlines-Sahel Aviation Service-Air Teranga,23
+Somalia,Jubba Airways-Daallo Airlines-Air Somalia-African Express Airways-Ocean Airlines,20
+Sudan,Sudan Airways-Badr Airlines-Tarco Aviation-Sun Air-Marsland Aviation,30
+Syria,Syrian Air-Cham Wings Airlines-FlyDamas-Kinda Airlines-Syrianair Express,30
+Tunisia,Tunisair-Nouvelair-Tunisair Express-Syphax Airlines-Karthago Airlines,23
+Turkey,Turkish Airlines-Pegasus Airlines-SunExpress-AnadoluJet-Onur Air,30
+Uzbekistan,Uzbekistan Airways-Qanot Sharq-Humo Air-SilkAvia-Asaka Airlines,23
+Yemen,Yemenia-Felix Airways-Queen Bilqis Airways-Socotra Airways-Golden Airlines,30

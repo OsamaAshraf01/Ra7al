@@ -1,4 +1,34 @@
 Airport,Code,Country
+Kabul International Airport,KBL,Afghanistan
+Kandahar International Airport,KDH,Afghanistan
+Herat International Airport,HEA,Afghanistan
+Mazar-i-Sharif International Airport,MZR,Afghanistan
+Bamyan Airport,BIN,Afghanistan
+Faizabad Airport,FBD,Afghanistan
+Ghazni Airport,GZI,Afghanistan
+Chaghcharan Airport,CCN,Afghanistan
+Jalalabad Airport,JAA,Afghanistan
+Kunduz Airport,UND,Afghanistan
+Houari Boumediene Airport,ALG,Algeria
+Oran Es Sénia Airport,ORN,Algeria
+Constantine Mohamed Boudiaf Airport,CZL,Algeria
+Annaba Rabah Bitat Airport,AAE,Algeria
+Tlemcen Zenata Airport,ORN,Algeria
+Batna Airport,BWK,Algeria
+Bechar Boudghene Ben Ali Lotfi Airport,CBH,Algeria
+Biskra Airport,BSK,Algeria
+Chlef International Airport,CFK,Algeria
+Jijel Ferhat Abbas Airport,GJL,Algeria
+Hazrat Shahjalal International Airport,DAC,Bangladesh
+Shah Amanat International Airport,CGP,Bangladesh
+Osmany International Airport,ZYL,Bangladesh
+Jessore Airport,JSR,Bangladesh
+Saidpur Airport,SPD,Bangladesh
+Barisal Airport,BZL,Bangladesh
+Cox's Bazar Airport,CXB,Bangladesh
+Tejgaon Airport,TEJ,Bangladesh
+Shah Makhdum Airport,RJH,Bangladesh
+Ishurdi Airport,IRD,Bangladesh
 Cairo International Airport,CAI,Egypt
 Hurghada International Airport,HRG,Egypt
 Sharm El Sheikh International Airport,SSH,Egypt
@@ -9,3 +39,173 @@ Marsa Alam International Airport,RMF,Egypt
 Sohag International Airport,HMB,Egypt
 El Nouzha Airport,ALY,Egypt
 Asyut International Airport,ATZ,Egypt
+Soekarno-Hatta International Airport,CGK,Indonesia
+Ngurah Rai International Airport,DPS,Indonesia
+Juanda International Airport,SUB,Indonesia
+Sultan Hasanuddin International Airport,UPG,Indonesia
+Kualanamu International Airport,KNO,Indonesia
+Halim Perdanakusuma International Airport,HLP,Indonesia
+Sultan Mahmud Badaruddin II Airport,PLM,Indonesia
+Adi Sumarmo International Airport,SOC,Indonesia
+Sultan Syarif Kasim II International Airport,PKU,Indonesia
+Sam Ratulangi International Airport,MDC,Indonesia
+Tehran Imam Khomeini International Airport,IKA,Iran
+Mehrabad International Airport,THR,Iran
+Mashhad International Airport,MHD,Iran
+Shiraz International Airport,SYZ,Iran
+Isfahan International Airport,IFN,Iran
+Tabriz International Airport,TBZ,Iran
+Kish International Airport,KIH,Iran
+Qeshm International Airport,GSM,Iran
+Ahvaz International Airport,AWZ,Iran
+Bandar Abbas International Airport,BND,Iran
+Baghdad International Airport,BGW,Iraq
+Erbil International Airport,EBL,Iraq
+Basra International Airport,BSR,Iraq
+Najaf International Airport,NJF,Iraq
+Sulaymaniyah International Airport,ISU,Iraq
+Mosul International Airport,OSM,Iraq
+Al Najaf International Airport,NJF,Iraq
+Kirkuk Airport,KIK,Iraq
+Nasiriyah Airport,XNH,Iraq
+Al Taqaddum Air Base,TQD,Iraq
+Kuala Lumpur International Airport,KUL,Malaysia
+Penang International Airport,PEN,Malaysia
+Kota Kinabalu International Airport,BKI,Malaysia
+Kuching International Airport,KCH,Malaysia
+Langkawi International Airport,LGK,Malaysia
+Subang Sultan Abdul Aziz Shah Airport,SZB,Malaysia
+Senai International Airport,JHB,Malaysia
+Sultan Mahmud Airport,TGG,Malaysia
+Sultan Abdul Halim Airport,AOR,Malaysia
+Labuan Airport,LBU,Malaysia
+Mohammed V International Airport,CMN,Morocco
+Marrakesh Menara Airport,RAK,Morocco
+Fes-Saïss Airport,FEZ,Morocco
+Tangier Ibn Battouta Airport,TNG,Morocco
+Agadir–Al Massira Airport,AGA,Morocco
+Oujda Angads Airport,OUD,Morocco
+Nador International Airport,NDR,Morocco
+Rabat–Salé Airport,RBA,Morocco
+Essaouira-Mogador Airport,ESU,Morocco
+Dakhla Airport,VIL,Morocco
+Murtala Muhammed International Airport,LOS,Nigeria
+Nnamdi Azikiwe International Airport,ABV,Nigeria
+Mallam Aminu Kano International Airport,KAN,Nigeria
+Port Harcourt International Airport,PHC,Nigeria
+Akanu Ibiam International Airport,ENU,Nigeria
+Yakubu Gowon Airport,JOS,Nigeria
+Sadiq Abubakar III International Airport,SKO,Nigeria
+Benin Airport,BNI,Nigeria
+Sam Mbakwe Airport,QOW,Nigeria
+Margaret Ekpo International Airport,CBQ,Nigeria
+Jinnah International Airport,KHI,Pakistan
+Allama Iqbal International Airport,LHE,Pakistan
+Islamabad International Airport,ISB,Pakistan
+Quetta International Airport,UET,Pakistan
+Bacha Khan International Airport,PEW,Pakistan
+Multan International Airport,MUX,Pakistan
+Faisalabad International Airport,LYP,Pakistan
+Sialkot International Airport,SKT,Pakistan
+Gwadar International Airport,GWD,Pakistan
+Skardu Airport,KDU,Pakistan
+Ramallah Airport,RMZ,Palestine
+Gaza International Airport,GZA,Palestine
+Yasser Arafat International Airport,YAI,Palestine
+Jericho International Airport,JRO,Palestine
+Nablus Airport,NBS,Palestine
+Jenin Airport,JEI,Palestine
+Rafah Airport,RAF,Palestine
+Hebron Airport,HEB,Palestine
+Tulkarm Airport,TUL,Palestine
+Qalqilya Airport,QLY,Palestine
+King Abdulaziz International Airport,JED,Saudi Arabia
+King Khalid International Airport,RUH,Saudi Arabia
+King Fahd International Airport,DMM,Saudi Arabia
+Prince Mohammad bin Abdulaziz International Airport,MED,Saudi Arabia
+Abha International Airport,AHB,Saudi Arabia
+Ta'if Regional Airport,TIF,Saudi Arabia
+Prince Sultan Air Base,AKH,Saudi Arabia
+Yanbu Airport,YNB,Saudi Arabia
+Gassim Airport,ELQ,Saudi Arabia
+Al-Jawf Airport,AJF,Saudi Arabia
+Blaise Diagne International Airport,DSS,Senegal
+Léopold Sédar Senghor International Airport,DKR,Senegal
+Ziguinchor Airport,ZIG,Senegal
+Cap Skirring Airport,CSK,Senegal
+Saint-Louis Airport,XLS,Senegal
+Kaolack Airport,KLC,Senegal
+Tambacounda Airport,TUD,Senegal
+Kédougou Airport,KGG,Senegal
+Kolda North Airport,KDA,Senegal
+Matam Airport,MAX,Senegal
+Aden Adde International Airport,MGQ,Somalia
+Hargeisa International Airport,HGA,Somalia
+Kismayo Airport,KMU,Somalia
+Baidoa Airport,BIB,Somalia
+Berbera Airport,BBO,Somalia
+Bosaso Airport,BSA,Somalia
+Galkayo Airport,GLK,Somalia
+Garowe Airport,GGR,Somalia
+Bardera Airport,BXX,Somalia
+Galcaio Airport,GLK,Somalia
+Khartoum International Airport,KRT,Sudan
+Port Sudan New International Airport,PZU,Sudan
+El Fasher Airport,ELF,Sudan
+Nyala Airport,UYL,Sudan
+Geneina Airport,EGN,Sudan
+Dongola Airport,DOG,Sudan
+Merowe Airport,MWE,Sudan
+Kassala Airport,KSL,Sudan
+El Obeid Airport,EBD,Sudan
+Damazin Airport,RDE,Sudan
+Damascus International Airport,DAM,Syria
+Aleppo International Airport,ALP,Syria
+Bassel Al-Assad International Airport,LTK,Syria
+Qamishli Airport,KAC,Syria
+Deir ez-Zor Airport,DEZ,Syria
+Palmyra Airport,OSD,Syria
+Abu Kamal Airport,AKM,Syria
+Tartus Airport,TTS,Syria
+Hama Airport,OSU,Syria
+Al-Dumayr Airport,ALD,Syria
+Tunis-Carthage International Airport,TUN,Tunisia
+Monastir Habib Bourguiba International Airport,MIR,Tunisia
+Djerba–Zarzis International Airport,DJE,Tunisia
+Enfidha–Hammamet International Airport,NBE,Tunisia
+Tozeur–Nefta International Airport,TOE,Tunisia
+Sfax–Thyna International Airport,SFA,Tunisia
+Gafsa Ksar International Airport,GAF,Tunisia
+Gabès – Matmata International Airport,GAE,Tunisia
+Tabarka–Aïn Draham International Airport,TBJ,Tunisia
+Remada Airport,RMF,Tunisia
+Istanbul Airport,IST,Turkey
+Sabiha Gökçen International Airport,SAW,Turkey
+Antalya Airport,AYT,Turkey
+Esenboğa International Airport,ESB,Turkey
+Adnan Menderes Airport,ADB,Turkey
+Dalaman Airport,DLM,Turkey
+Milas-Bodrum Airport,BJV,Turkey
+Trabzon Airport,TZX,Turkey
+Gazipaşa Airport,GZP,Turkey
+Kayseri Erkilet Airport,ASR,Turkey
+Tashkent International Airport,TAS,Uzbekistan
+Samarkand International Airport,SKD,Uzbekistan
+Bukhara International Airport,BHK,Uzbekistan
+Urgench International Airport,UGC,Uzbekistan
+Namangan Airport,NMA,Uzbekistan
+Fergana Airport,FEG,Uzbekistan
+Nukus Airport,NCU,Uzbekistan
+Termez Airport,TMJ,Uzbekistan
+Karshi Airport,KSQ,Uzbekistan
+Andizhan Airport,AZN,Uzbekistan
+Aden International Airport,ADE,Yemen
+Sana'a International Airport,SAH,Yemen
+Ta'izz International Airport,TAI,Yemen
+Al Hudaydah International Airport,HOD,Yemen
+Riyan Mukalla Airport,RIY,Yemen
+Socotra Airport,SCT,Yemen
+Ataq Airport,AXK,Yemen
+Sayun Airport,GXF,Yemen
+Mareb Airport,MYN,Yemen
+Dhamar Airport,DAM,Yemen

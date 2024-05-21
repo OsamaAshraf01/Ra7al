@@ -1,24 +1,338 @@
 Origin Airport,Destination Airport,Departure Date,Airline,Price,Flight Code
-Cairo International Airport,Hurghada International Airport,15-04-2024,EgyptAir,500,MS101
-Cairo International Airport,Sharm El Sheikh International Airport,15-04-2024,Air Cairo,450,SM102
-Cairo International Airport,Aswan International Airport,15-04-2024,Nile Air,400,NP103
-Cairo International Airport,Luxor International Airport,16-04-2024,Air Arabia Egypt,300,G9104
-Cairo International Airport,Marsa Alam International Airport,16-04-2024,FlyEgypt,350,FT105
-Cairo International Airport,Borg El Arab International Airport,16-04-2024,AlMasria Universal Airlines,400,UT106
-Cairo International Airport,El Nouzha Airport,17-04-2024,Air Leisure,350,AL107
-Cairo International Airport,Asyut International Airport,17-04-2024,Air Go Airlines,400,AG108
-Hurghada International Airport,Sharm El Sheikh International Airport,17-04-2024,Air Sinai,550,S6113
-Hurghada International Airport,Luxor International Airport,18-04-2024,SkyBird Airlines,250,SB114
-Hurghada International Airport,Aswan International Airport,18-04-2024,EgyptAir,500,MS115
-Sharm El Sheikh International Airport,Luxor International Airport,18-04-2024,Nile Air,400,NP116
-Sharm El Sheikh International Airport,Marsa Alam International Airport,19-04-2024,Air Cairo,450,SM117
-Aswan International Airport,Borg El Arab International Airport,19-04-2024,Air Arabia Egypt,300,G91018
-Aswan International Airport,El Nouzha Airport,19-04-2024,FlyEgypt,350,FT119
-Luxor International Airport,Asyut International Airport,20-04-2024,AlMasria Universal Airlines,400,UT120
-Luxor International Airport,Marsa Alam International Airport,20-04-2024,EgyptAir,500,MS121
-Marsa Alam International Airport,Borg El Arab International Airport,20-04-2024,Air Go Airlines,400,AG122
-Marsa Alam International Airport,El Nouzha Airport,21-04-2024,Air Leisure,350,AL123
-Borg El Arab International Airport,Asyut International Airport,21-04-2024,Nile Air,400,NP124
-Borg El Arab International Airport,El Nouzha Airport,21-04-2024,Air Arabia Egypt,300,G91025
-El Nouzha Airport,Asyut International Airport,22-04-2024,SkyBird Airlines,250,SB126
-El Nouzha Airport,Hurghada International Airport,22-04-2024,FlyEgypt,350,FT127
+Cairo International Airport,Hurghada International Airport,01-06-2024,EgyptAir,500,MS101
+Cairo International Airport,Hurghada International Airport,01-06-2024,Air Cairo,450,SM102
+Cairo International Airport,Hurghada International Airport,01-06-2024,Nile Air,400,NP103
+Cairo International Airport,Hurghada International Airport,02-06-2024,EgyptAir,510,MS104
+Cairo International Airport,Hurghada International Airport,02-06-2024,Air Cairo,460,SM105
+Cairo International Airport,Hurghada International Airport,02-06-2024,Nile Air,410,NP106
+Cairo International Airport,Hurghada International Airport,03-06-2024,EgyptAir,520,MS107
+Cairo International Airport,Hurghada International Airport,03-06-2024,Air Cairo,470,SM108
+Cairo International Airport,Hurghada International Airport,03-06-2024,Nile Air,420,NP109
+Cairo International Airport,Sharm El Sheikh International Airport,01-06-2024,EgyptAir,300,MS201
+Cairo International Airport,Sharm El Sheikh International Airport,01-06-2024,FlyEgypt,350,FT202
+Cairo International Airport,Sharm El Sheikh International Airport,01-06-2024,Air Cairo,400,SM203
+Cairo International Airport,Sharm El Sheikh International Airport,02-06-2024,EgyptAir,310,MS204
+Cairo International Airport,Sharm El Sheikh International Airport,02-06-2024,FlyEgypt,360,FT205
+Cairo International Airport,Sharm El Sheikh International Airport,02-06-2024,Air Cairo,410,SM206
+Cairo International Airport,Sharm El Sheikh International Airport,03-06-2024,EgyptAir,320,MS207
+Cairo International Airport,Sharm El Sheikh International Airport,03-06-2024,FlyEgypt,370,FT208
+Cairo International Airport,Sharm El Sheikh International Airport,03-06-2024,Air Cairo,420,SM209
+Cairo International Airport,Aswan International Airport,01-06-2024,Air Arabia Egypt,500,AAE301
+Cairo International Airport,Aswan International Airport,01-06-2024,Air Leisure,450,AL302
+Cairo International Airport,Aswan International Airport,01-06-2024,Air Go Airlines,400,AG303
+Cairo International Airport,Aswan International Airport,02-06-2024,Air Arabia Egypt,510,AAE304
+Cairo International Airport,Aswan International Airport,02-06-2024,Air Leisure,460,AL305
+Cairo International Airport,Aswan International Airport,02-06-2024,Air Go Airlines,410,AG306
+Cairo International Airport,Aswan International Airport,03-06-2024,Air Arabia Egypt,520,AAE307
+Cairo International Airport,Aswan International Airport,03-06-2024,Air Leisure,470,AL308
+Cairo International Airport,Aswan International Airport,03-06-2024,Air Go Airlines,420,AG309
+Kabul International Airport,Kandahar International Airport,01-06-2024,Ariana Afghan Airlines,150,FG401
+Kabul International Airport,Kandahar International Airport,01-06-2024,Kam Air,145,KAM402
+Kabul International Airport,Kandahar International Airport,01-06-2024,Safi Airways,155,SF403
+Kabul International Airport,Kandahar International Airport,02-06-2024,Ariana Afghan Airlines,160,FG404
+Kabul International Airport,Kandahar International Airport,02-06-2024,Kam Air,150,KAM405
+Kabul International Airport,Kandahar International Airport,02-06-2024,Safi Airways,165,SF406
+Kabul International Airport,Kandahar International Airport,03-06-2024,Ariana Afghan Airlines,170,FG407
+Kabul International Airport,Kandahar International Airport,03-06-2024,Kam Air,155,KAM408
+Kabul International Airport,Kandahar International Airport,03-06-2024,Safi Airways,175,SF409
+Kabul International Airport,Herat International Airport,01-06-2024,Kam Air,120,KAM501
+Kabul International Airport,Herat International Airport,01-06-2024,Ariana Afghan Airlines,125,FG502
+Kabul International Airport,Herat International Airport,01-06-2024,East Horizon Airlines,130,EHE503
+Kabul International Airport,Herat International Airport,02-06-2024,Kam Air,130,KAM504
+Kabul International Airport,Herat International Airport,02-06-2024,Ariana Afghan Airlines,135,FG505
+Kabul International Airport,Herat International Airport,02-06-2024,East Horizon Airlines,140,EHE506
+Kabul International Airport,Herat International Airport,03-06-2024,Kam Air,140,KAM507
+Kabul International Airport,Herat International Airport,03-06-2024,Ariana Afghan Airlines,145,FG508
+Kabul International Airport,Herat International Airport,03-06-2024,East Horizon Airlines,150,EHE509
+Kabul International Airport,Mazar-i-Sharif International Airport,01-06-2024,Ariana Afghan Airlines,110,FG601
+Kabul International Airport,Mazar-i-Sharif International Airport,01-06-2024,Kam Air,115,KAM602
+Kabul International Airport,Mazar-i-Sharif International Airport,01-06-2024,Safi Airways,120,SF603
+Kabul International Airport,Mazar-i-Sharif International Airport,02-06-2024,Ariana Afghan Airlines,115,FG604
+Kabul International Airport,Mazar-i-Sharif International Airport,02-06-2024,Kam Air,120,KAM605
+Kabul International Airport,Mazar-i-Sharif International Airport,02-06-2024,Safi Airways,125,SF606
+Kabul International Airport,Mazar-i-Sharif International Airport,03-06-2024,Ariana Afghan Airlines,120,FG607
+Kabul International Airport,Mazar-i-Sharif International Airport,03-06-2024,Kam Air,125,KAM608
+Kabul International Airport,Mazar-i-Sharif International Airport,03-06-2024,Safi Airways,130,SF609
+Houari Boumediene Airport,Oran Es Sénia Airport,01-06-2024,Air Algérie,100,AH701
+Houari Boumediene Airport,Oran Es Sénia Airport,01-06-2024,Tassili Airlines,95,TA702
+Houari Boumediene Airport,Oran Es Sénia Airport,01-06-2024,Air Express Algeria,105,AEA703
+Houari Boumediene Airport,Oran Es Sénia Airport,02-06-2024,Air Algérie,110,AH704
+Houari Boumediene Airport,Oran Es Sénia Airport,02-06-2024,Tassili Airlines,105,TA705
+Houari Boumediene Airport,Oran Es Sénia Airport,02-06-2024,Air Express Algeria,115,AEA706
+Houari Boumediene Airport,Oran Es Sénia Airport,03-06-2024,Air Algérie,120,AH707
+Houari Boumediene Airport,Oran Es Sénia Airport,03-06-2024,Tassili Airlines,115,TA708
+Houari Boumediene Airport,Oran Es Sénia Airport,03-06-2024,Air Express Algeria,125,AEA709
+Houari Boumediene Airport,Constantine Mohamed Boudiaf Airport,01-06-2024,Air Algérie,110,AH801
+Houari Boumediene Airport,Constantine Mohamed Boudiaf Airport,01-06-2024,Star Aviation,115,SA802
+Houari Boumediene Airport,Constantine Mohamed Boudiaf Airport,01-06-2024,Tassili Airlines,120,TA803
+Houari Boumediene Airport,Constantine Mohamed Boudiaf Airport,02-06-2024,Air Algérie,120,AH804
+Houari Boumediene Airport,Constantine Mohamed Boudiaf Airport,02-06-2024,Star Aviation,125,SA805
+Houari Boumediene Airport,Constantine Mohamed Boudiaf Airport,02-06-2024,Tassili Airlines,130,TA806
+Houari Boumediene Airport,Constantine Mohamed Boudiaf Airport,03-06-2024,Air Algérie,130,AH807
+Houari Boumediene Airport,Constantine Mohamed Boudiaf Airport,03-06-2024,Star Aviation,135,SA808
+Houari Boumediene Airport,Constantine Mohamed Boudiaf Airport,03-06-2024,Tassili Airlines,140,TA809
+Houari Boumediene Airport,Annaba Rabah Bitat Airport,01-06-2024,Air Algérie,115,AH901
+Houari Boumediene Airport,Annaba Rabah Bitat Airport,01-06-2024,Air Express Algeria,120,AEA902
+Houari Boumediene Airport,Annaba Rabah Bitat Airport,01-06-2024,Tassili Airlines,125,TA903
+Houari Boumediene Airport,Annaba Rabah Bitat Airport,02-06-2024,Air Algérie,125,AH904
+Houari Boumediene Airport,Annaba Rabah Bitat Airport,02-06-2024,Air Express Algeria,130,AEA905
+Houari Boumediene Airport,Annaba Rabah Bitat Airport,02-06-2024,Tassili Airlines,135,TA906
+Houari Boumediene Airport,Annaba Rabah Bitat Airport,03-06-2024,Air Algérie,135,AH907
+Houari Boumediene Airport,Annaba Rabah Bitat Airport,03-06-2024,Air Express Algeria,140,AEA908
+Houari Boumediene Airport,Annaba Rabah Bitat Airport,03-06-2024,Tassili Airlines,145,TA909
+Queen Alia International Airport,King Hussein International Airport,01-06-2024,Royal Jordanian,200,RJ1001
+Queen Alia International Airport,King Hussein International Airport,01-06-2024,Jordan Aviation,195,JA1002
+Queen Alia International Airport,King Hussein International Airport,01-06-2024,Fly Jordan,205,FJ1003
+Queen Alia International Airport,King Hussein International Airport,02-06-2024,Royal Jordanian,210,RJ1004
+Queen Alia International Airport,King Hussein International Airport,02-06-2024,Jordan Aviation,200,JA1005
+Queen Alia International Airport,King Hussein International Airport,02-06-2024,Fly Jordan,215,FJ1006
+Queen Alia International Airport,King Hussein International Airport,03-06-2024,Royal Jordanian,220,RJ1007
+Queen Alia International Airport,King Hussein International Airport,03-06-2024,Jordan Aviation,205,JA1008
+Queen Alia International Airport,King Hussein International Airport,03-06-2024,Fly Jordan,225,FJ1009
+Queen Alia International Airport,Amman Civil Airport,01-06-2024,Royal Jordanian,180,RJ1101
+Queen Alia International Airport,Amman Civil Airport,01-06-2024,Jordan Aviation,175,JA1102
+Queen Alia International Airport,Amman Civil Airport,01-06-2024,Fly Jordan,185,FJ1103
+Queen Alia International Airport,Amman Civil Airport,02-06-2024,Royal Jordanian,190,RJ1104
+Queen Alia International Airport,Amman Civil Airport,02-06-2024,Jordan Aviation,180,JA1105
+Queen Alia International Airport,Amman Civil Airport,02-06-2024,Fly Jordan,195,FJ1106
+Queen Alia International Airport,Amman Civil Airport,03-06-2024,Royal Jordanian,200,RJ1107
+Queen Alia International Airport,Amman Civil Airport,03-06-2024,Jordan Aviation,185,JA1108
+Queen Alia International Airport,Amman Civil Airport,03-06-2024,Fly Jordan,205,FJ1109
+Queen Alia International Airport,Queen Alia International Airport,01-06-2024,Royal Jordanian,150,RJ1201
+Queen Alia International Airport,Queen Alia International Airport,01-06-2024,Jordan Aviation,145,JA1202
+Queen Alia International Airport,Queen Alia International Airport,01-06-2024,Fly Jordan,155,FJ1203
+Queen Alia International Airport,Queen Alia International Airport,02-06-2024,Royal Jordanian,160,RJ1204
+Queen Alia International Airport,Queen Alia International Airport,02-06-2024,Jordan Aviation,150,JA1205
+Queen Alia International Airport,Queen Alia International Airport,02-06-2024,Fly Jordan,165,FJ1206
+Queen Alia International Airport,Queen Alia International Airport,03-06-2024,Royal Jordanian,170,RJ1207
+Queen Alia International Airport,Queen Alia International Airport,03-06-2024,Jordan Aviation,155,JA1208
+Queen Alia International Airport,Queen Alia International Airport,03-06-2024,Fly Jordan,175,FJ1209
+Istanbul Airport,Antalya Airport,01-06-2024,Turkish Airlines,200,TA1301
+Istanbul Airport,Antalya Airport,01-06-2024,SunExpress,195,SE1302
+Istanbul Airport,Antalya Airport,01-06-2024,AtlasGlobal,205,AG1303
+Istanbul Airport,Antalya Airport,02-06-2024,Turkish Airlines,210,TA1304
+Istanbul Airport,Antalya Airport,02-06-2024,SunExpress,200,SE1305
+Istanbul Airport,Antalya Airport,02-06-2024,AtlasGlobal,215,AG1306
+Istanbul Airport,Antalya Airport,03-06-2024,Turkish Airlines,220,TA1307
+Istanbul Airport,Antalya Airport,03-06-2024,SunExpress,205,SE1308
+Istanbul Airport,Antalya Airport,03-06-2024,AtlasGlobal,225,AG1309
+Istanbul Airport,Esenboğa International Airport,01-06-2024,Turkish Airlines,180,TA1401
+Istanbul Airport,Esenboğa International Airport,01-06-2024,AnadoluJet,175,AJ1402
+Istanbul Airport,Esenboğa International Airport,01-06-2024,SunExpress,185,SE1403
+Istanbul Airport,Esenboğa International Airport,02-06-2024,Turkish Airlines,190,TA1404
+Istanbul Airport,Esenboğa International Airport,02-06-2024,AnadoluJet,180,AJ1405
+Istanbul Airport,Esenboğa International Airport,02-06-2024,SunExpress,195,SE1406
+Istanbul Airport,Esenboğa International Airport,03-06-2024,Turkish Airlines,200,TA1407
+Istanbul Airport,Esenboğa International Airport,03-06-2024,AnadoluJet,185,AJ1408
+Istanbul Airport,Esenboğa International Airport,03-06-2024,SunExpress,205,SE1409
+Istanbul Airport,Adnan Menderes Airport,01-06-2024,Turkish Airlines,160,TA1501
+Istanbul Airport,Adnan Menderes Airport,01-06-2024,AtlasGlobal,155,AG1502
+Istanbul Airport,Adnan Menderes Airport,01-06-2024,SunExpress,165,SE1503
+Istanbul Airport,Adnan Menderes Airport,02-06-2024,Turkish Airlines,170,TA1504
+Istanbul Airport,Adnan Menderes Airport,02-06-2024,AtlasGlobal,160,AG1505
+Istanbul Airport,Adnan Menderes Airport,02-06-2024,SunExpress,175,SE1506
+Istanbul Airport,Adnan Menderes Airport,03-06-2024,Turkish Airlines,180,TA1507
+Istanbul Airport,Adnan Menderes Airport,03-06-2024,AtlasGlobal,165,AG1508
+Istanbul Airport,Adnan Menderes Airport,03-06-2024,SunExpress,185,SE1509
+Jinnah International Airport,Allama Iqbal International Airport,01-06-2024,PIA,150,PK1601
+Jinnah International Airport,Allama Iqbal International Airport,01-06-2024,Airblue,145,AB1602
+Jinnah International Airport,Allama Iqbal International Airport,01-06-2024,Serene Air,155,SA1603
+Jinnah International Airport,Allama Iqbal International Airport,02-06-2024,PIA,160,PK1604
+Jinnah International Airport,Allama Iqbal International Airport,02-06-2024,Airblue,150,AB1605
+Jinnah International Airport,Allama Iqbal International Airport,02-06-2024,Serene Air,165,SA1606
+Jinnah International Airport,Allama Iqbal International Airport,03-06-2024,PIA,170,PK1607
+Jinnah International Airport,Allama Iqbal International Airport,03-06-2024,Airblue,155,AB1608
+Jinnah International Airport,Allama Iqbal International Airport,03-06-2024,Serene Air,175,SA1609
+Jinnah International Airport,Islamabad International Airport,01-06-2024,PIA,180,PK1701
+Jinnah International Airport,Islamabad International Airport,01-06-2024,Airblue,175,AB1702
+Jinnah International Airport,Islamabad International Airport,01-06-2024,Serene Air,185,SA1703
+Jinnah International Airport,Islamabad International Airport,02-06-2024,PIA,190,PK1704
+Jinnah International Airport,Islamabad International Airport,02-06-2024,Airblue,180,AB1705
+Jinnah International Airport,Islamabad International Airport,02-06-2024,Serene Air,195,SA1706
+Jinnah International Airport,Islamabad International Airport,03-06-2024,PIA,200,PK1707
+Jinnah International Airport,Islamabad International Airport,03-06-2024,Airblue,185,AB1708
+Jinnah International Airport,Islamabad International Airport,03-06-2024,Serene Air,205,SA1709
+Jinnah International Airport,Benazir Bhutto International Airport,01-06-2024,PIA,190,PK1801
+Jinnah International Airport,Benazir Bhutto International Airport,01-06-2024,Airblue,185,AB1802
+Jinnah International Airport,Benazir Bhutto International Airport,01-06-2024,Serene Air,195,SA1803
+Jinnah International Airport,Benazir Bhutto International Airport,02-06-2024,PIA,200,PK1804
+Jinnah International Airport,Benazir Bhutto International Airport,02-06-2024,Airblue,190,AB1805
+Jinnah International Airport,Benazir Bhutto International Airport,02-06-2024,Serene Air,205,SA1806
+Jinnah International Airport,Benazir Bhutto International Airport,03-06-2024,PIA,210,PK1807
+Jinnah International Airport,Benazir Bhutto International Airport,03-06-2024,Airblue,195,AB1808
+Jinnah International Airport,Benazir Bhutto International Airport,03-06-2024,Serene Air,215,SA1809
+King Abdulaziz International Airport,King Khalid International Airport,01-06-2024,Saudia,300,SV1901
+King Abdulaziz International Airport,King Khalid International Airport,01-06-2024,Flynas,295,FNA1902
+King Abdulaziz International Airport,King Khalid International Airport,01-06-2024,Flyadeal,305,FA1903
+King Abdulaziz International Airport,King Khalid International Airport,02-06-2024,Saudia,310,SV1904
+King Abdulaziz International Airport,King Khalid International Airport,02-06-2024,Flynas,300,FNA1905
+King Abdulaziz International Airport,King Khalid International Airport,02-06-2024,Flyadeal,315,FA1906
+King Abdulaziz International Airport,King Khalid International Airport,03-06-2024,Saudia,320,SV1907
+King Abdulaziz International Airport,King Khalid International Airport,03-06-2024,Flynas,305,FNA1908
+King Abdulaziz International Airport,King Khalid International Airport,03-06-2024,Flyadeal,325,FA1909
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,01-06-2024,Saudia,350,SV2001
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,01-06-2024,Flynas,345,FNA2002
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,01-06-2024,Flyadeal,355,FA2003
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,02-06-2024,Saudia,360,SV2004
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,02-06-2024,Flynas,350,FNA2005
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,02-06-2024,Flyadeal,365,FA2006
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,03-06-2024,Saudia,370,SV2007
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,03-06-2024,Flynas,355,FNA2008
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,03-06-2024,Flyadeal,375,FA2009
+King Abdulaziz International Airport,King Fahd International Airport,01-06-2024,Saudia,400,SV2101
+King Abdulaziz International Airport,King Fahd International Airport,01-06-2024,Flynas,395,FNA2102
+King Abdulaziz International Airport,King Fahd International Airport,01-06-2024,Flyadeal,405,FA2103
+King Abdulaziz International Airport,King Fahd International Airport,02-06-2024,Saudia,410,SV2104
+King Abdulaziz International Airport,King Fahd International Airport,02-06-2024,Flynas,400,FNA2105
+King Abdulaziz International Airport,King Fahd International Airport,02-06-2024,Flyadeal,415,FA2106
+King Abdulaziz International Airport,King Fahd International Airport,03-06-2024,Saudia,420,SV2107
+King Abdulaziz International Airport,King Fahd International Airport,03-06-2024,Flynas,405,FNA2108
+King Abdulaziz International Airport,King Fahd International Airport,03-06-2024,Flyadeal,425,FA2109
+Ataturk International Airport,Esenboğa International Airport,01-06-2024,Turkish Airlines,150,THA2201
+Ataturk International Airport,Esenboğa International Airport,01-06-2024,AnadoluJet,145,ANA2202
+Ataturk International Airport,Esenboğa International Airport,01-06-2024,AtlasGlobal,155,AG2203
+Ataturk International Airport,Esenboğa International Airport,02-06-2024,Turkish Airlines,160,THA2204
+Ataturk International Airport,Esenboğa International Airport,02-06-2024,AnadoluJet,150,ANA2205
+Ataturk International Airport,Esenboğa International Airport,02-06-2024,AtlasGlobal,165,AG2206
+Ataturk International Airport,Esenboğa International Airport,03-06-2024,Turkish Airlines,170,THA2207
+Ataturk International Airport,Esenboğa International Airport,03-06-2024,AnadoluJet,155,ANA2208
+Ataturk International Airport,Esenboğa International Airport,03-06-2024,AtlasGlobal,175,AG2209
+Ataturk International Airport,Sabiha Gökçen International Airport,01-06-2024,Turkish Airlines,180,THA2301
+Ataturk International Airport,Sabiha Gökçen International Airport,01-06-2024,AnadoluJet,175,ANA2302
+Ataturk International Airport,Sabiha Gökçen International Airport,01-06-2024,AtlasGlobal,185,AG2303
+Ataturk International Airport,Sabiha Gökçen International Airport,02-06-2024,Turkish Airlines,190,THA2304
+Ataturk International Airport,Sabiha Gökçen International Airport,02-06-2024,AnadoluJet,180,ANA2305
+Ataturk International Airport,Sabiha Gökçen International Airport,02-06-2024,AtlasGlobal,195,AG2306
+Ataturk International Airport,Sabiha Gökçen International Airport,03-06-2024,Turkish Airlines,200,THA2307
+Ataturk International Airport,Sabiha Gökçen International Airport,03-06-2024,AnadoluJet,185,ANA2308
+Ataturk International Airport,Sabiha Gökçen International Airport,03-06-2024,AtlasGlobal,205,AG2309
+Ataturk International Airport,Izmir Adnan Menderes Airport,01-06-2024,Turkish Airlines,200,THA2401
+Ataturk International Airport,Izmir Adnan Menderes Airport,01-06-2024,AnadoluJet,195,ANA2402
+Ataturk International Airport,Izmir Adnan Menderes Airport,01-06-2024,AtlasGlobal,205,AG2403
+Ataturk International Airport,Izmir Adnan Menderes Airport,02-06-2024,Turkish Airlines,210,THA2404
+Ataturk International Airport,Izmir Adnan Menderes Airport,02-06-2024,AnadoluJet,200,ANA2405
+Ataturk International Airport,Izmir Adnan Menderes Airport,02-06-2024,AtlasGlobal,215,AG2406
+Ataturk International Airport,Izmir Adnan Menderes Airport,03-06-2024,Turkish Airlines,220,THA2407
+Ataturk International Airport,Izmir Adnan Menderes Airport,03-06-2024,AnadoluJet,205,ANA2408
+Ataturk International Airport,Izmir Adnan Menderes Airport,03-06-2024,AtlasGlobal,225,AG2409
+Ataturk International Airport,Izmir Adnan Menderes Airport,01-06-2024,Turkish Airlines,200,THA2401
+Ataturk International Airport,Izmir Adnan Menderes Airport,01-06-2024,AnadoluJet,195,ANA2402
+Ataturk International Airport,Izmir Adnan Menderes Airport,01-06-2024,AtlasGlobal,205,AG2403
+Ataturk International Airport,Izmir Adnan Menderes Airport,02-06-2024,Turkish Airlines,210,THA2404
+Ataturk International Airport,Izmir Adnan Menderes Airport,02-06-2024,AnadoluJet,200,ANA2405
+Ataturk International Airport,Izmir Adnan Menderes Airport,02-06-2024,AtlasGlobal,215,AG2406
+Ataturk International Airport,Izmir Adnan Menderes Airport,03-06-2024,Turkish Airlines,220,THA2407
+Ataturk International Airport,Izmir Adnan Menderes Airport,03-06-2024,AnadoluJet,205,ANA2408
+Ataturk International Airport,Izmir Adnan Menderes Airport,03-06-2024,AtlasGlobal,225,AG2409
+Jakarta Soekarno-Hatta International Airport,Surabaya Juanda International Airport,01-06-2024,Garuda Indonesia,300,GA2501
+Jakarta Soekarno-Hatta International Airport,Surabaya Juanda International Airport,01-06-2024,Lion Air,295,LA2502
+Jakarta Soekarno-Hatta International Airport,Surabaya Juanda International Airport,01-06-2024,Sriwijaya Air,305,SA2503
+Jakarta Soekarno-Hatta International Airport,Surabaya Juanda International Airport,02-06-2024,Garuda Indonesia,310,GA2504
+Jakarta Soekarno-Hatta International Airport,Surabaya Juanda International Airport,02-06-2024,Lion Air,300,LA2505
+Jakarta Soekarno-Hatta International Airport,Surabaya Juanda International Airport,02-06-2024,Sriwijaya Air,315,SA2506
+Jakarta Soekarno-Hatta International Airport,Surabaya Juanda International Airport,03-06-2024,Garuda Indonesia,320,GA2507
+Jakarta Soekarno-Hatta International Airport,Surabaya Juanda International Airport,03-06-2024,Lion Air,305,LA2508
+Jakarta Soekarno-Hatta International Airport,Surabaya Juanda International Airport,03-06-2024,Sriwijaya Air,325,SA2509
+Jakarta Soekarno-Hatta International Airport,Medan Kuala Namu International Airport,01-06-2024,Garuda Indonesia,350,GA2601
+Jakarta Soekarno-Hatta International Airport,Medan Kuala Namu International Airport,01-06-2024,Lion Air,345,LA2602
+Jakarta Soekarno-Hatta International Airport,Medan Kuala Namu International Airport,01-06-2024,Sriwijaya Air,355,SA2603
+Jakarta Soekarno-Hatta International Airport,Medan Kuala Namu International Airport,02-06-2024,Garuda Indonesia,360,GA2604
+Jakarta Soekarno-Hatta International Airport,Medan Kuala Namu International Airport,02-06-2024,Lion Air,350,LA2605
+Jakarta Soekarno-Hatta International Airport,Medan Kuala Namu International Airport,02-06-2024,Sriwijaya Air,365,SA2606
+Jakarta Soekarno-Hatta International Airport,Medan Kuala Namu International Airport,03-06-2024,Garuda Indonesia,370,GA2607
+Jakarta Soekarno-Hatta International Airport,Medan Kuala Namu International Airport,03-06-2024,Lion Air,355,LA2608
+Jakarta Soekarno-Hatta International Airport,Medan Kuala Namu International Airport,03-06-2024,Sriwijaya Air,375,SA2609
+Jakarta Soekarno-Hatta International Airport,Bali Ngurah Rai International Airport,01-06-2024,Garuda Indonesia,400,GA2701
+Jakarta Soekarno-Hatta International Airport,Bali Ngurah Rai International Airport,01-06-2024,Lion Air,395,LA2702
+Jakarta Soekarno-Hatta International Airport,Bali Ngurah Rai International Airport,01-06-2024,Sriwijaya Air,405,SA2703
+Jakarta Soekarno-Hatta International Airport,Bali Ngurah Rai International Airport,02-06-2024,Garuda Indonesia,410,GA2704
+Jakarta Soekarno-Hatta International Airport,Bali Ngurah Rai International Airport,02-06-2024,Lion Air,400,LA2705
+Jakarta Soekarno-Hatta International Airport,Bali Ngurah Rai International Airport,02-06-2024,Sriwijaya Air,415,SA2706
+Jakarta Soekarno-Hatta International Airport,Bali Ngurah Rai International Airport,03-06-2024,Garuda Indonesia,420,GA2707
+Jakarta Soekarno-Hatta International Airport,Bali Ngurah Rai International Airport,03-06-2024,Lion Air,405,LA2708
+Jakarta Soekarno-Hatta International Airport,Bali Ngurah Rai International Airport,03-06-2024,Sriwijaya Air,425,SA2709
+Tehran Imam Khomeini International Airport,Shiraz International Airport,01-06-2024,Iran Air,250,IA2801
+Tehran Imam Khomeini International Airport,Shiraz International Airport,01-06-2024,Mahan Air,245,MA2802
+Tehran Imam Khomeini International Airport,Shiraz International Airport,01-06-2024,ATA Airlines,255,ATA2803
+Tehran Imam Khomeini International Airport,Shiraz International Airport,02-06-2024,Iran Air,260,IA2804
+Tehran Imam Khomeini International Airport,Shiraz International Airport,02-06-2024,Mahan Air,250,MA2805
+Tehran Imam Khomeini International Airport,Shiraz International Airport,02-06-2024,ATA Airlines,265,ATA2806
+Tehran Imam Khomeini International Airport,Shiraz International Airport,03-06-2024,Iran Air,270,IA2807
+Tehran Imam Khomeini International Airport,Shiraz International Airport,03-06-2024,Mahan Air,255,MA2808
+Tehran Imam Khomeini International Airport,Shiraz International Airport,03-06-2024,ATA Airlines,275,ATA2809
+Tehran Imam Khomeini International Airport,Tabriz International Airport,01-06-2024,Iran Air,280,IA2901
+Tehran Imam Khomeini International Airport,Tabriz International Airport,01-06-2024,Mahan Air,275,MA2902
+Tehran Imam Khomeini International Airport,Tabriz International Airport,01-06-2024,ATA Airlines,285,ATA2903
+Tehran Imam Khomeini International Airport,Tabriz International Airport,02-06-2024,Iran Air,290,IA2904
+Tehran Imam Khomeini International Airport,Tabriz International Airport,02-06-2024,Mahan Air,280,MA2905
+Tehran Imam Khomeini International Airport,Tabriz International Airport,02-06-2024,ATA Airlines,295,ATA2906
+Tehran Imam Khomeini International Airport,Tabriz International Airport,03-06-2024,Iran Air,300,IA2907
+Tehran Imam Khomeini International Airport,Tabriz International Airport,03-06-2024,Mahan Air,285,MA2908
+Tehran Imam Khomeini International Airport,Tabriz International Airport,03-06-2024,ATA Airlines,305,ATA2909
+Tehran Imam Khomeini International Airport,Mashhad International Airport,01-06-2024,Iran Air,310,IA3001
+Tehran Imam Khomeini International Airport,Mashhad International Airport,01-06-2024,Mahan Air,305,MA3002
+Tehran Imam Khomeini International Airport,Mashhad International Airport,01-06-2024,ATA Airlines,315,ATA3003
+Tehran Imam Khomeini International Airport,Mashhad International Airport,02-06-2024,Iran Air,320,IA3004
+Tehran Imam Khomeini International Airport,Mashhad International Airport,02-06-2024,Mahan Air,310,MA3005
+Tehran Imam Khomeini International Airport,Mashhad International Airport,02-06-2024,ATA Airlines,325,ATA3006
+Tehran Imam Khomeini International Airport,Mashhad International Airport,03-06-2024,Iran Air,330,IA3007
+Tehran Imam Khomeini International Airport,Mashhad International Airport,03-06-2024,Mahan Air,315,MA3008
+Tehran Imam Khomeini International Airport,Mashhad International Airport,03-06-2024,ATA Airlines,335,ATA3009
+King Abdulaziz International Airport,King Khalid International Airport,01-06-2024,Saudia,300,SV1901
+King Abdulaziz International Airport,King Khalid International Airport,01-06-2024,Flynas,295,FNA1902
+King Abdulaziz International Airport,King Khalid International Airport,01-06-2024,Flyadeal,305,FA1903
+King Abdulaziz International Airport,King Khalid International Airport,02-06-2024,Saudia,310,SV1904
+King Abdulaziz International Airport,King Khalid International Airport,02-06-2024,Flynas,300,FNA1905
+King Abdulaziz International Airport,King Khalid International Airport,02-06-2024,Flyadeal,315,FA1906
+King Abdulaziz International Airport,King Khalid International Airport,03-06-2024,Saudia,320,SV1907
+King Abdulaziz International Airport,King Khalid International Airport,03-06-2024,Flynas,305,FNA1908
+King Abdulaziz International Airport,King Khalid International Airport,03-06-2024,Flyadeal,325,FA1909
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,01-06-2024,Saudia,350,SV2001
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,01-06-2024,Flynas,345,FNA2002
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,01-06-2024,Flyadeal,355,FA2003
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,02-06-2024,Saudia,360,SV2004
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,02-06-2024,Flynas,350,FNA2005
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,02-06-2024,Flyadeal,365,FA2006
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,03-06-2024,Saudia,370,SV2007
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,03-06-2024,Flynas,355,FNA2008
+King Abdulaziz International Airport,Prince Mohammad bin Abdulaziz Airport,03-06-2024,Flyadeal,375,FA2009
+King Abdulaziz International Airport,King Fahd International Airport,01-06-2024,Saudia,400,SV2101
+King Abdulaziz International Airport,King Fahd International Airport,01-06-2024,Flynas,395,FNA2102
+King Abdulaziz International Airport,King Fahd International Airport,01-06-2024,Flyadeal,405,FA2103
+King Abdulaziz International Airport,King Fahd International Airport,02-06-2024,Saudia,410,SV2104
+King Abdulaziz International Airport,King Fahd International Airport,02-06-2024,Flynas,400,FNA2105
+King Abdulaziz International Airport,King Fahd International Airport,02-06-2024,Flyadeal,415,FA2106
+King Abdulaziz International Airport,King Fahd International Airport,03-06-2024,Saudia,420,SV2107
+King Abdulaziz International Airport,King Fahd International Airport,03-06-2024,Flynas,405,FNA2108
+King Abdulaziz International Airport,King Fahd International Airport,03-06-2024,Flyadeal,425,FA2109
+Ataturk International Airport,Esenboğa International Airport,01-06-2024,Turkish Airlines,150,THA2201
+Ataturk International Airport,Esenboğa International Airport,01-06-2024,AnadoluJet,145,ANA2202
+Ataturk International Airport,Esenboğa International Airport,01-06-2024,AtlasGlobal,155,AG2203
+Ataturk International Airport,Esenboğa International Airport,02-06-2024,Turkish Airlines,160,THA2204
+Ataturk International Airport,Esenboğa International Airport,02-06-2024,AnadoluJet,150,ANA2205
+Ataturk International Airport,Esenboğa International Airport,02-06-2024,AtlasGlobal,165,AG2206
+Ataturk International Airport,Esenboğa International Airport,03-06-2024,Turkish Airlines,170,THA2207
+Ataturk International Airport,Esenboğa International Airport,03-06-2024,AnadoluJet,155,ANA2208
+Ataturk International Airport,Esenboğa International Airport,03-06-2024,AtlasGlobal,175,AG2209
+Ataturk International Airport,Sabiha Gökçen International Airport,01-06-2024,Turkish Airlines,180,THA2301
+Ataturk International Airport,Sabiha Gökçen International Airport,01-06-2024,AnadoluJet,175,ANA2302
+Ataturk International Airport,Sabiha Gökçen International Airport,01-06-2024,AtlasGlobal,185,AG2303
+Ataturk International Airport,Sabiha Gökçen International Airport,02-06-2024,Turkish Airlines,190,THA2304
+Ataturk International Airport,Sabiha Gökçen International Airport,02-06-2024,AnadoluJet,180,ANA2305
+Ataturk International Airport,Sabiha Gökçen International Airport,02-06-2024,AtlasGlobal,195,AG2306
+Ataturk International Airport,Sabiha Gökçen International Airport,03-06-2024,Turkish Airlines,200,THA2307
+Ataturk International Airport,Sabiha Gökçen International Airport,03-06-2024,AnadoluJet,185,ANA2308
+Ataturk International Airport,Sabiha Gökçen International Airport,03-06-2024,AtlasGlobal,205,AG2309
+Ataturk International Airport,Izmir Adnan Menderes Airport,01-06-2024,Turkish Airlines,200,THA2401
+Ataturk International Airport,Izmir Adnan Menderes Airport,01-06-2024,AnadoluJet,195,ANA2402
+Ataturk International Airport,Izmir Adnan Menderes Airport,01-06-2024,AtlasGlobal,250,MS102
+Cairo International Airport,Gaza International Airport,01-06-2024,EgyptAir,250,MS102
+Cairo International Airport,Gaza International Airport,01-06-2024,EgyptAir,270,MS103
+Cairo International Airport,Gaza International Airport,01-06-2024,Nile Air,280,NA101
+Cairo International Airport,Gaza International Airport,01-06-2024,Nile Air,300,NA102
+Cairo International Airport,Gaza International Airport,01-06-2024,FlyEgypt,290,FE101
+Cairo International Airport,Gaza International Airport,01-06-2024,FlyEgypt,320,FE102
+Cairo International Airport,Gaza International Airport,01-06-2024,AlMasria Universal Airlines,310,AMU101
+Cairo International Airport,Gaza International Airport,01-06-2024,AlMasria Universal Airlines,330,AMU102
+Cairo International Airport,Gaza International Airport,01-06-2024,Air Sinai,340,AS101
+Cairo International Airport,Gaza International Airport,01-06-2024,Air Sinai,350,AS102

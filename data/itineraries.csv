@@ -1,0 +1,15 @@
+User_ID,Origin_Airport,Destination_Airport,Date,Airline,Hotel,Activities
+11,Cairo International Airport,Hurghada International Airport,01-06-2024,EgyptAir,Fairmont Nile City Hotel,Museum Visit-Desert Safari
+11,Cairo International Airport,Hurghada International Airport,01-06-2024,EgyptAir,Fairmont Nile City Hotel,City Sightseeing Tour-Desert Safari-Museum Visit
+11,Cairo International Airport,Hurghada International Airport,01-06-2024,EgyptAir,Four Seasons Cairo,Desert Safari-City Sightseeing Tour-Scuba Diving
+11,Cairo International Airport,Hurghada International Airport,01-06-2024,EgyptAir,Fairmont Nile City Hotel,City Sightseeing Tour-Desert Safari
+11,Cairo International Airport,Sharm El Sheikh International Airport,01-06-2024,Nile Air,Kempinski Nile Hotel,Desert Safari-City Sightseeing Tour-Museum Visit
+5,Istanbul Airport,Sabiha Gökçen International Airport,01-06-2024,Turkish Airlines,Çırağan Palace Kempinski Istanbul,City Sightseeing Tour-Desert Safari
+11,Borg El Arab International Airport,Cairo International Airport,01-06-2014,Air Arabia Egypt,Cairo Marriott Hotel,City Sightseeing Tour-Desert Safari-Museum Visit
+11,Aswan International Airport,Sharm El Sheikh International Airport,01-06-2026,Air Cairo,Kempinski Nile Hotel,Museum Visit-Desert Safari-City Sightseeing Tour-Scuba Diving
+5,Sabiha Gökçen International Airport,Esenboğa International Airport,01-06-2024,Turkish Airlines,The Marmara Taksim,City Sightseeing Tour-Scuba Diving
+11,Sharm El Sheikh International Airport,Aswan International Airport,01-06-2024,Air Cairo,Cairo Marriott Hotel,Museum Visit-City Sightseeing Tour
+11,Cairo International Airport,Gaza International Airport,01-06-2024,EgyptAir,Manger Square Hotel,Desert Safari-City Sightseeing Tour
+5,Cairo International Airport,Gaza International Airport,01-06-2024,Nile Air,Manger Square Hotel,City Sightseeing Tour-Museum Visit-Desert Safari
+11,Cairo International Airport,Gaza International Airport,01-06-2024,Air Cairo,Manger Square Hotel,Desert Safari-City Sightseeing Tour
+11,Cairo International Airport,Sharm El Sheikh International Airport,01-06-2024,Air Cairo,Fairmont Nile City Hotel,Museum Visit-Desert Safari
