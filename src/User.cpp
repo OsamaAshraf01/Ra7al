@@ -5,10 +5,11 @@
 #include "headers/User.h"
 
 void User::Register(){
-    DataFrame registered(CONFIG.registered_path);
+    DataFrame registered(CONFIG.registered_users_table);
 
     Case x;
     x.header = registered.Header();
+    x["ID"] = id;
     x["Name"] = name;
     x["Email"] = email;
     x["Password"] = password;
