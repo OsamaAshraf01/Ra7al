@@ -37,6 +37,7 @@ public:
     string getEmail();
     string getPassword();
     double getBudget();
+    int getID();
 
 
     void printDetails();
