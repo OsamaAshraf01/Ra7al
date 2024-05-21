@@ -5,6 +5,12 @@
 
 using namespace std;
 
+// Constructors
+Hotel::Hotel(){
+    pricing = 0;
+}
+
+
 // Setters
 void Hotel::setName(string& Name) {
     this->name = Name;

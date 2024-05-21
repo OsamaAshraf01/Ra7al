@@ -18,6 +18,7 @@ private:
     double pricing;
 
 public:
+    Hotel();
 
     // Setters
     void setName(string& name);
