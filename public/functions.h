@@ -11,32 +11,35 @@
 using namespace std;
 
 // A function to split a string based on specific delimiter (space by default)
-static List split(string &str, char delimiter = ' ');
+[[maybe_unused]]static List split(string &str, char delimiter = ' ');
 
 
 // A function to join vector of string values by a delimiter
-static string join(List &values, const string &delimiter);
+[[maybe_unused]]static string join(List &values, const string &delimiter);
 
 
 // A function to strip a string from a specific character
-static string strip(const string &str, const string &characters = " ");
+[[maybe_unused]]static string strip(const string &str, const string &characters = " ");
 
 
 // A function to print a vector
 template<typename T>
-static void printVec(vector<T> v);
+[[maybe_unused]]static void printVec(vector<T> v);
 
 
 // A function to convert string to appropriate data type
-static Any Transform(const string &str);
+[[maybe_unused]]static Any Transform(const string &str);
 
 
 // A function to generate text with color
-static QString text(string txt, string color);
+[[maybe_unused]]static QString text(string txt, string color);
 
 // A function to initialize attribute with value
-static QString Style(string attribute_name, string value);
+[[maybe_unused]]static QString Style(string attribute_name, string value);
 
+
+// A function to remove airport code from airport name
+[[maybe_unused]]static string remove_code(string airportName);
 
 ///====================================================================================
 ///=====================================Definition=====================================
@@ -169,6 +172,12 @@ static QString Style(string attribute_name, string value){
     ostringstream oss;
     oss << attribute_name <<": "<<value<<";";
     return QString::fromStdString(oss.str());
+}
+
+static string remove_code(string airportName){
+    if(*(airportName.end()-1) == ')')
+        return airportName.substr(0, airportName.length()-6);
+    return airportName;
 }
 
 #endif // RA7AL_FUNCTIONS_H
