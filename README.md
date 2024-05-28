@@ -2,64 +2,46 @@
 
 # Ra7al
 
-Our app, Ra7al, aims to help people organize their journeys. We create a user-friendly experience that includes all the major aspects of travel planning. In addition, we simplify the travel process by assisting users in, first of all, choosing their destination, and then we offer them a list of available flights. After that, Ra7al helps users budget their travels by choosing the best value for their budget, covering everything from flights to accommodations. <br>
-Moreover, we partner with airlines to provide the best deals for our customers. Users can get Ra7al points and cash back. Furthermore, Ra7al offers a wide selection of hotels, hostels, and rentals.<br>
-Our ultimate goal is to provide our users with a travel companion that takes them from the moment they dream of their next trip to their experience and the memories they create there. <be>
+## Introduction
 
-<br>
-
-## Project Features:
-
-- ### User Experience
-
-  * Personal Profile: Enhance user’s experience with personal profiles that store their data(name, email, payment method, etc. ) and make decisions based on it.
-  * View Bookings: See a list of your flights and hotel reservations.
-  * History: Show all past itineraries and user’s feedback about them.
-  * Feedback: users can add feedback about an itinerary after finishing it.
+At Ra7al, we offer a comprehensive travel experience, with all the planning and booking taken care of through our app, specifically designed to provide users with a seamless experience from dreaming about their next trip to creating unforgettable memories. Our app aims to simplify the travel process by assisting users in choosing their destination, finding flights, budgeting for their travels, and booking accommodations. Ra7al partners with airlines, hotels, and other travel providers to offer the best deals and rewards to its customers. Ra7al is implemented using `C++` and the `Qt` framework. This is to ensure cross-platform compatibility and a modern, intuitive user interface. Our aim is not simply to introduce a digital element to traditional travel, rather, it is to fundamentally change the way people travel, by cutting the middle-men, agencies, and third-parties from the process, and offering direct booking to different services, we aim to create a seamless travel experience for our customers. Our business model is of a marketplace; we connect our Ra7alah (Travelers/Nomads) to our partners, with whom we have exclusive deals to offer our customers. Thus, it is our strategy from the get-go to form strategic partnerships with famous international brands, in order to cement our positioning as a market leader in the tourism industry. Our team does not only come from diverse backgrounds and experiences, but most importantly, we all share the love of travel, and believe that it is an essential ingredient of the good life. So, from that passion, comes our desire to create a service that can make the lives of millions of travelers much easier, and let them focus on the things that really matter, exploring our fascinating world.
 
 
-- ### Technical Features
+## Project Scope
 
-  * Register & Log-in: Easy register and Log-in system to manage users.
-  * Search Flights: Find flights based on origin, destination, and date.
-  * Search Hotels: Locate hotels based on location and price range.
-  * Flight Filtering ٍSystem: Narrow search results by airline and price range.
-  * Database Integration: Integration with well-organized databases to ease data retrieval and management.
-  * Permission Control: Distinguish between regular users and administrators.
-
-
-- ### Financial Planning
-
-  * Budget Calculator: Help users set and adjust their travel budgets based on their needs and preferences.
-  * Currency Converter: Provide basic conversion rates between a few common currencies.
-  * Ra7al Travel Points: Partner with airlines, hotels, and activities providers. Award points for bookings through the app, redeemable for future discounts.
-  * Cashback offers: Small cashback rewards on spending in certain categories that add up over time.
-  * Saving goals settings: Allows users to set goals and achieve them.
-  * Financial Advice: Give advice based on the user's budget.
+### Project Objectives
+- Provide a user-centric platform for travel planning and booking.
+- Simplify the travel process by integrating flight and hotel searches, booking, financial planning tools, and personalized features.
+- Foster partnerships with airlines, hotels, and activity providers to offer competitive
+deals and loyalty rewards.
+### Target Audience
+Ra7al caters to a diverse range of travelers, including:
+- Leisure travelers seeking convenient travel planning tools.
+- Budget-conscious travelers looking for the best deals and value.
+- Frequent travelers seeking a personalized and efficient booking experience.
 
 
-- ### Booking & Reservations
-
-  * Flight Booking: A search and booking tool for flights, including price comparison.
-  * Hotel Reservations: Offers bookings for hotels, hostels, and other accommodations with filters for price, location, and amenities.
-  * Seat Selection & Meal Preferences: Users can customize their flight seating and meal options.
-  * Packing List: Offer a simple checklist of essential travel items.
-
-
-- ### Admin Features
-
-  * Users Management: View a list of registered users.
-  * Booking Management: Editing all possible destinations that are available.
-  * Flights Management: Add, edit, or delete flight data in the database.
-  * Hotels Management: Add, edit, or delete hotel data in the database.
-  * Settings: Update simple informational content like a welcome message or FAQs.
-  * Payment Management: Admin can update supported payment gates.
+## Functional Requirements
+### User Experience Features
+- Personal Profile: Provides data storage and personalization features.
+- View Bookings: Clear access to upcoming and past flight and hotel reservations.
+- History: View and manage past itineraries, including user feedback.
+### Technical Features
+- Register & Log-in: Secure user authentication and account management.
+- Search Flights & Hotels: Robust search engines with customizable filters.
+- Database Integration: Efficient data storage and retrieval using CSV files.
+- Permission Control: Differentiate between regular user and admin.
+### Booking & Reservation Features
+- Flight Booking: Integrated flight search, comparison, and booking engine.
+- Hotel Reservations: Search and book hotels, hostels, and rentals.
 
 
-- ### Other Features
-
-  * "Surprise Me": The app generates a random, exciting destination based on the user's budget and available travel dates.
-  * Travel Insurance: Option to compare and purchase travel insurance.
-  * Itinerary Popularity: Display the most popular itineraries for a specific destination.
-  * Language Support: users can get a simple manual for the destination’s language based on the language in the profile.
-  * User Interface Design: Create a user-friendly interface for searching, simulating bookings, and viewing information.
+## Conclusion
+Ra7al aims to revolutionize your travel experience by offering a suite of features that cater
+to the diverse needs of modern travelers. Our focus is on your experience, personalizing
+all features to your liking, and offering you financial planning tools, to help you keep the
+good times rolling! Ra7al is already becoming the go-to platform for anyone embarking
+on a journey, or thinking about one. The app’s architecture is designed to be scalable,
+reliable, and secure. The goal is to provide users with a seamless and enjoyable travel
+experience, one they would never forget, not as long as they are with us on this Re7lah
+(journey).
